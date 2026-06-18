@@ -86,6 +86,13 @@ If `npm start` reports `zone-lookup is duplicated`, a second copy of the widget 
 
 If removing one copy makes the widget disappear from the EB Entrypoint list entirely, the copy that remains is nested too deep. Move it so the manifest sits directly inside the widget folder.
 
+## Feedback
+
+Questions, bug reports, and feature ideas are welcome on the Esri Community thread:
+https://community.esri.com/t5/experience-builder-custom-widgets/zone-lookup/ba-p/1708890
+
+Or open an issue on the GitHub repo.
+
 ## License
 
 Apache-2.0. See `LICENSE`.

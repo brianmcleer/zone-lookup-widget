@@ -2,6 +2,8 @@
 
 Repo wrapper for the **Zone Lookup** custom widget for ArcGIS Experience Builder.
 
+Esri Community post: https://community.esri.com/t5/experience-builder-custom-widgets/zone-lookup/ba-p/1708890
+
 The actual widget lives in [`zone-lookup/`](./zone-lookup/). The repo's top-level files (this README, the LICENSE, the publish script) are infrastructure for tracking, syncing, and releasing the widget. They do not get shipped into Experience Builder.
 
 ## What the widget does
@@ -57,8 +59,6 @@ From a terminal in this repo folder:
 The script mirrors the live EB widget folder into [`zone-lookup/`](./zone-lookup/) (skipping `node_modules` and `.vs`), commits, and pushes to GitHub. When called with `-Release`, it also zips the widget folder and cuts a GitHub release with that zip attached.
 
 First run auto-creates the GitHub repo as **public** using the GitHub CLI. Subsequent runs just push.
-
-> Esri Community is intentionally not used for this widget right now. If that changes later, add a Community link block below this section and follow the standard Community-post workflow.
 
 ## Version tag rules
 
