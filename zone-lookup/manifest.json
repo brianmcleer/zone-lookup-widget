@@ -1,0 +1,22 @@
+{
+  "name": "zone-lookup",
+  "type": "widget",
+  "version": "1.0.0",
+  "exbVersion": "1.20.0",
+  "author": "City of Grand Junction",
+  "description": "Address-based zone lookup. Geocodes an entered address, finds the configured zone polygon it falls within, and renders a developer-defined HTML template populated with that zone's attributes. Generic point-in-polygon use cases: council districts, polling places, school boundaries, service areas, etc.",
+  "copyright": "City of Grand Junction, CO",
+  "license": "Apache-2.0",
+  "properties": {
+    "supportMultipleInstances": true,
+    "hasLocale": true,
+    "flexibleLayout": true
+  },
+  "dependency": [ "jimu-arcgis" ],
+  "translatedLocales": [ "en" ],
+  "i18nMessages": { "_widgetLabel": "Zone Lookup" },
+  "defaultSize": {
+    "width": 400,
+    "height": 620
+  }
+}

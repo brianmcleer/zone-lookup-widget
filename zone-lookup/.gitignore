@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Visual Studio cache
+.vs/
+*.user
+*.suo
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# OS cruft
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
