@@ -10,6 +10,8 @@ The actual widget lives in [`zone-lookup/`](./zone-lookup/). The repo's top-leve
 
 Resident enters their address, the widget geocodes it, finds the zone polygon that contains the resulting point, and renders a configurable HTML template populated with that zone's attributes. Generic point-in-polygon use cases: leaf pickup areas, council districts, polling places, school zones, snow routes, service areas. First deployment is the City of Grand Junction Leaf Removal Program lookup for fall 2026.
 
+Date fields (`esriFieldTypeDate`) in the result template are auto-formatted as long-form dates (e.g. `October 20, 2026`) and parsed as UTC, so date-only fields stored at midnight UTC render on the correct day for viewers in any timezone. See the widget README for details.
+
 See [`zone-lookup/README.md`](./zone-lookup/README.md) for the user-facing widget documentation: install steps, features, configuration, troubleshooting.
 
 ## Repo layout

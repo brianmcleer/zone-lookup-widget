@@ -76,6 +76,14 @@ Notable fields:
 
 After importing a configuration XML, **the data source reference (zone layer) is not preserved** because EB stores it as an app-specific UUID, not a URL. Always re-link the zone layer in the settings panel after importing an XML.
 
+## Date field rendering
+
+Date fields (`esriFieldTypeDate`) in the result template are rendered using long month format and parsed as UTC. A `{Pickup_Date_1}` token whose value is October 20, 2026 renders as `October 20, 2026`, not `10/20/2026`.
+
+The UTC handling matters for date-only fields. Esri stores those as midnight UTC, and the naive JavaScript default (`new Date(value).toLocaleDateString()`) interprets that timestamp in the viewer's local timezone. In Mountain Time (UTC-6/-7) and other negative-offset zones, midnight UTC is late evening the day before, so October 20 renders as October 19. Passing `timeZone: 'UTC'` to the formatter reads the date components in UTC and displays the day as stored.
+
+Every `{FIELD_NAME}` token that resolves to a date field goes through this formatter automatically. No template-side configuration is needed.
+
 ## Troubleshooting: `<name> is duplicated`
 
 If `npm start` reports `zone-lookup is duplicated`, a second copy of the widget is registered somewhere. EB scans `your-extensions/widgets` and throws this when it sees the same manifest `name` more than once. Check in this order:

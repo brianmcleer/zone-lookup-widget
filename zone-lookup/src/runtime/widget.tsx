@@ -104,7 +104,13 @@ const readableTextColor = (rgb: [number, number, number]): string => {
 const formatValue = (value: any, field?: any): string => {
   if (value === null || value === undefined || value === '') return ''
   if (field && (field.type === 'date' || field.type === 'esriFieldTypeDate')) {
-    try { return new Date(value).toLocaleDateString() } catch (_e) { /* fall through */ }
+    try {
+      // Force UTC interpretation so date-only fields stored as midnight UTC
+      // don't shift back a day in negative-offset time zones (e.g. Mountain Time).
+      return new Date(value).toLocaleDateString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
+      })
+    } catch (_e) { /* fall through */ }
   }
   return String(value)
 }
