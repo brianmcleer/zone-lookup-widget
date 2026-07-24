@@ -209,7 +209,13 @@ const triggerDownload = (filename: string, content: string, mimeType: string) =>
 
 // ---------- Component ----------
 
-const Setting = (props: AllWidgetSettingProps<IMConfig>) => {
+type SettingProps = AllWidgetSettingProps<IMConfig> & {
+    id: string
+    useDataSources?: any[]
+    useMapWidgetIds?: string[] | any
+}
+
+const Setting = (props: SettingProps) => {
     const { config, onSettingChange, id, useDataSources, useMapWidgetIds } = props
 
     const [fields, setFields] = useState<any[]>([])

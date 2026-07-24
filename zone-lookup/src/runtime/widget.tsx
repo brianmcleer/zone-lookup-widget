@@ -160,7 +160,13 @@ type ClickMode = 'idle' | 'armed'
 
 // ---------- Component ----------
 
-const Widget = (props: AllWidgetProps<IMConfig>) => {
+type WidgetProps = AllWidgetProps<IMConfig> & {
+  id: string
+  useDataSources?: any[]
+  useMapWidgetIds?: string[] | any
+}
+
+const Widget = (props: WidgetProps) => {
   const { config, useDataSources, useMapWidgetIds, id } = props
 
   // ---- State ----
