@@ -56,6 +56,8 @@ export default {
   shareEmailSubjectPlaceholder: 'e.g. "Lookup results"',
   iframeMode: 'Optimize for iframe',
   iframeModeHint: 'Widget fills its parent\u2019s height and stretches the result card to remove void space below. Use when embedding as a fixed-size iframe.',
+  mobileOptimized: 'Optimize for mobile',
+  mobileOptimizedHint: 'On phones and touch screens: larger touch targets (44px), 16px input font to prevent iOS auto-zoom when focusing the search box, full-width action buttons, thumb-reachable share menu, and tighter spacing on narrow screens. Recommended on. Turn off to keep desktop sizing everywhere.',
 
   // Appearance
   zoomLevel: 'Zoom level after lookup',

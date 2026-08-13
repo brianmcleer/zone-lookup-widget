@@ -1326,6 +1326,74 @@ const Widget = (props: WidgetProps) => {
       }
     }
 
+    /* ===== Mobile / touch optimizations (config.mobileOptimized, default on) =====
+       Two layers:
+       1. (pointer: coarse) OR narrow viewport — touch ergonomics: 16px input font
+          (prevents iOS Safari focus auto-zoom), 44px touch targets, larger menu rows.
+       2. Narrow viewport only — layout: tighter gutters, full-width action chips,
+          share menu as bottom sheet, stacked outside-area card. */
+    &.zl-mobile-opt {
+      @media (pointer: coarse), (max-width: 480px) {
+        .zl-search-shell input,
+        .zl-search-shell .jimu-input input {
+          font-size: 16px !important; /* < 16px triggers iOS focus zoom */
+          height: 44px !important;
+          line-height: 44px !important;
+        }
+        .zl-search-leading { width: 30px; height: 44px; }
+        .zl-search-trailing { width: 42px; height: 44px; margin-right: 0; }
+        .zl-help-trigger { width: 36px; height: 36px; }
+        .zl-action-chip { min-height: 44px; font-size: 0.9rem; }
+        .zl-suggestion { padding: 12px; font-size: 15px; min-height: 44px; }
+        .zl-suggestion-empty { padding: 12px; font-size: 15px; }
+        .zl-listbox { max-height: min(280px, 45vh); } /* stay above on-screen keyboard */
+        .zl-recent-item { min-height: 44px; padding: 10px; font-size: 0.9rem; }
+        .zl-recents-clear { min-height: 36px; padding: 8px 12px; }
+        .zl-toolbar-btn { min-height: 40px; padding: 8px 14px; font-size: 0.85rem; }
+        .zl-share-menuitem { min-height: 48px; padding: 12px; font-size: 0.95rem; }
+        .zl-outside-action { min-height: 44px; padding: 10px 18px; }
+        .zl-action-chip, .zl-toolbar-btn, .zl-share-menuitem, .zl-suggestion,
+        .zl-recent-item, .zl-outside-action, .zl-search-trailing, .zl-recents-clear {
+          touch-action: manipulation; /* kill double-tap zoom delay */
+        }
+      }
+
+      @media (max-width: 480px) {
+        padding: 12px;
+        gap: 8px;
+        .zl-banner { margin: -12px -12px 12px -12px; padding: 14px 14px 16px 14px; }
+        .zl-search-row .zl-combo { flex: 1 1 100%; min-width: 100%; max-width: none; }
+        .zl-actions { width: 100%; }
+        .zl-action-chip { flex: 1; justify-content: center; }
+        .zl-placeholder-card,
+        .zl-result-card,
+        .zl-outside-card { min-height: 300px; }
+        .zl-placeholder-card { padding: 20px 16px; }
+        .zl-placeholder-message { max-width: none; }
+        .zl-outside-card {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 20px 16px;
+          gap: 10px;
+        }
+        .zl-outside-content { width: 100%; }
+        .zl-hero { padding: 12px 14px; }
+        .zl-hero-title { font-size: 1.25rem; }
+        .zl-result-body { padding: 14px 12px; }
+        .zl-result-toolbar { padding: 6px 8px; }
+        /* Share menu becomes a fixed bottom sheet for thumb reach */
+        .zl-share-popover {
+          position: fixed;
+          left: 12px; right: 12px;
+          top: auto; bottom: 12px;
+          min-width: 0;
+          padding: 6px;
+          box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.06);
+        }
+      }
+    }
+
     .sr-only {
       position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
       overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
@@ -1382,7 +1450,7 @@ const Widget = (props: WidgetProps) => {
 
   return (
     <div
-      className={`widget-zone-lookup jimu-widget${config.iframeMode ? ' zl-iframe-mode' : ''}`}
+      className={`widget-zone-lookup jimu-widget${config.iframeMode ? ' zl-iframe-mode' : ''}${(config as any).mobileOptimized !== false ? ' zl-mobile-opt' : ''}`}
       css={styles}
       ref={containerRef}
       aria-busy={loading}
@@ -1460,6 +1528,12 @@ const Widget = (props: WidgetProps) => {
                 placeholder={config.addressPlaceholder}
                 disabled={loading}
                 autoComplete="off"
+                {...({
+                  enterKeyHint: 'search', // mobile keyboards show a Search key
+                  autoCorrect: 'off', // autocorrect fights address entry
+                  autoCapitalize: 'words',
+                  spellCheck: false
+                } as any)}
                 aria-autocomplete="list"
                 aria-controls={listboxId}
                 aria-activedescendant={activeIndex >= 0 ? `${listboxId}-opt-${activeIndex}` : undefined}

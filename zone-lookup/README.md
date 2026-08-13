@@ -70,7 +70,26 @@ Notable fields:
 - `placeholderHeading`, `placeholderMessage`, `outsideAreaHeading`, `outsideAreaMessage`, `tryAnotherAddressLabel`, `errorMessage`, `noAddressMessage`
 - `enableMyLocation`, `enableMapClick`, `enableShare`, `enablePrint`, `enableRecentSearches`
 - `iframeMode` (fills parent height, removes void space below the card)
+- `mobileOptimized` (touch/mobile ergonomics, **default on**; see Mobile support below)
 - `shareUrl` (overrides the auto-detected page URL used by the share menu)
+
+## Mobile support
+
+The **Optimize for mobile** toggle (settings panel, `mobileOptimized` in XML) is on by default and applies:
+
+- **Touch screens and narrow viewports** (`pointer: coarse` or ≤480px):
+  - 16px search input font — inputs under 16px trigger iOS Safari's automatic page zoom on focus, which is especially jarring inside an iframe embed
+  - 44px minimum touch targets on the input, clear button, action chips, suggestion rows, recent-search rows, toolbar buttons, and share menu items (Apple HIG / WCAG 2.5.8)
+  - `touch-action: manipulation` on interactive elements to remove double-tap zoom delay
+  - Suggestion list capped at 45% of viewport height so it stays visible above the on-screen keyboard
+- **Narrow viewports only** (≤480px):
+  - Tighter root gutters (12px) so the address field gets more characters on screen
+  - Action chips ("Use my location", "Click map") expand to full-width buttons
+  - Share menu renders as a fixed bottom sheet within thumb reach instead of a small anchored popover
+  - Outside-area card stacks vertically and centers
+  - Result hero and body paddings tighten; card min-heights reduce from 340px to 300px
+
+Turning the toggle off keeps desktop metrics on all screens. The widget also sets `enterKeyHint="search"`, disables autocorrect/spellcheck, and uses word capitalization on the address input for better mobile keyboards (always on, independent of the toggle).
 
 ## Configuration import
 

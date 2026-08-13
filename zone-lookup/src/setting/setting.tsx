@@ -115,7 +115,8 @@ const CONFIG_SCHEMA: Record<string, SerializableFieldType> = {
     outsideAreaHeading: 'string',
     tryAnotherAddressLabel: 'string',
     shareEmailSubject: 'string',
-    iframeMode: 'boolean'
+    iframeMode: 'boolean',
+    mobileOptimized: 'boolean'
 }
 
 const escapeXml = (s: string): string => String(s ?? '')
@@ -552,6 +553,16 @@ const Setting = (props: SettingProps) => {
                         <small className="text-muted">{defaultMessages.iframeModeHint}</small>
                     </SettingRow>
                 )}
+                <SettingRow label={defaultMessages.mobileOptimized}>
+                    <Switch
+                        checked={(config as any).mobileOptimized !== false}
+                        onChange={(e: any) => updateConfig('mobileOptimized', e.target.checked)}
+                        aria-label={defaultMessages.mobileOptimized}
+                    />
+                </SettingRow>
+                <SettingRow flow="wrap">
+                    <small className="text-muted">{defaultMessages.mobileOptimizedHint}</small>
+                </SettingRow>
                 {config.showResetButton && (
                     <>
                         <SettingRow flow="wrap" label={defaultMessages.resetLabel}>
