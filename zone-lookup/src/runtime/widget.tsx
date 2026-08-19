@@ -1195,6 +1195,7 @@ const Widget = (props: WidgetProps) => {
       min-height: 340px;
     }
     .zl-placeholder-icon {
+      position: relative; /* anchor for jimu Loading, which positions absolutely */
       display: inline-flex;
       align-items: center;
       justify-content: center;
