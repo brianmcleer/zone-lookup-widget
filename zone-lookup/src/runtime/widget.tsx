@@ -1,3 +1,4 @@
+import { runCascade, CascadeError } from './cascade'
 /** @jsx jsx */
 /** @jsxFrag React.Fragment */
 // PATCH VERSION: CivicPlus mobile body-portal scroll + semantic phone links v9.1 - EB 1.21 react-dom typing fix - 2026-08-26
@@ -423,7 +424,7 @@ const Widget = (props: WidgetProps) => {
             const { FeatureLayer, Graphic, SimpleFillSymbol, SimpleMarkerSymbol, SimpleLineSymbol } = mods
 
             const ds = dataSourceRef.current
-            const layerUrl = (ds as any)?.url || (ds?.getDataSourceJson() as any)?.url
+            const layerUrl = config.cascadeMode ? config.cascadePrimaryUrl : ((ds as any)?.url || (ds?.getDataSourceJson() as any)?.url)
             if (!layerUrl) {
                 setError(config.errorMessage); setStatusMsg(config.errorMessage); return
             }
@@ -438,15 +439,24 @@ const Widget = (props: WidgetProps) => {
                 geometry: point,
                 spatialRelationship: 'intersects',
                 outFields: ['*'],
-                returnGeometry: true
+                // Polygon geometry is only needed to draw the highlight. With no
+                // map widget linked (e.g. the iframe lookup apps) skipping it cuts
+                // the response from megabytes of vertices to a few KB.
+                returnGeometry: Boolean(graphicsLayerRef.current)
             }
-            let result = await queryLayer.queryFeatures(baseQuery)
-            if (!result.features || result.features.length === 0) {
-                result = await queryLayer.queryFeatures({
-                    ...baseQuery,
-                    distance: 30,
-                    units: 'meters'
-                })
+            let result: any
+            let selectedTemplate = config.resultTemplate
+            let lookupMeta: Record<string, any> = {}
+            if (config.cascadeMode) {
+                const cascade = await runCascade(FeatureLayer, baseQuery, config)
+                result = cascade.result
+                selectedTemplate = cascade.priority ? (config.cascadePriorityTemplate || config.resultTemplate) : config.resultTemplate
+                lookupMeta = cascade.meta
+            } else {
+                result = await queryLayer.queryFeatures(baseQuery)
+                if (!result.features || result.features.length === 0) {
+                    result = await queryLayer.queryFeatures({ ...baseQuery, distance: 30, units: 'meters' })
+                }
             }
 
             const pinSym = new SimpleMarkerSymbol({
@@ -471,9 +481,10 @@ const Widget = (props: WidgetProps) => {
             // (e.g. "{__searchedAddress} is in {LAYER}").
             const attributesWithMeta = {
                 ...feature.attributes,
+                ...lookupMeta,
                 __searchedAddress: displayLabel || ''
             }
-            const html = renderTemplate(config.resultTemplate, attributesWithMeta, fields)
+            const html = renderTemplate(selectedTemplate, attributesWithMeta, fields)
             setResultHtml(html)
             setResultFeature({ attributes: feature.attributes, fields })
             setStatusMsg('Results found.')
@@ -503,8 +514,8 @@ const Widget = (props: WidgetProps) => {
             focusResults()
         } catch (e) {
             console.error('Zone Lookup error:', e)
-            setError(config.errorMessage)
-            setStatusMsg(config.errorMessage)
+            setError(e instanceof CascadeError ? e.message : config.errorMessage)
+            setStatusMsg(e instanceof CascadeError ? e.message : config.errorMessage)
         } finally {
             setLoading(false)
         }
@@ -563,7 +574,7 @@ const Widget = (props: WidgetProps) => {
             await runLookupForPoint(candidates[0].location, value)
         } catch (e) {
             console.error('Zone Lookup submit error:', e)
-            setError(config.errorMessage); setStatusMsg(config.errorMessage)
+            setError(e instanceof CascadeError ? e.message : config.errorMessage); setStatusMsg(e instanceof CascadeError ? e.message : config.errorMessage)
         } finally {
             setLoading(false)
         }
@@ -1847,7 +1858,7 @@ const Widget = (props: WidgetProps) => {
                                         type="button"
                                         className="zl-action-chip"
                                         onClick={handleMyLocation}
-                                        disabled={loading || !useDs}
+                                        disabled={loading || (!useDs && !config.cascadeMode)}
                                     >
                                         <CrosshairSvg size={14} />
                                         <span>{defaultMessages.useMyLocation}</span>
@@ -1863,7 +1874,7 @@ const Widget = (props: WidgetProps) => {
                                         type="button"
                                         className="zl-action-chip"
                                         onClick={toggleClickMode}
-                                        disabled={loading || !useDs || !mapWidgetId}
+                                        disabled={loading || (!useDs && !config.cascadeMode) || !mapWidgetId}
                                         aria-pressed={armed}
                                     >
                                         <MapClickSvg size={14} />
@@ -1992,7 +2003,7 @@ const Widget = (props: WidgetProps) => {
                     tabIndex={0}
                     role="presentation"
                     aria-busy={loading}
-                    aria-label="Leaf pickup results. Swipe up or down to scroll."
+                    aria-label="Address lookup results. Swipe up or down to scroll."
                     data-zone-lookup-patch="civicplus-v9-overlay"
                     style={brandRootStyle as any}
                 >
@@ -2001,7 +2012,7 @@ const Widget = (props: WidgetProps) => {
                 document.body
             )}
 
-            {!useDs && (
+            {!useDs && !config.cascadeMode && (
                 <Alert form="basic" type="info" text={defaultMessages.noLayerConfigured} withIcon closable={false} />
             )}
         </div>

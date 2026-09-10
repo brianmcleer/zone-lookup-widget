@@ -1,23 +1,28 @@
 {
+  // VS-only type check (WIDGETHANDOFF Section 12, item 3 — Mode B, self-contained).
+  // Inert to the webpack build; webpack is the only type authority.
+  // Mode B because VS reports IDE1100 "Access to the path ...node_modules... is denied"
+  // on this install (pnpm junctions unreadable), so no baseUrl/paths into node_modules.
   "compilerOptions": {
-    "target": "ES2020",
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "noEmit": true,
+    "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react",
-    "baseUrl": "../../..",
-    "paths": {
-      "jimu-*": ["jimu-*"],
-      "esri/*": ["node_modules/@arcgis/core/*"]
-    },
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
+    "types": [],
+    // Also stop VS from scanning any @types directories at all - closes the
+    // last path to @types/react through the unreadable pnpm junctions.
+    "typeRoots": [],
     "strict": false,
-    "noEmit": true
+    "skipLibCheck": true,
+    "lib": [ "ESNext", "DOM", "DOM.Iterable" ],
+    // Classic JSX, no jsxImportSource — "react-jsx" makes VS resolve
+    // @emotion/react/jsx-runtime through the pnpm junction and die on the
+    // access-denied @types/react/jsx-runtime.d.ts (the jsx-runtime trap).
+    "jsx": "react",
+    "allowJs": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["src"]
+  "exclude": [ "node_modules", ".vs" ],
+  "include": [ "src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts" ]
 }

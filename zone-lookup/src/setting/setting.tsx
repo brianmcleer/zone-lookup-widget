@@ -79,6 +79,15 @@ const rgbaStringToArray = (str: string): ColorRGBA => {
 
 type SerializableFieldType = 'string' | 'number' | 'boolean' | 'rgba'
 const CONFIG_SCHEMA: Record<string, SerializableFieldType> = {
+    cascadeMode: 'boolean',
+    cascadePrimaryUrl: 'string',
+    cascadePriorityUrl: 'string',
+    cascadeLookupUrl: 'string',
+    cascadeLookupField: 'string',
+    cascadeValueMap: 'string',
+    cascadePriorityTemplate: 'string',
+    cascadeUnresolvedMessage: 'string',
+
     geocodeUrl: 'string',
     constrainSearch: 'string',
     zoomLevel: 'number',

@@ -5,6 +5,24 @@ export type SearchConstraint = 'none' | 'mapExtent' | 'layerExtent'
 export type ColorRGBA = [number, number, number, number]
 
 export interface Config {
+    // ----- Multi-layer lookup cascade (optional; see runtime/cascade.ts) -----
+    /** Enable the cascade. When on, the linked data source is ignored. */
+    cascadeMode?: boolean
+    /** Main zone layer (step 2). Required when cascadeMode is on. */
+    cascadePrimaryUrl?: string
+    /** Checked first (step 1); a hit renders cascadePriorityTemplate. Optional. */
+    cascadePriorityUrl?: string
+    /** Enrichment layer queried at the same point (step 3). Optional. */
+    cascadeLookupUrl?: string
+    /** Field on cascadeLookupUrl whose value drives the value map. */
+    cascadeLookupField?: string
+    /** JSON object mapping lookup values to display text; exposed as {__mappedValue}. */
+    cascadeValueMap?: string
+    /** Template for priority-layer hits. Falls back to resultTemplate. */
+    cascadePriorityTemplate?: string
+    /** Shown when the lookup value or map entry cannot be resolved. Falls back to errorMessage. */
+    cascadeUnresolvedMessage?: string
+
     /** Geocoding service URL. World Geocoder by default; can be swapped for an internal composite locator. */
     geocodeUrl: string
     /** Limit geocoder candidates to map extent, configured layer's extent, or no constraint. */
