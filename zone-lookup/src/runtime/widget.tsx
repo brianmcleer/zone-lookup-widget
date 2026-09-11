@@ -1,10 +1,7 @@
-import { runCascade, CascadeError } from './cascade'
-/** @jsx jsx */
-/** @jsxFrag React.Fragment */
 // PATCH VERSION: CivicPlus mobile body-portal scroll + semantic phone links v9.1 - EB 1.21 react-dom typing fix - 2026-08-26
+import { runCascade, CascadeError } from './cascade'
 import {
     React,
-    jsx,
     css,
     type AllWidgetProps,
     DataSourceComponent,
@@ -16,6 +13,7 @@ import {
     type JimuMapView,
     loadArcGISJSAPIModules
 } from 'jimu-arcgis'
+import { styled } from 'jimu-theme'
 import { Button, TextInput, Tooltip, Loading, LoadingType, Alert } from 'jimu-ui'
 import { type IMConfig } from '../config'
 import defaultMessages from './translations/default'
@@ -86,7 +84,43 @@ const MessageSvg = (p: { size?: number, className?: string }) => (
 
 const { useState, useRef, useCallback, useEffect } = React
 
+// ---------- Styled root ----------
+// The style block is computed inside the component (brand colors from config),
+// so the root takes it as a prop instead of a css prop. This keeps the widget
+// off the classic `/** @jsx jsx */` pragma entirely, which Experience Builder
+// 1.21's jimu-core `jsx` no longer tolerates (null-props crash in emotion).
+const ZlRoot: any = styled('div', {
+    shouldForwardProp: (prop: string) => prop !== 'zlStyles'
+})`${(p: any) => p.zlStyles}`
+
 // ---------- Template + value helpers ----------
+
+/**
+ * Render a plain-text message with any phone numbers converted to accessible
+ * tel: links. Plain-text config fields (placeholder, outside-area, error
+ * messages) stay HTML-free for safety, but a bare phone number is not
+ * operable for keyboard, screen reader, or mobile users (WCAG 2.1 1.3.1,
+ * 2.1.1). Matches common North American formats: (970) 256-4136,
+ * 970-256-4136, 970.256.4136, 970 256 4136.
+ */
+const PHONE_RE = /(\(?\d{3}\)?[\s.-]?\d{3}[\s.-]\d{4})/g
+const linkifyPhones = (text: string): any => {
+    if (!text) return text
+    const parts = text.split(PHONE_RE)
+    if (parts.length === 1) return text
+    return parts.map((part, i) => {
+        if (i % 2 === 1) {
+            const digits = part.replace(/\D/g, '')
+            const href = `tel:${digits.length === 10 ? '+1' + digits : digits}`
+            return (
+                <a key={i} href={href} className="zl-phone-link" aria-label={`Call ${part}`}>
+                    {part}
+                </a>
+            )
+        }
+        return part
+    })
+}
 
 const escapeHtml = (s: any): string => {
     if (s === null || s === undefined) return ''
@@ -1522,6 +1556,15 @@ const Widget = (props: WidgetProps) => {
       outline-offset: -3px;
     }
 
+    .zl-phone-link {
+      color: #003a55;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: 600;
+      white-space: nowrap;
+      &:focus-visible { outline: 3px solid var(--primary, #0083bd); outline-offset: 2px; border-radius: 2px; }
+    }
+
     .sr-only {
       position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
       overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
@@ -1716,9 +1759,9 @@ const Widget = (props: WidgetProps) => {
     )
 
     return (
-        <div
+        <ZlRoot
             className={`widget-zone-lookup jimu-widget${config.iframeMode ? ' zl-iframe-mode' : ''}${(config as any).mobileOptimized !== false ? ' zl-mobile-opt' : ''}`}
-            css={styles}
+            zlStyles={styles}
             ref={containerRef}
             aria-busy={loading}
             data-zone-lookup-patch="civicplus-v9"
@@ -1947,7 +1990,7 @@ const Widget = (props: WidgetProps) => {
                     </div>
                     <div className="zl-outside-content">
                         <h2 className="zl-outside-title">{config.outsideAreaHeading || defaultMessages.outsideAreaHeading}</h2>
-                        <p className="zl-outside-message">{config.outsideAreaMessage}</p>
+                        <p className="zl-outside-message">{linkifyPhones(config.outsideAreaMessage)}</p>
                         <button
                             type="button"
                             className="zl-outside-action"
@@ -1960,7 +2003,7 @@ const Widget = (props: WidgetProps) => {
             )}
 
             {error && (
-                <Alert form="basic" type="warning" text={error} withIcon closable={false} />
+                <Alert form="basic" type="warning" text={linkifyPhones(error)} withIcon closable={false} />
             )}
 
             {/* Pre-search & loading placeholder: same card stays visible from idle through loading
@@ -1984,7 +2027,7 @@ const Widget = (props: WidgetProps) => {
                                 {config.placeholderHeading || defaultMessages.placeholderHeading}
                             </h3>
                             <p className="zl-placeholder-message">
-                                {config.placeholderMessage || defaultMessages.placeholderMessage}
+                                {linkifyPhones(config.placeholderMessage || defaultMessages.placeholderMessage)}
                             </p>
                         </>
                     )}
@@ -1997,9 +2040,9 @@ const Widget = (props: WidgetProps) => {
             {/* In phone portrait, portal the result directly to document.body so
           Experience Builder and CivicPlus ancestor overflow cannot clip it. */}
             {mobileResultOverlay && createPortal(
-                <div
+                <ZlRoot
                     className="widget-zone-lookup jimu-widget zl-mobile-opt zl-mobile-result-portal"
-                    css={styles}
+                    zlStyles={styles}
                     tabIndex={0}
                     role="presentation"
                     aria-busy={loading}
@@ -2008,14 +2051,14 @@ const Widget = (props: WidgetProps) => {
                     style={brandRootStyle as any}
                 >
                     {renderResultCard(true)}
-                </div>,
+                </ZlRoot>,
                 document.body
             )}
 
             {!useDs && !config.cascadeMode && (
                 <Alert form="basic" type="info" text={defaultMessages.noLayerConfigured} withIcon closable={false} />
             )}
-        </div>
+        </ZlRoot>
     )
 }
 

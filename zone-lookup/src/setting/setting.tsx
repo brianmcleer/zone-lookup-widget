@@ -1,8 +1,5 @@
-/** @jsx jsx */
-/** @jsxFrag React.Fragment */
 import {
     React,
-    jsx,
     css,
     Immutable,
     type UseDataSource,
@@ -12,6 +9,7 @@ import {
     type DataSource,
     type FeatureLayerDataSource
 } from 'jimu-core'
+import { styled } from 'jimu-theme'
 import { type AllWidgetSettingProps } from 'jimu-for-builder'
 import {
     MapWidgetSelector,
@@ -78,6 +76,11 @@ const rgbaStringToArray = (str: string): ColorRGBA => {
 // app-specific IDs that would be meaningless in a different app.
 
 type SerializableFieldType = 'string' | 'number' | 'boolean' | 'rgba'
+// Styled root (no css prop / no classic-JSX pragma; see runtime/widget.tsx)
+const SettingRoot: any = styled('div', {
+    shouldForwardProp: (prop: string) => prop !== 'zlStyles'
+})`${(p: any) => p.zlStyles}`
+
 const CONFIG_SCHEMA: Record<string, SerializableFieldType> = {
     cascadeMode: 'boolean',
     cascadePrimaryUrl: 'string',
@@ -397,7 +400,7 @@ const Setting = (props: SettingProps) => {
     )
 
     return (
-        <div className="widget-setting-zone-lookup" css={styles}>
+        <SettingRoot className="widget-setting-zone-lookup" zlStyles={styles}>
 
             {/* ---- MAP ---- */}
             <SettingSection title={defaultMessages.mapSection}>
@@ -880,7 +883,7 @@ const Setting = (props: SettingProps) => {
                     </div>
                 )}
             </SettingSection>
-        </div>
+        </SettingRoot>
     )
 }
 
