@@ -55,9 +55,13 @@ export async function runCascade(FeatureLayer: any, baseQuery: any, config: any)
         returnGeometry: false
     }
 
+    // Buffered retry distance. 0 disables the retry, so only exact
+    // point-in-polygon matches count.
+    const rawBuf = config.bufferMeters
+    const bufferMeters = rawBuf === undefined || rawBuf === null ? 30 : Number(rawBuf)
     const run = (url: string, q: any, buffered: boolean) =>
         getLayer(FeatureLayer, url).queryFeatures(
-            buffered ? { ...q, distance: 30, units: 'meters' } : q
+            buffered && bufferMeters > 0 ? { ...q, distance: bufferMeters, units: 'meters' } : q
         )
     const hit = (r: any) => Boolean(r && r.features && r.features.length > 0)
 
@@ -69,7 +73,7 @@ export async function runCascade(FeatureLayer: any, baseQuery: any, config: any)
     ])
 
     // Round 2: buffered retries, in parallel, only where the answer matters.
-    if (!hit(priority) && !hit(primary)) {
+    if (bufferMeters > 0 && !hit(priority) && !hit(primary)) {
         const [priorityB, primaryB] = await Promise.all([
             config.cascadePriorityUrl ? run(config.cascadePriorityUrl, baseQuery, true) : null,
             run(config.cascadePrimaryUrl, baseQuery, true)
@@ -86,7 +90,7 @@ export async function runCascade(FeatureLayer: any, baseQuery: any, config: any)
 
     // Step 3: lookup field value -> mapped display text.
     if (!hasLookupCfg) return unresolved()
-    if (!hit(lookup)) {
+    if (!hit(lookup) && bufferMeters > 0) {
         lookup = await run(config.cascadeLookupUrl, lookupQuery, true)
     }
     const raw = lookup?.features?.[0]?.attributes?.[config.cascadeLookupField]

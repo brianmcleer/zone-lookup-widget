@@ -488,8 +488,12 @@ const Widget = (props: WidgetProps) => {
                 lookupMeta = cascade.meta
             } else {
                 result = await queryLayer.queryFeatures(baseQuery)
-                if (!result.features || result.features.length === 0) {
-                    result = await queryLayer.queryFeatures({ ...baseQuery, distance: 30, units: 'meters' })
+                // Buffered retry for geocoder precision. bufferMeters = 0 disables
+                // it, so an address just outside a boundary stays outside.
+                const buf = (config as any).bufferMeters
+                const meters = buf === undefined || buf === null ? 30 : Number(buf)
+                if (meters > 0 && (!result.features || result.features.length === 0)) {
+                    result = await queryLayer.queryFeatures({ ...baseQuery, distance: meters, units: 'meters' })
                 }
             }
 

@@ -49,6 +49,7 @@ declare module 'jimu-core' {
     // emotion bindings
     export function jsx(...args: any[]): any
     export function css(strings: any, ...values: any[]): any
+    export const styled: any
     // immutable
     export function Immutable<T = any>(value: T): any
     export type ImmutableObject<T = any> = T & {

@@ -82,6 +82,7 @@ const SettingRoot: any = styled('div', {
 })`${(p: any) => p.zlStyles}`
 
 const CONFIG_SCHEMA: Record<string, SerializableFieldType> = {
+    bufferMeters: 'number',
     cascadeMode: 'boolean',
     cascadePrimaryUrl: 'string',
     cascadePriorityUrl: 'string',

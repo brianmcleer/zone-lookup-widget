@@ -5,6 +5,16 @@ export type SearchConstraint = 'none' | 'mapExtent' | 'layerExtent'
 export type ColorRGBA = [number, number, number, number]
 
 export interface Config {
+    /**
+     * Metres to buffer the retry query when an exact point-in-polygon match
+     * finds nothing. Absorbs geocoders that place points in the road
+     * right-of-way just outside the correct polygon. Set 0 to disable the
+     * retry entirely, so only exact matches count. Default 30.
+     * Raise it only if legitimate addresses are being reported as outside;
+     * lower it if addresses just outside a boundary are wrongly matched.
+     */
+    bufferMeters?: number
+
     // ----- Multi-layer lookup cascade (optional; see runtime/cascade.ts) -----
     /** Enable the cascade. When on, the linked data source is ignored. */
     cascadeMode?: boolean
