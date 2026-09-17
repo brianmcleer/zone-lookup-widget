@@ -15,8 +15,12 @@ import {
 } from 'jimu-arcgis'
 import { styled } from 'jimu-theme'
 import { Button, TextInput, Tooltip, Loading, LoadingType, Alert } from 'jimu-ui'
+import { CalciteIcon } from 'calcite-components'
 import { type IMConfig } from '../config'
 import defaultMessages from './translations/default'
+import HelpPopup from './components/HelpPopup'
+import FirstRunHint from './components/FirstRunHint'
+import { buildHelpSections, type HelpFeatures } from './helpSections'
 
 // Experience Builder 1.21 ships react-dom with ambient typings that are not
 // exposed as an ES module. Use webpack's runtime require instead of a TS import.
@@ -82,7 +86,7 @@ const MessageSvg = (p: { size?: number, className?: string }) => (
     <Svg {...p} size={p.size ?? 16} paths={<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />} />
 )
 
-const { useState, useRef, useCallback, useEffect } = React
+const { useState, useRef, useCallback, useEffect, useMemo } = React
 
 // ---------- Styled root ----------
 // The style block is computed inside the component (brand colors from config),
@@ -227,6 +231,49 @@ const Widget = (props: WidgetProps) => {
     const [recents, setRecents] = useState<RecentSearch[]>([])
     const [clickMode, setClickMode] = useState<ClickMode>('idle')
     const [isPhonePortrait, setIsPhonePortrait] = useState(false)
+    const [isHelpOpen, setHelpOpen] = useState(false)
+
+    // ---- Help guide: translate helper ----
+    // Reads the widget's own strings and fills {token} placeholders, falling back
+    // to defaultMessages when the app supplies no translation.
+    const intl = (props as any).intl
+    const t = useCallback((key: string, values?: Record<string, string>): string => {
+        const fallback = (defaultMessages as any)[key] ?? key
+        let text: string = fallback
+        try {
+            if (intl) text = intl.formatMessage({ id: key, defaultMessage: fallback }, values)
+        } catch (_e) { text = fallback }
+        if (values) {
+            Object.keys(values).forEach(k => {
+                text = text.split(`{${k}}`).join(values[k])
+            })
+        }
+        return text
+    }, [intl])
+
+    // ---- First-run hint ----
+    // Namespaced by widget id so two copies of the widget do not share one
+    // dismissal. Read and write are guarded: private browsing throws on both,
+    // and the guide is not worth breaking the widget over.
+    const hintKey = `zoneLookup.helpHintDismissed.${id}`
+    const [showFirstRunHint, setShowFirstRunHint] = useState<boolean>(() => {
+        try { return window.localStorage.getItem(hintKey) !== '1' }
+        catch (_e) { return true }
+    })
+
+    const dismissFirstRunHint = useCallback((): void => {
+        setShowFirstRunHint(false)
+        try { window.localStorage.setItem(hintKey, '1') }
+        catch (_e) { /* private browsing */ }
+    }, [hintKey])
+
+    // Opening the guide counts as answering the hint.
+    const openHelp = useCallback((): void => {
+        setHelpOpen(true)
+        dismissFirstRunHint()
+    }, [dismissFirstRunHint])
+
+    const closeHelp = useCallback((): void => { setHelpOpen(false) }, [])
 
     // ---- Refs ----
     const mapViewRef = useRef<JimuMapView | null>(null)
@@ -919,6 +966,12 @@ const Widget = (props: WidgetProps) => {
 
     .zl-intro { font-size: 0.95rem; line-height: 1.5; color: var(--zl-heading, var(--gray-700, inherit)); }
     .zl-intro p:last-child { margin-bottom: 0; }
+
+    /* Help button row: sits at the top right, above everything else. */
+    .zl-help-row { flex-shrink: 0; }
+    /* The banner normally bleeds to the top edge. With the help row above it,
+       drop the negative top margin so the banner cannot cover the button. */
+    .zl-help-row + .zl-banner { margin-top: 0; }
 
     /* Branded header banner (when headerStyle = 'banner') */
     .zl-banner {
@@ -1624,6 +1677,38 @@ const Widget = (props: WidgetProps) => {
     const armed = clickMode === 'armed'
     const mobileResultOverlay = Boolean(config.iframeMode && isPhonePortrait && resultHtml)
 
+    // ---- Help guide content ----
+    // Each flag comes from the same check the render code above uses, so the
+    // guide never describes a button the widget is not currently showing.
+    const helpFeatures: HelpFeatures = useMemo(() => ({
+        myLocation: !!config.enableMyLocation,
+        mapClick: !!config.enableMapClick,
+        mapConnected: !!mapWidgetId,
+        hero: !!(config.heroTitleField || config.heroSubtitleField),
+        share: !!config.enableShare,
+        print: !!config.enablePrint,
+        recentSearches: !!config.enableRecentSearches,
+        resetButton: !!config.showResetButton,
+        labels: {
+            address: config.addressLabel || t('placeholderHeading'),
+            myLocation: t('useMyLocation'),
+            clickMap: t('clickMap'),
+            share: t('share'),
+            print: t('print'),
+            reset: config.resetLabel || t('clearRecent'),
+            tryAnother: config.tryAnotherAddressLabel || t('tryAnotherAddress'),
+            recentSearches: t('recentSearches'),
+            clearRecent: t('clearRecent')
+        }
+    }), [
+        config.enableMyLocation, config.enableMapClick, mapWidgetId,
+        config.heroTitleField, config.heroSubtitleField, config.enableShare,
+        config.enablePrint, config.enableRecentSearches, config.showResetButton,
+        config.addressLabel, config.resetLabel, config.tryAnotherAddressLabel, t
+    ])
+
+    const helpSections = useMemo(() => buildHelpSections(t, helpFeatures), [t, helpFeatures])
+
     // Focus the phone result dialog after it opens. The portaled overlay itself
     // is the one native scroll surface, so no touch handlers or body overflow
     // overrides can interfere with iOS link activation or portrait scrolling.
@@ -1785,6 +1870,43 @@ const Widget = (props: WidgetProps) => {
                     onDataSourceCreated={onDsCreated}
                 />
             )}
+
+            {/* Help button, top right of the widget. */}
+            <div className="zl-help-row" style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <Button
+                    size="sm"
+                    type="tertiary"
+                    icon
+                    onClick={openHelp}
+                    title={t('helpTitle')}
+                    aria-label={t('helpTitle')}
+                    style={{ flexShrink: 0 }}
+                >
+                    <CalciteIcon icon="question" scale="s" />
+                </Button>
+            </div>
+
+            {showFirstRunHint && (
+                <FirstRunHint
+                    title={t('firstRunTitle')}
+                    body={t('firstRunBody')}
+                    linkLabel={t('firstRunHelpLink')}
+                    dismissLabel={t('firstRunDismiss')}
+                    onOpenHelp={openHelp}
+                    onDismiss={dismissFirstRunHint}
+                />
+            )}
+
+            <HelpPopup
+                open={isHelpOpen}
+                onClose={closeHelp}
+                sections={helpSections}
+                title={t('helpTitle')}
+                intro={t('helpIntro')}
+                searchPlaceholder={t('helpSearchPlaceholder')}
+                noMatches={t('helpNoMatches')}
+                closeLabel={t('close')}
+            />
 
             {/* Header: banner with optional title, or plain intro */}
             {config.headerStyle === 'banner' && (config.headerTitle || config.intro) ? (

@@ -1,0 +1,13 @@
+# Changelog
+
+All notable changes to the Zone Lookup widget. Newest first.
+
+## 1.4.0 (2026-09-17)
+
+- Added: in-widget help guide (Help button, searchable guide, first-run hint)
+- Packaging: the Visual Studio editor shims are no longer in the release zip. `publish.ps1` strips them from a staging copy (`$ReleaseOnlyExclude`) and refuses to zip if any ambient `declare module` of react, jimu or esri survives. The shims stay in the GitHub repo; clone users delete them before building.
+- Packaging: `package.json` gained the `exb-widget`, `experience-builder` and `exb` keywords used by the community `exb search` CLI.
+
+## 1.3.0 and earlier
+
+Prior releases: see the GitHub releases page.

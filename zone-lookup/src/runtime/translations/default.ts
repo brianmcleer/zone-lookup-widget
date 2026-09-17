@@ -36,5 +36,77 @@ export default {
   outsideAreaHeading: 'Address is outside the service area',
   tryAnotherAddress: 'Try another address',
   placeholderHeading: 'Find your area',
-  placeholderMessage: 'Enter an address above to see your results.'
+  placeholderMessage: 'Enter an address above to see your results.',
+
+  // ----- Shared help guide strings -----
+  helpTitle: 'Help',
+  close: 'Close',
+  helpIntro: 'This widget tells you which area an address falls in.',
+  helpSearchPlaceholder: 'Search the guide (try "address" or "map")',
+  helpNoMatches: 'Nothing in the guide matches that word. Try another, or open the sections above.',
+  helpAnd: 'and',
+  firstRunTitle: 'New here?',
+  firstRunBody: 'Type an address, pick it from the list, then read the answer in the card below.',
+  firstRunHelpLink: 'Open the guide.',
+  firstRunDismiss: 'Dismiss',
+
+  // ----- Start here -----
+  helpStartTitle: 'Start here: three steps',
+  helpStart1: 'Type an address in the box under "{address}". After a few letters, a short list of matching addresses appears.',
+  helpStart2: 'Click your address in that list. You can also press Enter to use exactly what you typed.',
+  helpStart3: 'Read the answer in the card below the box.',
+  helpStart3Map: 'Read the answer in the card below the box, and look at the shaded area on the map.',
+
+  // ----- Typing an address -----
+  helpFindTitle: 'Typing an address',
+  helpFind1: 'The list of addresses appears once you have typed about three letters. Picking from the list is the surest way to get the right spot.',
+  helpFind2: 'Use the down and up arrow keys to move through the list, then press Enter to choose one.',
+  helpFind3: 'The small x at the right end of the box empties it so you can start over.',
+  helpFindReset: '{reset} sits below the box. It empties the box and clears the answer.',
+  helpFind4: 'House number first, then the street name, works best: 250 N 5th St.',
+
+  // ----- Other ways to look up a place -----
+  helpWaysTitle: 'Other ways to look up a place',
+  helpWaysIntro: 'You do not have to type an address. You can also use {ways}.',
+  helpWaysLocation: '{name}: uses the location of the device you are on. Your browser asks for permission the first time. Choose Allow.',
+  helpWaysClick: '{name}: lets you pick a spot on the map. Click the button, then click the map. Click the button again to stop.',
+  helpWaysClickNoMap: '{name} is greyed out because this app does not show a map beside the widget.',
+
+  // ----- Reading the answer -----
+  helpResultTitle: 'Reading the answer',
+  helpResultHero: 'The colored bar at the top of the card is the short answer, such as the area name and the date.',
+  helpResult1: 'The rest of the card gives the details for the address you looked up.',
+  helpResultMap: 'On the map, a red dot marks the address and the matching area is shaded.',
+  helpResultOutside: 'If the address sits outside the areas this app covers, a yellow card says so and offers {tryAnother}.',
+
+  // ----- Recent addresses -----
+  helpRecentTitle: 'Your recent addresses',
+  helpRecent1: 'Your last few addresses are listed under "{recent}" when the box is empty.',
+  helpRecent2: 'Click one to look it up again.',
+  helpRecent3: '{clear} removes that list from this browser. The list is only on your own computer, and nobody else sees it.',
+
+  // ----- Buttons on the answer card -----
+  helpActionsTitle: 'Buttons on the answer card',
+  helpActionsIntro: 'At the top of the answer card you get {actions}.',
+  helpActionsShare: '{name}: opens a small menu with Copy link, Email and Text message.',
+  helpActionsPrint: '{name}: prints the answer card on its own, not the whole page.',
+
+  // ----- If something looks wrong -----
+  helpTroubleTitle: 'If something looks wrong',
+  helpTroubleNoList: 'No list of addresses appears: you have typed fewer than three letters, or the address service is slow. Type a little more and wait a second.',
+  helpTroubleNoMatch: 'Your address is not in the list: the house number or the spelling may be slightly off. Try the street name on its own, then pick the right one from the list.',
+  helpTroubleOutside: 'The answer says the address is outside the area: that address is not in the areas this app covers. Check the address, then use the phone number or contact shown on the card.',
+  helpTroubleLocation: '"{name}" does nothing: your browser is blocking location access. Allow location for this page in your browser settings, or type the address instead.',
+  helpTroubleClick: '"{name}" is greyed out: the widget has no map to click, or the map is still loading. Type the address instead.',
+  helpTroubleShare: 'Copy link does nothing: this browser does not allow copying from a page. Copy the address out of the box by hand instead.',
+  helpTroublePrint: 'The printout shows the whole page: the print window was opened from the browser menu. Use the {name} button on the answer card instead.',
+  helpTroubleBlank: 'The card stays empty after a long wait: the address service or the area layer did not answer. Reload the page and try again.',
+  helpTroubleContact: 'Still stuck? Contact the GIS Division and mention the Zone Lookup widget and this app.',
+
+  // ----- Good to know -----
+  helpTipsTitle: 'Good to know',
+  helpTips1: 'Picking an address from the list is more reliable than typing the whole address and pressing Enter.',
+  helpTips2: 'An address right on the edge of an area still matches. The widget looks a short distance around the point.',
+  helpTips3: 'Clearing your browser data also clears your recent addresses.',
+  helpTips4: 'This guide follows the app: it only describes the buttons this app is showing you.'
 }

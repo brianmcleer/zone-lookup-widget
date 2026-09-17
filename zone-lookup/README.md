@@ -17,6 +17,7 @@ Built generically: any point-in-polygon use case works (leaf pickup areas, counc
 - Iframe-optimization toggle that fills the parent's available height
 - XML import/export of full widget configuration for portability across EB experiences
 - Brand color overrides (primary and heading) via settings, cascaded through CSS custom properties
+- Help guide: a question button at the top right opens a short, searchable, plain-language guide that adapts to the options the app author enabled; a one-time hint points new users at it
 - WCAG 2.1 AA compliance: target sizes, focus indicators, reduced-motion and forced-colors support, screen reader announcements
 
 ## Requirements
@@ -58,6 +59,12 @@ Built generically: any point-in-polygon use case works (leaf pickup areas, counc
    - Optionally link a Map widget for highlighting and click-to-lookup
    - Customize labels, messages, brand colors, and the result template
 
+### The release zip and the editor shims
+
+The zip is the widget only. The Visual Studio type shims in the repo (`zone-lookup/src/exb-editor-shims.d.ts`, `zone-lookup/src/vendor-shims.d.ts`) are left out on purpose: their ambient `declare module` blocks are not file-scoped and would rewrite the react, jimu and esri types for every other widget in your `your-extensions` folder.
+
+If you clone the repository instead of using the zip, delete `zone-lookup/src/exb-editor-shims.d.ts` and the other shim files listed above before building; nothing else depends on them.
+
 ## Configuration
 
 Every configurable string, color, and toggle lives in the widget's settings panel. Settings round-trip via XML export and import (in the same settings panel) so configurations can be moved between EB experiences without manual setup.
@@ -78,7 +85,7 @@ Notable fields:
 The **Optimize for mobile** toggle (settings panel, `mobileOptimized` in XML) is on by default and applies:
 
 - **Touch screens and narrow viewports** (`pointer: coarse` or ≤480px):
-  - 16px search input font — inputs under 16px trigger iOS Safari's automatic page zoom on focus, which is especially jarring inside an iframe embed
+  - 16px search input font - inputs under 16px trigger iOS Safari's automatic page zoom on focus, which is especially jarring inside an iframe embed
   - 44px minimum touch targets on the input, clear button, action chips, suggestion rows, recent-search rows, toolbar buttons, and share menu items (Apple HIG / WCAG 2.5.8)
   - `touch-action: manipulation` on interactive elements to remove double-tap zoom delay
   - Suggestion list capped at 45% of viewport height so it stays visible above the on-screen keyboard

@@ -21,3 +21,7 @@ desktop.ini
 .idea/
 *.swp
 *.swo
+
+# Cowork working folder and release zips never ship
+Claude outputs/
+*.zip
