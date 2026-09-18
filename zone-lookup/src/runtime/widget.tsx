@@ -21,6 +21,8 @@ import defaultMessages from './translations/default'
 import HelpPopup from './components/HelpPopup'
 import FirstRunHint from './components/FirstRunHint'
 import { buildHelpSections, type HelpFeatures } from './helpSections'
+import { beacon } from '../shared/beacon'
+import type { BeaconHandle } from '../shared/beacon'
 
 // Experience Builder 1.21 ships react-dom with ambient typings that are not
 // exposed as an ES module. Use webpack's runtime require instead of a TS import.
@@ -289,6 +291,9 @@ const Widget = (props: WidgetProps) => {
     const containerRef = useRef<HTMLDivElement | null>(null)
     const clickHandleRef = useRef<any>(null)
     const clickModeRef = useRef<ClickMode>('idle') // mirrored for closures in handlers
+    const beaconRef = useRef<BeaconHandle | null>(null)
+
+    useEffect(() => { beaconRef.current = beacon.init(props) }, [])
 
     // Keep ref in sync with state for handlers attached via JSAPI watchers
     useEffect(() => { clickModeRef.current = clickMode }, [clickMode])
@@ -598,6 +603,7 @@ const Widget = (props: WidgetProps) => {
 
             focusResults()
         } catch (e) {
+            beaconRef.current?.error(e, 'search')
             console.error('Zone Lookup error:', e)
             setError(e instanceof CascadeError ? e.message : config.errorMessage)
             setStatusMsg(e instanceof CascadeError ? e.message : config.errorMessage)
@@ -608,6 +614,7 @@ const Widget = (props: WidgetProps) => {
 
     // ---- Pick a suggestion ----
     const selectSuggestion = useCallback(async (s: Suggestion) => {
+        beaconRef.current?.action('select-suggestion')
         setAddress(s.text)
         setSuggestions([])
         setShowSuggestions(false)
@@ -629,6 +636,7 @@ const Widget = (props: WidgetProps) => {
             }
             await runLookupForPoint(candidates[0].location, s.text)
         } catch (e) {
+            beaconRef.current?.error(e, 'select-suggestion')
             console.error('Zone Lookup select error:', e)
             setError(config.errorMessage); setStatusMsg(config.errorMessage)
         }
@@ -638,6 +646,7 @@ const Widget = (props: WidgetProps) => {
     const submitTypedAddress = useCallback(async () => {
         const value = address.trim()
         if (!value) return
+        beaconRef.current?.action('search')
         setShowSuggestions(false)
         setLoading(true)
         setLoadingMessage(defaultMessages.searching)
@@ -658,6 +667,7 @@ const Widget = (props: WidgetProps) => {
             }
             await runLookupForPoint(candidates[0].location, value)
         } catch (e) {
+            beaconRef.current?.error(e, 'search')
             console.error('Zone Lookup submit error:', e)
             setError(e instanceof CascadeError ? e.message : config.errorMessage); setStatusMsg(e instanceof CascadeError ? e.message : config.errorMessage)
         } finally {
@@ -676,6 +686,7 @@ const Widget = (props: WidgetProps) => {
 
     // ---- Use my location ----
     const handleMyLocation = useCallback(async () => {
+        beaconRef.current?.action('locate')
         if (!navigator.geolocation) {
             setError(defaultMessages.geoUnsupported)
             setStatusMsg(defaultMessages.geoUnsupported)
@@ -698,6 +709,7 @@ const Widget = (props: WidgetProps) => {
                     if (addressText) setAddress(addressText)
                     await runLookupForPoint(point, addressText || `(${pos.coords.latitude.toFixed(5)}, ${pos.coords.longitude.toFixed(5)})`)
                 } catch (e) {
+                    beaconRef.current?.error(e, 'locate')
                     console.error('Zone Lookup geolocate error:', e)
                     setError(config.errorMessage)
                     setLoading(false)
@@ -731,6 +743,7 @@ const Widget = (props: WidgetProps) => {
 
     const runMapClickLookup = useCallback(async (mapPoint: any) => {
         if (!mapPoint) return
+        beaconRef.current?.action('map-click')
         setClickMode('idle')
         const addressText = await reverseGeocode(mapPoint)
         if (addressText) setAddress(addressText)
@@ -776,6 +789,7 @@ const Widget = (props: WidgetProps) => {
     }, [resultFeature, address, config.heroTitleField, config.heroSubtitleField])
 
     const handleShare = useCallback(async () => {
+        beaconRef.current?.action('share')
         setShareMenuOpen(prev => !prev)
         setShareFeedback(null)
     }, [])
@@ -866,6 +880,7 @@ const Widget = (props: WidgetProps) => {
 
     // ---- Print ----
     const handlePrint = useCallback(() => {
+        beaconRef.current?.action('print')
         // The print stylesheet (below) scopes output to the result card
         const root = containerRef.current
         if (root) root.classList.add('zl-printing')

@@ -21,3 +21,8 @@ declare module 'calcite-components' {
     const mod: any
     export default mod
 }
+
+// jimu-core members the widget's shim did not list (used by src/shared/beacon.ts).
+declare module 'jimu-core' {
+    export const getAppStore: () => any
+}
