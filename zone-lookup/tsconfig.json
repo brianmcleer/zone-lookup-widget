@@ -1,6 +1,6 @@
 {
   // VS-only type check (WIDGETHANDOFF Section 12, item 3 — Mode B, self-contained).
-  // Inert to the webpack build; webpack is the only type authority.
+  // NOT inert to the webpack build for jsx/jsxImportSource (ts-loader reads them).
   // Mode B because VS reports IDE1100 "Access to the path ...node_modules... is denied"
   // on this install (pnpm junctions unreadable), so no baseUrl/paths into node_modules.
   "compilerOptions": {
@@ -15,10 +15,10 @@
     "strict": false,
     "skipLibCheck": true,
     "lib": [ "ESNext", "DOM", "DOM.Iterable" ],
-    // Classic JSX, no jsxImportSource — "react-jsx" makes VS resolve
-    // @emotion/react/jsx-runtime through the pnpm junction and die on the
-    // access-denied @types/react/jsx-runtime.d.ts (the jsx-runtime trap).
-    "jsx": "react",
+    // jsx must stay "react-jsx" + "@emotion/react": ts-loader reads this file and
+    // classic jsx crashes the widget at runtime (12.3). IDE1100 noise is accepted.
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
     "allowJs": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
