@@ -5,6 +5,9 @@ export type SearchConstraint = 'none' | 'mapExtent' | 'layerExtent'
 export type ColorRGBA = [number, number, number, number]
 
 export interface Config {
+  /** Show the question-mark button that opens the help guide. Undefined means on,
+   *  so apps configured before this setting existed keep their help button. */
+  showHelp?: boolean
     /**
      * Metres to buffer the retry query when an exact point-in-polygon match
      * finds nothing. Absorbs geocoders that place points in the road

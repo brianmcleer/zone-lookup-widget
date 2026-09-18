@@ -1888,20 +1888,22 @@ const Widget = (props: WidgetProps) => {
 
             {/* Help button, top right of the widget. */}
             <div className="zl-help-row" style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <Button
-                    size="sm"
-                    type="tertiary"
-                    icon
-                    onClick={openHelp}
-                    title={t('helpTitle')}
-                    aria-label={t('helpTitle')}
-                    style={{ flexShrink: 0 }}
-                >
-                    <CalciteIcon icon="question" scale="s" />
-                </Button>
+                {props.config?.showHelp !== false && (
+                    <Button
+                        size="sm"
+                        type="tertiary"
+                        icon
+                        onClick={openHelp}
+                        title={t('helpTitle')}
+                        aria-label={t('helpTitle')}
+                        style={{ flexShrink: 0 }}
+                    >
+                        <CalciteIcon icon="question" scale="s" />
+                    </Button>
+                )}
             </div>
 
-            {showFirstRunHint && (
+            {props.config?.showHelp !== false && showFirstRunHint && (
                 <FirstRunHint
                     title={t('firstRunTitle')}
                     body={t('firstRunBody')}

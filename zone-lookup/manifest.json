@@ -1,7 +1,7 @@
 {
   "name": "zone-lookup",
   "type": "widget",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "exbVersion": "1.21.0",
   "author": "City of Grand Junction",
   "description": "Address-based zone lookup. Geocodes an entered address, finds the configured zone polygon it falls within, and renders a developer-defined HTML template populated with that zone's attributes. Generic point-in-polygon use cases: council districts, polling places, school boundaries, service areas, etc.",

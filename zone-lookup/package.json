@@ -1,6 +1,6 @@
 {
   "name": "zone-lookup",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Address-based zone lookup widget for ArcGIS Experience Builder. Geocodes an entered address, finds the configured zone polygon it falls within, and renders a developer-defined HTML template populated with that zone's attributes.",
   "keywords": [
     "exb-widget",
