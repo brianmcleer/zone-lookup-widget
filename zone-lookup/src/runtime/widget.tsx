@@ -1,4 +1,4 @@
-// PATCH VERSION: CivicPlus mobile body-portal scroll + semantic phone links v9.1 - EB 1.21 react-dom typing fix - 2026-08-26
+// PATCH VERSION: 1.4.4 Promise.withResolvers polyfill for older Safari/iOS - 2026-09-24
 import { runCascade, CascadeError } from './cascade'
 import {
     React,
@@ -28,6 +28,23 @@ import type { BeaconHandle } from '../shared/beacon'
 // exposed as an ES module. Use webpack's runtime require instead of a TS import.
 declare const require: (moduleName: string) => any
 const { createPortal } = require('react-dom') as any
+
+// Promise.withResolvers (ES2024) polyfill. The ArcGIS Maps SDK bundled with
+// EB 1.21 calls it inside class constructors (new FeatureLayer, etc.), which
+// throws "Promise.withResolvers is not a function" on older browsers such as
+// iOS/Safari before 17.4. Installed once at module load, before any lookup.
+if (typeof (Promise as any).withResolvers !== 'function') {
+    Object.defineProperty(Promise, 'withResolvers', {
+        configurable: true,
+        writable: true,
+        value: function withResolvers<T> (this: PromiseConstructor) {
+            let resolve!: (value: T | PromiseLike<T>) => void
+            let reject!: (reason?: any) => void
+            const promise = new this<T>((res, rej) => { resolve = res; reject = rej })
+            return { promise, resolve, reject }
+        }
+    })
+}
 
 // ---------- Inline SVG icons (no jimu-icons module deps) ----------
 

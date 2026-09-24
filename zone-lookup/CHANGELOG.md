@@ -2,6 +2,10 @@
 
 All notable changes to the Zone Lookup widget. Newest first.
 
+## 1.4.4 (2026-09-24)
+
+- Fixed: "TypeError: Promise.withResolvers is not a function" on older browsers (iOS/Safari before 17.4). The ArcGIS Maps SDK in Experience Builder 1.21 calls `Promise.withResolvers` when it builds layers, so the lookup failed before it could query. The widget now installs a small polyfill at load when the browser lacks it. Seen in Leaf Pickup via beacon telemetry.
+
 ## 1.4.3 (2026-09-18)
 
 - Settings: a **Show help guide** option. Turn it off and the question-mark button and the first-run hint both disappear; the guide itself is untouched. Undefined means on, so apps configured before this release keep their help button.
