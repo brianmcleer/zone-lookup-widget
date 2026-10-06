@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Partial configuration: changes only resultTemplate, not data sources or other settings. -->
+<ZoneLookupConfig version="1.0">
+  <resultTemplate><![CDATA[{{#if Municipality}}
+  <p>Incorporated {Municipality}</p>
+{{else}}
+  <p>Unincorporated {Township} Township</p>
+{{/if}}
+]]></resultTemplate>
+</ZoneLookupConfig>

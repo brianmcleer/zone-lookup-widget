@@ -1,5 +1,6 @@
-// PATCH VERSION: 1.4.4 Promise.withResolvers polyfill for older Safari/iOS - 2026-09-24
+// VERSION: 1.5.0 Conditional result templates - 2026-10-06
 import { runCascade, CascadeError } from './cascade'
+import { formatValue, renderTemplate, TemplateSyntaxError } from './template'
 import {
     React,
     css,
@@ -145,13 +146,6 @@ const linkifyPhones = (text: string): any => {
     })
 }
 
-const escapeHtml = (s: any): string => {
-    if (s === null || s === undefined) return ''
-    return String(s)
-        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;').replace(/'/g, '&#39;')
-}
-
 // ---------- WCAG contrast helper ----------
 // Pick black or white text for any background, guaranteeing at least 4.5:1
 // against the full-opacity background color. Used for the hero badge so admin
@@ -163,33 +157,6 @@ const readableTextColor = (rgb: [number, number, number]): string => {
     }
     const L = 0.2126 * lin(rgb[0]) + 0.7152 * lin(rgb[1]) + 0.0722 * lin(rgb[2])
     return L > 0.5 ? '#1a1a1a' : '#ffffff'
-}
-
-const formatValue = (value: any, field?: any): string => {
-    if (value === null || value === undefined || value === '') return ''
-    if (field && (field.type === 'date' || field.type === 'esriFieldTypeDate')) {
-        try {
-            // Force UTC interpretation so date-only fields stored as midnight UTC
-            // don't shift back a day in negative-offset time zones (e.g. Mountain Time).
-            return new Date(value).toLocaleDateString('en-US', {
-                year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
-            })
-        } catch (_e) { /* fall through */ }
-    }
-    return String(value)
-}
-
-const renderTemplate = (
-    template: string,
-    attributes: { [k: string]: any },
-    fields: any[] = []
-): string => {
-    if (!template) return ''
-    return template.replace(/\{([A-Za-z_][A-Za-z0-9_]*)\}/g, (_match, fieldName) => {
-        if (!(fieldName in attributes)) return ''
-        const field = fields.find((f: any) => f.name === fieldName)
-        return escapeHtml(formatValue(attributes[fieldName], field))
-    })
 }
 
 // ---------- Recent searches (localStorage) ----------
@@ -622,8 +589,11 @@ const Widget = (props: WidgetProps) => {
         } catch (e) {
             beaconRef.current?.error(e, 'search')
             console.error('Zone Lookup error:', e)
-            setError(e instanceof CascadeError ? e.message : config.errorMessage)
-            setStatusMsg(e instanceof CascadeError ? e.message : config.errorMessage)
+            const message = e instanceof TemplateSyntaxError
+                ? defaultMessages.templateConfigurationError
+                : e instanceof CascadeError ? e.message : config.errorMessage
+            setError(message)
+            setStatusMsg(message)
         } finally {
             setLoading(false)
         }
@@ -2141,7 +2111,7 @@ const Widget = (props: WidgetProps) => {
                 </div>
             )}
 
-            <div role="status" aria-live="polite" className="sr-only">{statusMsg}</div>
+            <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">{statusMsg}</div>
 
             {outsideArea && (
                 <div className="zl-outside-card" role="alert">

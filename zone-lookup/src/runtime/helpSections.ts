@@ -104,6 +104,7 @@ export function buildHelpSections (t: T, f: HelpFeatures): HelpSection[] {
         body: [
             ...when(f.hero, 'helpResultHero'),
             t('helpResult1'),
+            t('helpResultConditional'),
             ...when(f.mapConnected, 'helpResultMap'),
             t('helpResultOutside', { tryAnother: L.tryAnother })
         ]

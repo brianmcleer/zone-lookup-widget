@@ -32,6 +32,8 @@ import {
 import { ColorPicker } from 'jimu-ui/basic/color-picker'
 import { type IMConfig, type ColorRGBA, type SearchConstraint } from '../config'
 import defaultMessages from './translations/default'
+import { validateTemplate, type TemplateErrorCode } from '../runtime/template'
+import { useTokens } from '../runtime/theme'
 
 // jimu-ui ships an info icon SVG we can reuse for help affordances.
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -72,7 +74,7 @@ const rgbaStringToArray = (str: string): ColorRGBA => {
 // ---------- XML import/export ----------
 // A flat XML schema where each child element corresponds to one Config key.
 // Strings that may contain markup (intro, resultTemplate) round-trip via CDATA.
-// useMapWidgetIds and useDataSources are intentionally excluded — they reference
+// useMapWidgetIds and useDataSources are intentionally excluded : they reference
 // app-specific IDs that would be meaningless in a different app.
 
 type SerializableFieldType = 'string' | 'number' | 'boolean' | 'rgba'
@@ -237,6 +239,19 @@ const Setting = (props: SettingProps) => {
     const [importStatus, setImportStatus] = useState<{ type: 'success' | 'error', text: string } | null>(null)
     const fileInputRef = useRef<HTMLInputElement | null>(null)
 
+    const tokens = useTokens()
+    const templateError = validateTemplate(config.resultTemplate || '')
+    const templateHelpId = `zl-template-help-${id}`
+    const conditionalHelpId = `zl-conditional-help-${id}`
+    const templateErrorMessages: Record<TemplateErrorCode, string> = {
+        invalidDirective: defaultMessages.templateInvalidDirective,
+        unexpectedElse: defaultMessages.templateUnexpectedElse,
+        duplicateElse: defaultMessages.templateDuplicateElse,
+        unexpectedClose: defaultMessages.templateUnexpectedClose,
+        missingClose: defaultMessages.templateMissingClose,
+        tooDeep: defaultMessages.templateTooDeep
+    }
+
     // ---- Load fields from the configured zone layer ----
     useEffect(() => {
         const ds = useDataSources?.[0]
@@ -331,7 +346,7 @@ const Setting = (props: SettingProps) => {
     // re-binds them per active theme.
 
     const styles = css`
-    /* Hint text under SettingRows — styled per EB conventions */
+    /* Hint text under SettingRows : styled per EB conventions */
     .hint {
       color: var(--gray-700);
       font-size: 0.8125rem;
@@ -347,7 +362,7 @@ const Setting = (props: SettingProps) => {
       color: var(--gray-600);
     }
 
-    /* Token chip area — theme-aware container */
+    /* Token chip area : theme-aware container */
     .zl-token-panel {
       width: 100%;
       border: 1px solid var(--gray-400);
@@ -373,7 +388,22 @@ const Setting = (props: SettingProps) => {
       font-size: 0.8125rem;
     }
 
-    /* Textareas — force taller defaults; users can still resize via drag handle */
+    .zl-template-example {
+      max-width: 100%;
+      overflow-x: auto;
+      padding: 8px;
+      border: 1px solid ${tokens.divider};
+      border-radius: ${tokens.radius};
+      background: ${tokens.surface};
+      color: ${tokens.text};
+      font-size: 0.8125rem;
+    }
+    .zl-template-example:focus-visible {
+      outline: 2px solid ${tokens.primary};
+      outline-offset: 2px;
+    }
+
+    /* Textareas : force taller defaults; users can still resize via drag handle */
     textarea.zl-textarea-template,
     .zl-textarea-template textarea {
       width: 100%;
@@ -392,7 +422,7 @@ const Setting = (props: SettingProps) => {
     }
   `
 
-    /** Small helper — renders a hint line under a SettingRow with an info icon. */
+    /** Small helper : renders a hint line under a SettingRow with an info icon. */
     const Hint = ({ children }: { children: React.ReactNode }) => (
         <div className="hint">
             <Icon icon={infoOutlinedIcon} size={12} className="jimu-icon" />
@@ -471,12 +501,26 @@ const Setting = (props: SettingProps) => {
                         value={config.resultTemplate}
                         onChange={(e: any) => updateConfig('resultTemplate', e.target.value)}
                         placeholder="<h3>Zone Info</h3><p><strong>Zone:</strong> {ZONE_NAME}</p>"
-                        aria-describedby="zl-template-help"
+                        aria-label={defaultMessages.resultTemplate}
+                        aria-describedby={`${templateHelpId} ${conditionalHelpId}`}
+                        aria-invalid={templateError ? true : undefined}
                     />
                 </SettingRow>
                 <Hint>
-                    <span id="zl-template-help">{defaultMessages.resultTemplateHint}</span>
+                    <span id={templateHelpId}>{defaultMessages.resultTemplateHint}</span>
                 </Hint>
+
+                <div id={conditionalHelpId}>
+                    <Hint>{defaultMessages.conditionalTemplateHint}</Hint>
+                    <pre className="zl-template-example" tabIndex={0}
+                        aria-label={defaultMessages.conditionalTemplateExampleLabel}>
+                        {defaultMessages.conditionalTemplateExample}
+                    </pre>
+                </div>
+                {templateError && (
+                    <Alert type="error" withIcon
+                        text={`${defaultMessages.templateErrorPrefix} ${templateErrorMessages[templateError]}`} />
+                )}
 
                 <SettingRow flow="wrap" label={defaultMessages.availableFields}>
                     <div className="zl-token-panel">
@@ -489,7 +533,7 @@ const Setting = (props: SettingProps) => {
                                 {fields.map((f: any) => (
                                     <Tooltip
                                         key={f.name}
-                                        title={`${f.alias || f.name} (${f.type}) — click to insert`}
+                                        title={`${f.alias || f.name} (${f.type}) : click to insert`}
                                         placement="top"
                                     >
                                         <Button

@@ -1,0 +1,11 @@
+{
+  "src/runtime/theme.ts": "770c10b409ecc967eafe9e0744a1f4a759f05b834b8494aa4d9452bd43dc2ade",
+  "src/runtime/components/HelpPopup.tsx": "bf25e9d01b185c5f2b582a1a1cc3d028ffb1446955f4f9885871ad7661bede06",
+  "src/runtime/components/FirstRunHint.tsx": "c32f89f08661eb6f70f1b5be6ec32d0fb8ad341ec00c7d1c2bb147e899a20d0b",
+  "src/shared/beacon.ts": "8c62dab88784c5d74d86758445321264e741b4d5a585ac343b4a7ad5d1f76c8d",
+  "tsconfig.json": "5d12abd128ee64a804088b23313d92cb371b343324f7aa922eb1af5311c3edd4",
+  "config.json": "3b5170f78b4368f6fd32ba7e75982c01a49805439a0fe7276aff4108e65ff61e",
+  "src/exb-editor-shims.d.ts": "b6c9c8018435c8e68a44fe562855b65a411187a57bfb137c0a2e7a83a2d15ff7",
+  "src/editor-shims.d.ts": "084bb3ad83bdc9f14dde8541c47edbf7b23ddc10a9b243b31789ff0f6338d9a8",
+  "src/vendor-shims.d.ts": "89ae0d95e54572b3a4bb4a9b66c025a2cdc43f177b95cdeec670b1464e8fa9a8"
+}

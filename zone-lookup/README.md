@@ -9,6 +9,7 @@ Built generically: any point-in-polygon use case works (leaf pickup areas, counc
 - Custom address autocomplete using any ArcGIS GeocodeServer (single-line geocoding with `magicKey` resolution)
 - Point-in-polygon spatial query against any configured zone layer, with a 30m buffered fallback for geocoder precision near polygon boundaries
 - Configurable result template (HTML + CSS) populated with feature attributes via `{FIELD_NAME}` tokens, plus a synthetic `{__searchedAddress}` token that interpolates the address the user typed
+- Conditional result text using `{{#if FIELD}}...{{else}}...{{/if}}`, including Municipality/Township fallback and nested conditions
 - Optional hero header derived from any two feature fields
 - Optional features per deployment: "Use my location", "Click the map", recent searches, share menu, print
 - Modern share popover: Copy link, Email, Text message, plus native share sheet where supported
@@ -18,12 +19,12 @@ Built generically: any point-in-polygon use case works (leaf pickup areas, counc
 - XML import/export of full widget configuration for portability across EB experiences
 - Brand color overrides (primary and heading) via settings, cascaded through CSS custom properties
 - Help guide: a question button at the top right opens a short, searchable, plain-language guide that adapts to the options the app author enabled; a one-time hint points new users at it
-- WCAG 2.1 AA compliance: target sizes, focus indicators, reduced-motion and forced-colors support, screen reader announcements
+- Accessibility features: target sizes, focus indicators, reduced-motion and forced-colors support, and screen reader announcements. Live accessibility testing is still required for each deployment.
 
 ## Requirements
 
-- ArcGIS Experience Builder Developer Edition 1.19 or 1.20 (React 19)
-- EB 1.18 and earlier are not supported (React 18 boundary)
+- Target: ArcGIS Experience Builder Developer Edition 1.21.0, matching the supplied manifest and source
+- Other versions have not been validated for this update
 - A configured ArcGIS GeocodeServer URL
 - A polygon FeatureLayer holding the zones, added as a data source in the EB app
 
@@ -44,13 +45,13 @@ Built generically: any point-in-polygon use case works (leaf pickup areas, counc
 
 3. From the `client/` directory, run:
    ```
-   npm install
+   pnpm ci
    ```
-   EB auto-installs every dependency listed in any widget's `package.json` under `your-extensions/`, so no per-package commands are needed.
+   Use the setup instructions for your Experience Builder version. This widget adds no third-party dependencies. An existing installation receiving only this update does not need another dependency installation. See Esri's installation guide: https://developers.arcgis.com/experience-builder/guide/install-guide/
 
 4. Start the EB dev server:
    ```
-   npm start
+   pnpm start
    ```
 
 5. Open the Builder, drop the Zone Lookup widget into an experience, then in the widget's settings:
@@ -61,9 +62,31 @@ Built generically: any point-in-polygon use case works (leaf pickup areas, counc
 
 ### The release zip and the editor shims
 
-The zip is the widget only. The Visual Studio type shims in the repo (`zone-lookup/src/exb-editor-shims.d.ts`, `zone-lookup/src/vendor-shims.d.ts`) are left out on purpose: their ambient `declare module` blocks are not file-scoped and would rewrite the react, jimu and esri types for every other widget in your `your-extensions` folder.
+The zip is the widget only. The Visual Studio type shims in the repo (`zone-lookup/src/exb-editor-shims.d.ts`, `zone-lookup/src/editor-shims.d.ts`, `zone-lookup/src/vendor-shims.d.ts`) are left out on purpose: their ambient `declare module` blocks are not file-scoped and would rewrite the react, jimu and esri types for every other widget in your `your-extensions` folder.
 
 If you clone the repository instead of using the zip, delete `zone-lookup/src/exb-editor-shims.d.ts` and the other shim files listed above before building; nothing else depends on them.
+
+### Updating an existing installation
+
+Stop the client watcher before copying the files, then restart it after the copy finishes. This update introduces `src/runtime/template.ts`; copying only `widget.tsx` is not sufficient. Keep only one registered `zone-lookup` folder. Existing app settings and the default config have not been changed.
+
+The public release ZIP omits editor shims. The separate development-source ZIP retains the supplied shims and tests for an isolated editing setup; do not redistribute it as the public release or use its shims in another developer's shared type-checking environment.
+
+## Conditional result text
+
+In **Result HTML template**, use:
+
+```html
+{{#if Municipality}}
+  <p>Incorporated {Municipality}</p>
+{{else}}
+  <p>Unincorporated {Township} Township</p>
+{{/if}}
+```
+
+The Municipality branch wins when populated. Missing, null, empty, or whitespace-only values use Township instead. Zero and false count as populated. Field-name capitalization is ignored when no exact match exists. This is widget template syntax, not Arcade.
+
+Examples are in `examples/`. The XML example changes only `resultTemplate`. See `docs/CONDITIONAL_TEMPLATES.md` for nested fallback, hero-field behavior, validation, and the HTML trust model.
 
 ## Configuration
 
@@ -71,7 +94,7 @@ Every configurable string, color, and toggle lives in the widget's settings pane
 
 Notable fields:
 - `geocodeUrl` (required), `constrainSearch`, `zoomLevel`
-- `resultTemplate` (HTML with `{FIELD_NAME}` and `{__searchedAddress}` tokens)
+- `resultTemplate` (HTML with `{FIELD_NAME}`, `{__searchedAddress}`, and `{{#if FIELD_NAME}}...{{else}}...{{/if}}`)
 - `heroTitleField`, `heroSubtitleField` (optional hero header above the result template)
 - `brandPrimaryColor`, `brandHeadingColor`, `highlightFillColor`, `highlightOutlineColor`
 - `placeholderHeading`, `placeholderMessage`, `outsideAreaHeading`, `outsideAreaMessage`, `tryAnotherAddressLabel`, `errorMessage`, `noAddressMessage`
@@ -100,7 +123,7 @@ Turning the toggle off keeps desktop metrics on all screens. The widget also set
 
 ## Configuration import
 
-After importing a configuration XML, **the data source reference (zone layer) is not preserved** because EB stores it as an app-specific UUID, not a URL. Always re-link the zone layer in the settings panel after importing an XML.
+XML contains settings, not app-specific map and data-source references. Importing into the same configured widget keeps its current references. After importing into a different experience, select the map and zone layer there. A partial XML containing only `resultTemplate` updates only that setting.
 
 ## Date field rendering
 
@@ -116,13 +139,26 @@ This widget records anonymous usage counts and errors so the GIS Division can se
 
 ## Troubleshooting: `<name> is duplicated`
 
-If `npm start` reports `zone-lookup is duplicated`, a second copy of the widget is registered somewhere. EB scans `your-extensions/widgets` and throws this when it sees the same manifest `name` more than once. Check in this order:
+If the client build reports `zone-lookup is duplicated`, a second copy of the widget is registered somewhere. EB scans `your-extensions/widgets` and throws this when it sees the same manifest `name` more than once. Check in this order:
 
 1. **Nested folder**: `widgets/zone-lookup/zone-lookup/` (manifest must be one level inside the widget folder, not two)
 2. **Leftover folder**: any `-copy` folder, a previous-name folder if the widget was renamed, or an older version of the widget folder
 3. **Stale compiled build**: stop the client server, delete `client/dist/widgets/zone-lookup/` if it exists, then restart. Common after moving between EB versions, since the build can see both new source and old compiled output.
 
 If removing one copy makes the widget disappear from the EB Entrypoint list entirely, the copy that remains is nested too deep. Move it so the manifest sits directly inside the widget folder.
+
+## Developer checks
+
+Run from the development-source widget folder or the repository clone using the Experience Builder client's TypeScript installation:
+
+```text
+npx tsc -p .
+node --test tests/*.test.cjs
+```
+
+Tests and local editor shims are omitted from the public release ZIP. The existing JSX compiler settings must remain `react-jsx` with `jsxImportSource: @emotion/react`.
+
+This update passed 70 standalone tests and TypeScript checking. A complete Experience Builder webpack build and live browser/mobile checks were not available in the delivery environment. See `docs/VALIDATION-1.5.0.md` for the checked scope and remaining deployment checks.
 
 ## Feedback
 

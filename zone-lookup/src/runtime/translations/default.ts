@@ -4,6 +4,7 @@ export default {
   noMapConfigured: 'No map configured. The widget will still look up zones, but results will not be highlighted on a map.',
   noLayerConfigured: 'A zone layer has not been configured. Open the widget settings to choose one.',
   resultsHeading: 'Lookup results',
+  templateConfigurationError: 'The result layout could not be read. Please contact the app administrator.',
   helpIconLabel: 'Help',
   suggestionsLabel: 'Address suggestions',
   noSuggestions: 'No matching addresses',
@@ -73,6 +74,7 @@ export default {
   helpWaysClickNoMap: '{name} is greyed out because this app does not show a map beside the widget.',
 
   // ----- Reading the answer -----
+  helpResultConditional: 'The wording in the answer may change to match the area your address is in.',
   helpResultTitle: 'Reading the answer',
   helpResultHero: 'The colored bar at the top of the card is the short answer, such as the area name and the date.',
   helpResult1: 'The rest of the card gives the details for the address you looked up.',

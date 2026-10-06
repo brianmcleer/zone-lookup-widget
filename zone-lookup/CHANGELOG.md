@@ -2,6 +2,27 @@
 
 All notable changes to the Zone Lookup widget. Newest first.
 
+## 1.5.0 (2026-10-06)
+
+### Added
+
+- Conditional result HTML: `{{#if FIELD}}...{{else}}...{{/if}}`, including nested blocks and a Municipality/Township example. This is template syntax, not an Arcade evaluator.
+- A dependency-free pure template helper shared by runtime and settings. Missing, null, empty, and whitespace-only values select the else branch; zero and false remain populated.
+- Settings guidance, syntax validation, a keyboard-scrollable example, and a fixed runtime error message for invalid templates.
+- A paste-ready HTML example, a partial XML example, template documentation, a validation record, and 70 Node tests.
+
+### Changed
+
+- Token and condition field lookup is case-insensitive when an exact field name is not present. Existing HTML escaping, UTC date formatting, metadata tokens, and cascade-template selection remain in place.
+- Help text explains that the answer can vary by area. The shared help components, theme, first-run hint, beacon, default config, and compiler setup are unchanged.
+- README setup now targets the supplied Experience Builder 1.21 source. Manifest author is Brian McLeer. Manifest, package, and npm lockfile root versions are synchronized.
+
+### Fixed
+
+- Inherited object properties are not treated as feature attributes.
+- The main result announcement is atomic. Template help IDs are unique to each widget instance.
+- Public release packaging excludes Visual Studio caches, node_modules, all editor shims, and source-only tests. Local editing shims remain available only in the development-source package.
+
 ## 1.4.4 (2026-09-24)
 
 - Fixed: "TypeError: Promise.withResolvers is not a function" on older browsers (iOS/Safari before 17.4). The ArcGIS Maps SDK in Experience Builder 1.21 calls `Promise.withResolvers` when it builds layers, so the lookup failed before it could query. The widget now installs a small polyfill at load when the browser lacks it. Seen in Leaf Pickup via beacon telemetry.

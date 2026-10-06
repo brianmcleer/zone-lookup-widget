@@ -11,7 +11,7 @@ export default {
 
   // Map / data source
   selectMap: 'Select a map widget',
-  selectMapHint: 'The map where the address pin and zone highlight are drawn. Optional — the widget still returns results without a map.',
+  selectMapHint: 'The map where the address pin and zone highlight are drawn. Optional : the widget still returns results without a map.',
   selectLayer: 'Select the zone layer',
   selectLayerHint: 'The polygon feature layer that holds the zones.',
 
@@ -25,7 +25,17 @@ export default {
 
   // Template
   resultTemplate: 'Result HTML template',
-  resultTemplateHint: 'HTML rendered after a successful lookup. Use {FIELD_NAME} tokens — they will be replaced with the matching attribute from the zone feature. Values are HTML-escaped automatically. Date fields are formatted with the user\'s locale.',
+  resultTemplateHint: 'Use {FIELD_NAME} to insert a field value. Field names ignore capitalization, and values are HTML-escaped. Date fields use long English dates in UTC.',
+  conditionalTemplateHint: 'Use {{#if FIELD_NAME}}...{{else}}...{{/if}} to choose text when a field is populated or empty. Missing, null, empty, and whitespace-only values use the else branch. Zero and false count as populated. This is template syntax, not Arcade.',
+  conditionalTemplateExampleLabel: 'Conditional template example',
+  conditionalTemplateExample: '{{#if Municipality}}\n  <p>Incorporated {Municipality}</p>\n{{else}}\n  <p>Unincorporated {Township} Township</p>\n{{/if}}',
+  templateErrorPrefix: 'Check the result template:',
+  templateInvalidDirective: 'Use {{#if FIELD_NAME}}, {{else}}, and {{/if}}. Field names may contain letters, numbers, and underscores and may not start with a number. Close each directive with two braces.',
+  templateUnexpectedElse: 'An {{else}} needs an opening {{#if FIELD_NAME}}.',
+  templateDuplicateElse: 'Each if block can have only one {{else}}.',
+  templateUnexpectedClose: 'A closing {{/if}} needs an opening {{#if FIELD_NAME}}.',
+  templateMissingClose: 'Add a closing {{/if}} for every opening if block.',
+  templateTooDeep: 'Use no more than 64 nested if blocks.',
   availableFields: 'Available fields',
   availableFieldsEmpty: 'Select a zone layer above to see its fields.',
   fieldsLoading: 'Loading fields…',

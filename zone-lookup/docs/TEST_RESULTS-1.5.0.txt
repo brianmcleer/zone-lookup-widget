@@ -1,0 +1,430 @@
+TAP version 13
+# Subtest: help works with all features on
+ok 1 - help works with all features on
+  ---
+  duration_ms: 2.154618
+  type: 'test'
+  ...
+# Subtest: help works with all optional features off
+ok 2 - help works with all optional features off
+  ---
+  duration_ms: 0.272051
+  type: 'test'
+  ...
+# Subtest: help works with only myLocation enabled
+ok 3 - help works with only myLocation enabled
+  ---
+  duration_ms: 0.181618
+  type: 'test'
+  ...
+# Subtest: help works with only mapClick enabled
+ok 4 - help works with only mapClick enabled
+  ---
+  duration_ms: 0.137183
+  type: 'test'
+  ...
+# Subtest: help works with only mapConnected enabled
+ok 5 - help works with only mapConnected enabled
+  ---
+  duration_ms: 0.209519
+  type: 'test'
+  ...
+# Subtest: help works with only hero enabled
+ok 6 - help works with only hero enabled
+  ---
+  duration_ms: 0.127788
+  type: 'test'
+  ...
+# Subtest: help works with only share enabled
+ok 7 - help works with only share enabled
+  ---
+  duration_ms: 1.591648
+  type: 'test'
+  ...
+# Subtest: help works with only print enabled
+ok 8 - help works with only print enabled
+  ---
+  duration_ms: 0.285151
+  type: 'test'
+  ...
+# Subtest: help works with only recentSearches enabled
+ok 9 - help works with only recentSearches enabled
+  ---
+  duration_ms: 0.468782
+  type: 'test'
+  ...
+# Subtest: help works with only resetButton enabled
+ok 10 - help works with only resetButton enabled
+  ---
+  duration_ms: 0.328164
+  type: 'test'
+  ...
+# Subtest: custom button labels reach the help guide
+ok 11 - custom button labels reach the help guide
+  ---
+  duration_ms: 0.323567
+  type: 'test'
+  ...
+# Subtest: preserved original file: src/runtime/theme.ts
+ok 12 - preserved original file: src/runtime/theme.ts
+  ---
+  duration_ms: 1.361658
+  type: 'test'
+  ...
+# Subtest: preserved original file: src/runtime/components/HelpPopup.tsx
+ok 13 - preserved original file: src/runtime/components/HelpPopup.tsx
+  ---
+  duration_ms: 0.194857
+  type: 'test'
+  ...
+# Subtest: preserved original file: src/runtime/components/FirstRunHint.tsx
+ok 14 - preserved original file: src/runtime/components/FirstRunHint.tsx
+  ---
+  duration_ms: 0.106627
+  type: 'test'
+  ...
+# Subtest: preserved original file: src/shared/beacon.ts
+ok 15 - preserved original file: src/shared/beacon.ts
+  ---
+  duration_ms: 0.155069
+  type: 'test'
+  ...
+# Subtest: preserved original file: tsconfig.json
+ok 16 - preserved original file: tsconfig.json
+  ---
+  duration_ms: 0.129982
+  type: 'test'
+  ...
+# Subtest: preserved original file: config.json
+ok 17 - preserved original file: config.json
+  ---
+  duration_ms: 0.105646
+  type: 'test'
+  ...
+# Subtest: preserved original file: src/exb-editor-shims.d.ts
+ok 18 - preserved original file: src/exb-editor-shims.d.ts
+  ---
+  duration_ms: 0.22348
+  type: 'test'
+  ...
+# Subtest: preserved original file: src/editor-shims.d.ts
+ok 19 - preserved original file: src/editor-shims.d.ts
+  ---
+  duration_ms: 0.103142
+  type: 'test'
+  ...
+# Subtest: preserved original file: src/vendor-shims.d.ts
+ok 20 - preserved original file: src/vendor-shims.d.ts
+  ---
+  duration_ms: 0.414712
+  type: 'test'
+  ...
+# Subtest: manifest, package and both npm lock version fields agree
+ok 21 - manifest, package and both npm lock version fields agree
+  ---
+  duration_ms: 0.891494
+  type: 'test'
+  ...
+# Subtest: Emotion JSX compiler settings remain automatic, not classic
+ok 22 - Emotion JSX compiler settings remain automatic, not classic
+  ---
+  duration_ms: 5.514493
+  type: 'test'
+  ...
+# Subtest: new template module stays SDK-free and has no expression execution
+ok 23 - new template module stays SDK-free and has no expression execution
+  ---
+  duration_ms: 0.304599
+  type: 'test'
+  ...
+# Subtest: settings imports no Maps SDK module and uses the shared validator and tokens
+ok 24 - settings imports no Maps SDK module and uses the shared validator and tokens
+  ---
+  duration_ms: 0.322586
+  type: 'test'
+  ...
+# Subtest: runtime keeps all attributes, renders the selected cascade template and announces errors
+ok 25 - runtime keeps all attributes, renders the selected cascade template and announces errors
+  ---
+  duration_ms: 0.365619
+  type: 'test'
+  ...
+# Subtest: all TypeScript and TSX source files transpile with automatic Emotion JSX
+ok 26 - all TypeScript and TSX source files transpile with automatic Emotion JSX
+  ---
+  duration_ms: 282.57654
+  type: 'test'
+  ...
+# Subtest: populated Municipality takes precedence over Township
+ok 27 - populated Municipality takes precedence over Township
+  ---
+  duration_ms: 1.499962
+  type: 'test'
+  ...
+# Subtest: null Municipality uses Township
+ok 28 - null Municipality uses Township
+  ---
+  duration_ms: 0.163101
+  type: 'test'
+  ...
+# Subtest: undefined Municipality uses Township
+ok 29 - undefined Municipality uses Township
+  ---
+  duration_ms: 0.130954
+  type: 'test'
+  ...
+# Subtest: empty text Municipality uses Township
+ok 30 - empty text Municipality uses Township
+  ---
+  duration_ms: 0.106708
+  type: 'test'
+  ...
+# Subtest: spaces Municipality uses Township
+ok 31 - spaces Municipality uses Township
+  ---
+  duration_ms: 0.138474
+  type: 'test'
+  ...
+# Subtest: tabs and newlines Municipality uses Township
+ok 32 - tabs and newlines Municipality uses Township
+  ---
+  duration_ms: 0.125495
+  type: 'test'
+  ...
+# Subtest: missing Municipality uses Township
+ok 33 - missing Municipality uses Township
+  ---
+  duration_ms: 0.140407
+  type: 'test'
+  ...
+# Subtest: presence is not truthiness: 0
+ok 34 - presence is not truthiness: 0
+  ---
+  duration_ms: 0.162099
+  type: 'test'
+  ...
+# Subtest: presence is not truthiness: false
+ok 35 - presence is not truthiness: false
+  ---
+  duration_ms: 0.21646
+  type: 'test'
+  ...
+# Subtest: presence is not truthiness: "0"
+ok 36 - presence is not truthiness: "0"
+  ---
+  duration_ms: 0.334794
+  type: 'test'
+  ...
+# Subtest: presence is not truthiness: "false"
+ok 37 - presence is not truthiness: "false"
+  ---
+  duration_ms: 0.15573
+  type: 'test'
+  ...
+# Subtest: presence is not truthiness: "NULL"
+ok 38 - presence is not truthiness: "NULL"
+  ---
+  duration_ms: 0.066168
+  type: 'test'
+  ...
+# Subtest: presence is not truthiness: "null"
+ok 39 - presence is not truthiness: "null"
+  ---
+  duration_ms: 0.04739
+  type: 'test'
+  ...
+# Subtest: presence is not truthiness: []
+ok 40 - presence is not truthiness: []
+  ---
+  duration_ms: 4.140497
+  type: 'test'
+  ...
+# Subtest: presence is not truthiness: {}
+ok 41 - presence is not truthiness: {}
+  ---
+  duration_ms: 0.275937
+  type: 'test'
+  ...
+# Subtest: case-insensitive lookup works for conditions, tokens, and date metadata
+ok 42 - case-insensitive lookup works for conditions, tokens, and date metadata
+  ---
+  duration_ms: 11.2016
+  type: 'test'
+  ...
+# Subtest: exact case wins when two keys differ only by capitalization
+ok 43 - exact case wins when two keys differ only by capitalization
+  ---
+  duration_ms: 0.171844
+  type: 'test'
+  ...
+# Subtest: no else is needed for optional text
+ok 44 - no else is needed for optional text
+  ---
+  duration_ms: 0.102041
+  type: 'test'
+  ...
+# Subtest: nested branches handle both fields blank
+ok 45 - nested branches handle both fields blank
+  ---
+  duration_ms: 0.099828
+  type: 'test'
+  ...
+# Subtest: independent sibling blocks do not share state
+ok 46 - independent sibling blocks do not share state
+  ---
+  duration_ms: 0.077394
+  type: 'test'
+  ...
+# Subtest: multiline blocks and spaces inside directive braces are accepted
+ok 47 - multiline blocks and spaces inside directive braces are accepted
+  ---
+  duration_ms: 0.063684
+  type: 'test'
+  ...
+# Subtest: attribute HTML and quotes are escaped, author HTML stays intact
+ok 48 - attribute HTML and quotes are escaped, author HTML stays intact
+  ---
+  duration_ms: 0.06791
+  type: 'test'
+  ...
+# Subtest: inserted values cannot become directives or a second field lookup
+ok 49 - inserted values cannot become directives or a second field lookup
+  ---
+  duration_ms: 0.08121
+  type: 'test'
+  ...
+# Subtest: inherited object properties are not feature fields
+ok 50 - inherited object properties are not feature fields
+  ---
+  duration_ms: 0.095961
+  type: 'test'
+  ...
+# Subtest: null attribute dictionaries and missing tokens are harmless
+ok 51 - null attribute dictionaries and missing tokens are harmless
+  ---
+  duration_ms: 0.257851
+  type: 'test'
+  ...
+# Subtest: legacy double-braced fields keep their old substitution behavior
+ok 52 - legacy double-braced fields keep their old substitution behavior
+  ---
+  duration_ms: 0.115381
+  type: 'test'
+  ...
+# Subtest: legacy date output is UTC and does not move to the prior day
+ok 53 - legacy date output is UTC and does not move to the prior day
+  ---
+  duration_ms: 0.265181
+  type: 'test'
+  ...
+# Subtest: existing searched-address and cascade metadata tokens still render
+ok 54 - existing searched-address and cascade metadata tokens still render
+  ---
+  duration_ms: 0.184422
+  type: 'test'
+  ...
+# Subtest: invalid syntax produces a controlled missingClose error: {{\#if X}}yes
+ok 55 - invalid syntax produces a controlled missingClose error: {{\#if X}}yes
+  ---
+  duration_ms: 0.410435
+  type: 'test'
+  ...
+# Subtest: invalid syntax produces a controlled unexpectedElse error: {{else}}
+ok 56 - invalid syntax produces a controlled unexpectedElse error: {{else}}
+  ---
+  duration_ms: 0.125655
+  type: 'test'
+  ...
+# Subtest: invalid syntax produces a controlled unexpectedClose error: {{/if}}
+ok 57 - invalid syntax produces a controlled unexpectedClose error: {{/if}}
+  ---
+  duration_ms: 0.072096
+  type: 'test'
+  ...
+# Subtest: invalid syntax produces a controlled duplicateElse error: {{\#if X}}a{{else}}b{{else}}c{{/if}}
+ok 58 - invalid syntax produces a controlled duplicateElse error: {{\#if X}}a{{else}}b{{else}}c{{/if}}
+  ---
+  duration_ms: 0.06071
+  type: 'test'
+  ...
+# Subtest: invalid syntax produces a controlled invalidDirective error: {{\#if}}a{{/if}}
+ok 59 - invalid syntax produces a controlled invalidDirective error: {{\#if}}a{{/if}}
+  ---
+  duration_ms: 0.090303
+  type: 'test'
+  ...
+# Subtest: invalid syntax produces a controlled invalidDirective error: {{\#if X == 1}}a{{/if}}
+ok 60 - invalid syntax produces a controlled invalidDirective error: {{\#if X == 1}}a{{/if}}
+  ---
+  duration_ms: 0.062212
+  type: 'test'
+  ...
+# Subtest: invalid syntax produces a controlled invalidDirective error: {{\#unless X}}a{{/unless}}
+ok 61 - invalid syntax produces a controlled invalidDirective error: {{\#unless X}}a{{/unless}}
+  ---
+  duration_ms: 0.04795
+  type: 'test'
+  ...
+# Subtest: invalid syntax produces a controlled invalidDirective error: {{\#if X
+ok 62 - invalid syntax produces a controlled invalidDirective error: {{\#if X
+  ---
+  duration_ms: 0.04733
+  type: 'test'
+  ...
+# Subtest: invalid syntax produces a controlled invalidDirective error: {{\#if X}}a{{/if}
+ok 63 - invalid syntax produces a controlled invalidDirective error: {{\#if X}}a{{/if}
+  ---
+  duration_ms: 0.107609
+  type: 'test'
+  ...
+# Subtest: invalid syntax produces a controlled invalidDirective error: {{\#if X}}a{{else if Y}}b{{/if}}
+ok 64 - invalid syntax produces a controlled invalidDirective error: {{\#if X}}a{{else if Y}}b{{/if}}
+  ---
+  duration_ms: 0.067139
+  type: 'test'
+  ...
+# Subtest: invalid syntax produces a controlled invalidDirective error: {{\#if $feature.X}}a{{/if}}
+ok 65 - invalid syntax produces a controlled invalidDirective error: {{\#if $feature.X}}a{{/if}}
+  ---
+  duration_ms: 0.082962
+  type: 'test'
+  ...
+# Subtest: invalid syntax produces a controlled invalidDirective error: {{\#if 1X}}a{{/if}}
+ok 66 - invalid syntax produces a controlled invalidDirective error: {{\#if 1X}}a{{/if}}
+  ---
+  duration_ms: 0.059648
+  type: 'test'
+  ...
+# Subtest: 64 nesting levels work and deeper input fails predictably
+ok 67 - 64 nesting levels work and deeper input fails predictably
+  ---
+  duration_ms: 0.206425
+  type: 'test'
+  ...
+# Subtest: parser errors never include author template text or values
+ok 68 - parser errors never include author template text or values
+  ---
+  duration_ms: 0.083443
+  type: 'test'
+  ...
+# Subtest: the shipping default template matches the legacy renderer
+ok 69 - the shipping default template matches the legacy renderer
+  ---
+  duration_ms: 0.418387
+  type: 'test'
+  ...
+# Subtest: builder example uses exactly the supported syntax
+ok 70 - builder example uses exactly the supported syntax
+  ---
+  duration_ms: 6.966935
+  type: 'test'
+  ...
+1..70
+# tests 70
+# suites 0
+# pass 70
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 517.499906
