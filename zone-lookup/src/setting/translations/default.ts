@@ -112,5 +112,10 @@ export default {
   importTooltip: 'Load settings from a previously exported XML file.',
   importSuccess: 'Configuration imported successfully.',
   importErrorParse: 'Could not read the file. Make sure it is a valid Zone Lookup XML export.',
-  importErrorEmpty: 'No recognized settings were found in the file.'
+  importErrorEmpty: 'No recognized settings were found in the file.',
+  aliasTypeClickToInsert: '{alias} ({type}) : click to insert',
+  insertTokenForFieldAlias: 'Insert token for field {alias}',
+  help: 'Help',
+  showHelpGuide: 'Show help guide',
+  showTheQuestionMarkButtonThat: 'Show the question-mark button that opens the widget help guide'
 }

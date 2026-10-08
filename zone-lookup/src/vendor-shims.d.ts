@@ -25,4 +25,9 @@ declare module 'calcite-components' {
 // jimu-core members the widget's shim did not list (used by src/shared/beacon.ts).
 declare module 'jimu-core' {
     export const getAppStore: () => any
+    // exb-i18n-kit auto-wiring: const t = hooks.useTranslation(defaultMessages)
+    export const hooks: {
+        useTranslation: (...messages: any[]) => (id: string, values?: Record<string, any>) => string
+        [key: string]: any
+    }
 }

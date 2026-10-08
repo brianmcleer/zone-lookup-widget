@@ -1753,10 +1753,10 @@ const Widget = (props: WidgetProps) => {
                             type="button"
                             className="zl-toolbar-btn zl-mobile-result-close"
                             onClick={handleReset}
-                            aria-label="Close results and search another address"
+                            aria-label={t('closeResultsAndSearchAnotherAddress')}
                         >
                             <CloseSvg size={16} />
-                            <span>New search</span>
+                            <span>{t('newSearch')}</span>
                         </button>
                     )}
                     {mobileOverlay && <span className="zl-mobile-toolbar-spacer" aria-hidden="true" />}
@@ -2176,7 +2176,7 @@ const Widget = (props: WidgetProps) => {
                     tabIndex={0}
                     role="presentation"
                     aria-busy={loading}
-                    aria-label="Address lookup results. Swipe up or down to scroll."
+                    aria-label={t('addressLookupResultsSwipeUpOr')}
                     data-zone-lookup-patch="civicplus-v9-overlay"
                     style={brandRootStyle as any}
                 >

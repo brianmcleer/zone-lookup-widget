@@ -34,6 +34,9 @@ import { type IMConfig, type ColorRGBA, type SearchConstraint } from '../config'
 import defaultMessages from './translations/default'
 import { validateTemplate, type TemplateErrorCode } from '../runtime/template'
 import { useTokens } from '../runtime/theme'
+import { hooks as __exbI18nHooks } from 'jimu-core';
+import __exbI18nMessages from './translations/default';
+
 
 // jimu-ui ships an info icon SVG we can reuse for help affordances.
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -232,6 +235,7 @@ type SettingProps = AllWidgetSettingProps<IMConfig> & {
 }
 
 const Setting = (props: SettingProps) => {
+  const t = __exbI18nHooks.useTranslation(__exbI18nMessages);
     const { config, onSettingChange, id, useDataSources, useMapWidgetIds } = props
 
     const [fields, setFields] = useState<any[]>([])
@@ -533,7 +537,7 @@ const Setting = (props: SettingProps) => {
                                 {fields.map((f: any) => (
                                     <Tooltip
                                         key={f.name}
-                                        title={`${f.alias || f.name} (${f.type}) : click to insert`}
+                                        title={t('aliasTypeClickToInsert', { alias: f.alias || f.name, type: f.type })}
                                         placement="top"
                                     >
                                         <Button
@@ -542,7 +546,7 @@ const Setting = (props: SettingProps) => {
                                             className="zl-token-btn"
                                             role="listitem"
                                             onClick={() => appendToken(f.name)}
-                                            aria-label={`Insert token for field ${f.alias || f.name}`}
+                                            aria-label={t('insertTokenForFieldAlias', { alias: f.alias || f.name })}
                                         >
                                             <code>{`{${f.name}}`}</code>
                                         </Button>
@@ -928,12 +932,12 @@ const Setting = (props: SettingProps) => {
                     </div>
                 )}
             </SettingSection>
-            <SettingSection title='Help'>
-              <SettingRow tag='label' label='Show help guide'>
+            <SettingSection title={t('help')}>
+              <SettingRow tag='label' label={t('showHelpGuide')}>
                 <Switch
                   checked={props.config?.showHelp !== false}
                   onChange={(evt) => { props.onSettingChange({ id: (props as any).id, config: (props.config as any).set('showHelp', evt.target.checked) }) }}
-                  aria-label='Show the question-mark button that opens the widget help guide'
+                  aria-label={t('showTheQuestionMarkButtonThat')}
                 />
               </SettingRow>
             </SettingSection>

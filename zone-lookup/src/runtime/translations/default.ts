@@ -110,5 +110,8 @@ export default {
   helpTips1: 'Picking an address from the list is more reliable than typing the whole address and pressing Enter.',
   helpTips2: 'An address right on the edge of an area still matches. The widget looks a short distance around the point.',
   helpTips3: 'Clearing your browser data also clears your recent addresses.',
-  helpTips4: 'This guide follows the app: it only describes the buttons this app is showing you.'
+  helpTips4: 'This guide follows the app: it only describes the buttons this app is showing you.',
+  closeResultsAndSearchAnotherAddress: 'Close results and search another address',
+  newSearch: 'New search',
+  addressLookupResultsSwipeUpOr: 'Address lookup results. Swipe up or down to scroll.'
 }
