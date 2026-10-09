@@ -1,3 +1,4 @@
+import { __locale } from './i18n-t'
 /**
  * Pure result-template helpers. Shared with settings; do not import the Maps SDK,
  * React, a browser global, or an expression evaluator into this module.
@@ -47,7 +48,7 @@ export const formatValue = (value: any, field?: TemplateField): string => {
     if (field && (field.type === 'date' || field.type === 'esriFieldTypeDate')) {
         try {
             // Preserve the existing UTC date-only formatting.
-            return new Date(value).toLocaleDateString('en-US', {
+            return new Date(value).toLocaleDateString(__locale(), {
                 year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC'
             })
         } catch (_e) { /* Keep the original text when it cannot be formatted. */ }
