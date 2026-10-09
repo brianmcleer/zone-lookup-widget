@@ -64,7 +64,7 @@ System.register([], function (e) {
         mobileOptimizedHint: "On phones and touch screens: larger touch targets (44px), 16px input font to prevent iOS auto-zoom when focusing the search box, full-width action buttons, thumb-reachable share menu, and tighter spacing on narrow screens. Recommended on. Turn off to keep desktop sizing everywhere.",
         zoomLevel: "Zoom level after lookup",
         highlightFill: "Highlight fill color",
-        highlightOutline: "Highlight outline color",
+        highlightOutline: "Colore dei contorni",
         highlightOutlineWidth: "Highlight outline width (pt)",
         brandSection: "Brand colors",
         brandSectionHint: "Optional. Override the theme accent and heading colors used in the top UI (label, icons, \"Use my location\", focus rings). Leave blank to inherit from the page theme.",
@@ -100,8 +100,8 @@ System.register([], function (e) {
         aliasTypeClickToInsert: "{alias} ({type}) : click to insert",
         insertTokenForFieldAlias: "Insert token for field {alias}",
         help: "Guida",
-        showHelpGuide: "Show help guide",
-        showTheQuestionMarkButtonThat: "Show the question-mark button that opens the widget help guide"
+        showHelpGuide: "Mostra la guida",
+        showTheQuestionMarkButtonThat: "Mostra il pulsante di punto interrogativo che apre la guida di aiuto widget"
       })
     }
   }
