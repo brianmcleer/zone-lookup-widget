@@ -3,8 +3,8 @@
   "generator": "exb-i18n-kit",
   "parts": {
     "runtime": {
-      "en": "6dccc1b01abf",
-      "keys": 97,
+      "en": "8a7db2c134bc",
+      "keys": 101,
       "hashes": {
         "_widgetLabel": "6752914d15a2",
         "searching": "b52edced9716",
@@ -102,1488 +102,982 @@
         "helpTips4": "fcb4fdc2efae",
         "closeResultsAndSearchAnotherAddress": "678fa7bece15",
         "newSearch": "0df419370454",
-        "addressLookupResultsSwipeUpOr": "dd5e1518233e"
+        "addressLookupResultsSwipeUpOr": "dd5e1518233e",
+        "uiCall": "22587f1aa02b",
+        "resultsFound": "37e0c51ab045",
+        "unknownError": "af6321ca7a8b",
+        "unserializableError": "76e73551597a"
       },
       "locales": {
         "ar": {
-          "file": "f77d1262a52f",
+          "file": "7151ed99a67e",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "لا شيء في الدليل يطابق تلك الكلمة جرّبْ آخر، أَو يَفْتحُ الأقسامَ أعلاه.",
+            "suggestionsLabel": {
+              "t": "الاقتراحات",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "افتح الدليل",
+            "shareCopyLink": {
+              "t": "وصلة نسخ",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "ابدأ هنا: ثلاث خطوات",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "إذا كان هناك شيء ما يبدو خاطئا",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "من الجيد معرفة",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "bg": {
-          "file": "c3db4fa25387",
+          "file": "45f623083761",
           "counts": {
-            "esri": 13,
+            "esri": 17,
             "esri-check": 0,
             "community": 0,
-            "manual": 0,
+            "manual": 1,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Нищо в ръководството не съвпада с тази дума. Опитайте друг, или отвори секциите по-горе.",
+            "suggestionsLabel": {
+              "t": "Предложения за адрес",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Отвори гидът.",
+            "shareCopyLink": {
+              "t": "Копиране на връзка",
               "src": "machine",
-              "h": "2447dd6134ea"
+              "h": "2f84eea5d45d"
             },
-            "helpStartTitle": {
-              "t": "Започнете от тук: три стъпки",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Ако нещо не е наред",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Добре е да го знам.",
-              "src": "machine",
-              "h": "79fc372dc790"
+            "firstRunDismiss": {
+              "t": "Свободно.",
+              "src": "manual",
+              "h": "70afe9eff3f2"
             }
           }
         },
         "bs": {
-          "file": "0ba3dbfe2ba6",
+          "file": "270d59bd0bd1",
           "counts": {
-            "esri": 13,
+            "esri": 11,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 0,
             "stale": 0,
-            "missing": 84
+            "missing": 90
           },
           "entries": {}
         },
         "ca": {
-          "file": "c022d9e89267",
+          "file": "79d2329314c8",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Res en la guia coincideix amb aquesta paraula. Proveu-ne una altra, o obriu les seccions de dalt.",
+            "suggestionsLabel": {
+              "t": "suggeriment de l' adreça",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Obre la guia.",
+            "shareCopyLink": {
+              "t": "Copia l' enllaç",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Comença aquí: tres passes",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Si alguna cosa sembla malament",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Bo saber-ho",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "cs": {
-          "file": "f5256fc3c2c5",
+          "file": "36d0a957278e",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Nic v průvodci neodpovídá tomu slovu. Zkuste jiný, nebo otevřete sekce výše.",
+            "suggestionsLabel": {
+              "t": "Návrhy adres",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Otevři průvodce.",
+            "shareCopyLink": {
+              "t": "Kopírovat odkaz",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Začněte zde: tři kroky",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Pokud něco vypadá špatně",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Dobré vědět.",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "da": {
-          "file": "c88f2da51729",
+          "file": "e4ba5d9db4fa",
           "counts": {
-            "esri": 12,
+            "esri": 17,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Intet i guiden matcher det ord. Prøv en anden, eller åbn afsnittene ovenfor.",
+            "suggestionsLabel": {
+              "t": "adresseforslag",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Åbn guiden.",
+            "shareCopyLink": {
+              "t": "Kopiér link",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Start her: tre trin",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Hvis noget ser forkert ud",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Godt at vide",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "de": {
-          "file": "c84491b508bc",
+          "file": "02b64d1f0866",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Nichts im Guide passt zu diesem Wort. Versuchen Sie es mit einem anderen oder öffnen Sie die obigen Abschnitte.",
+            "suggestionsLabel": {
+              "t": "Adressvorschläge",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Öffne den Guide.",
+            "shareCopyLink": {
+              "t": "Kopierlink",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Beginnen Sie hier: drei Schritte",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Wenn etwas falsch aussieht",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Gut zu wissen",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "el": {
-          "file": "58f4e155176d",
+          "file": "9da2c9685335",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Τίποτα στον οδηγό δεν ταιριάζει με αυτή τη λέξη. Δοκιμάστε ένα άλλο, ή ανοίξτε τα τμήματα παραπάνω.",
+            "suggestionsLabel": {
+              "t": "Προτάσεις διεύθυνσης",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Άνοιξε τον οδηγό.",
+            "shareCopyLink": {
+              "t": "Αντιγραφή συνδέσμου",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Εκκίνηση εδώ: τρία βήματα",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Αν κάτι φαίνεται λάθος",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Χαίρομαι που το μαθαίνω.",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "es": {
-          "file": "0a0a7b25cd61",
+          "file": "7a621477c5a6",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Nada en la guía coincide con esa palabra. Pruebe otro, o abra las secciones anteriores.",
+            "suggestionsLabel": {
+              "t": "Abordar sugerencias",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Abre el guía.",
+            "shareCopyLink": {
+              "t": "Copiar el enlace",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Empieza aquí: tres pasos",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Si algo se ve mal",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Es bueno saberlo.",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "et": {
-          "file": "fc9ec52ad299",
+          "file": "0cc92ef95aef",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Mitte miski juhendis ei klapi selle sõnaga. Proovige teist või avage ülaltoodud lõigud.",
+            "suggestionsLabel": {
+              "t": "Aadressisoovitused",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Tee teejuht lahti.",
+            "shareCopyLink": {
+              "t": "Kopeeri link",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Alusta siit: kolm sammu",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Kui midagi on valesti",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Hea teada",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "fi": {
-          "file": "3010bccf0b05",
+          "file": "4f1310105959",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Mikään oppaassa ei vastaa tuota sanaa. Kokeile toista, tai avaa kohdat yllä.",
+            "suggestionsLabel": {
+              "t": "Osoita ehdotukset",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Avaa opas.",
+            "shareCopyLink": {
+              "t": "Kopioi linkki",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Aloita tästä: kolme vaihetta",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Jos jokin näyttää väärältä.",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Hyvä tietää",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "fr": {
-          "file": "58edf54a909a",
+          "file": "7baa927ffdc0",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Rien dans le guide ne correspond à ce mot. Essayez un autre, ou ouvrez les sections ci-dessus.",
+            "suggestionsLabel": {
+              "t": "Suggestions d'adresse",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Ouvrez le guide.",
+            "shareCopyLink": {
+              "t": "Copier le lien",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Commencez ici: trois étapes",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Si quelque chose ne va pas",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Bon à savoir",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "he": {
-          "file": "8e1c92ea70c3",
+          "file": "8c1ba9a9a049",
           "counts": {
-            "esri": 12,
+            "esri": 17,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "שום דבר במדריך לא מתאים למילה הזאת. נסה עוד, או לפתוח את החלקים לעיל.",
+            "suggestionsLabel": {
+              "t": "הצעות",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "פתח את המדריך",
+            "shareCopyLink": {
+              "t": "קישור",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "התחל כאן: שלושה צעדים",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "אם משהו נראה לא בסדר",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "טוב לדעת",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "hr": {
-          "file": "0ba3dbfe2ba6",
+          "file": "270d59bd0bd1",
           "counts": {
-            "esri": 13,
+            "esri": 11,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 0,
             "stale": 0,
-            "missing": 84
+            "missing": 90
           },
           "entries": {}
         },
         "hu": {
-          "file": "336422f9acc2",
+          "file": "57ed21dd2fca",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "A kalauzban semmi sem egyezik ezzel a szóval. Próbálja meg egy másik, vagy nyissa ki a fenti szakaszok.",
+            "suggestionsLabel": {
+              "t": "Javaslatok",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Nyisd ki az útmutatót.",
+            "shareCopyLink": {
+              "t": "A link másolása",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Kezdjük itt: három lépés",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Ha valami nem stimmel",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Jó tudni.",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "id": {
-          "file": "10c84285bd49",
+          "file": "94eb0c30c6fe",
           "counts": {
-            "esri": 12,
-            "esri-check": 1,
+            "esri": 17,
+            "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 3,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Tidak ada dalam panduan cocok kata itu. Coba yang lain, atau buka bagian di atas.",
+            "suggestionsLabel": {
+              "t": "Saran alamat",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Buka panduannya.",
+            "shareCopyLink": {
+              "t": "Salin taut",
               "src": "machine",
-              "h": "2447dd6134ea"
+              "h": "2f84eea5d45d"
             },
-            "helpStartTitle": {
-              "t": "Mulai dari sini: tiga langkah",
+            "shareEmail": {
+              "t": "Surel",
               "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Jika ada sesuatu yang salah",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Baik untuk mengetahui",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "84add5b29527"
             }
           }
         },
         "it": {
-          "file": "1097ecc44e21",
+          "file": "fd1d15bf9f02",
           "counts": {
-            "esri": 12,
+            "esri": 17,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Niente nella guida corrisponde a quella parola. Prova un altro, o apri le sezioni sopra.",
+            "suggestionsLabel": {
+              "t": "Consigli di indirizzo",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Apri la guida.",
+            "shareCopyLink": {
+              "t": "Copia link",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Inizia qui: tre passi",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Se qualcosa sembra sbagliato",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Buono a sapersi",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "ja": {
-          "file": "c9a8defe63dc",
+          "file": "e66af14ae6b0",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "ガイドがその単語と一致するわけではありません。 別のセクションを試し、または上記のセクションを開きます。",
+            "suggestionsLabel": {
+              "t": "アドレス提案",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "ガイドを開きます。",
+            "shareCopyLink": {
+              "t": "コピーリンク",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "ここから: 3 つのステップ",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "何かが間違っている",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "よく知る",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "ko": {
-          "file": "8efb8a16b5fe",
+          "file": "a1e2ded7b2f3",
           "counts": {
-            "esri": 12,
+            "esri": 17,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "가이드의 아무것도 그 단어 일치. 다른 시도, 또는 위의 섹션을 엽니 다.",
+            "suggestionsLabel": {
+              "t": "주소 제안",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "자주 묻는 질문",
+            "shareCopyLink": {
+              "t": "관련 링크",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "여기에 시작: 세 단계",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "뭔가 잘못되었는지",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "잘 알고",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "lt": {
-          "file": "40a758eca4ae",
+          "file": "27160241713d",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Vadove nėra nieko, kas atitiktų šį žodį. Pabandykite kitą, arba atidaryti skyrių aukščiau.",
+            "suggestionsLabel": {
+              "t": "Adreso pasiūlymai",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Atidaryk gidą.",
+            "shareCopyLink": {
+              "t": "Kopijuoti nuorodą",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Pradėti čia: trys žingsniai",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Jei kas nors atrodo blogai",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Gera žinoti",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "lv": {
-          "file": "672ae5b4a2da",
+          "file": "4ddc6c5a3f50",
           "counts": {
-            "esri": 11,
+            "esri": 16,
             "esri-check": 2,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Nekas ceļvedī neatbilst šim vārdam. Mēģiniet citu, vai atvērt sadaļas iepriekš.",
+            "suggestionsLabel": {
+              "t": "Adreses ieteikumi",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Atveriet ceļvedi.",
+            "shareCopyLink": {
+              "t": "Kopēt saiti",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Sākt šeit: trīs soļi",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Ja kaut kas izskatās nepareizi",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Labi zināt",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "no": {
-          "file": "a08d13eccd4c",
+          "file": "65b19cf1bcab",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Ingenting i guiden stemmer med det ordet. Prøv en annen, eller åpne seksjonene ovenfor.",
+            "suggestionsLabel": {
+              "t": "Adresseforslag",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Åpne guiden.",
+            "shareCopyLink": {
+              "t": "Kopier link",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Start her: 3 trinn",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Hvis noe ser galt ut",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Godt å vite",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "nl": {
-          "file": "17c48b238d8b",
+          "file": "252b63066280",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Niets in de gids komt overeen met dat woord. Probeer een andere, of open de bovenstaande secties.",
+            "suggestionsLabel": {
+              "t": "Aanbevelingen voor adressen",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Open de gids.",
+            "shareCopyLink": {
+              "t": "Verwijzing kopiëren",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Begin hier: drie stappen",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Als er iets mis lijkt.",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Goed om te weten",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "pl": {
-          "file": "bbe17cb13276",
+          "file": "ff67e72bf183",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Nic w przewodniku nie pasuje do tego słowa. Spróbuj innego, albo otwórz powyższe sekcje.",
+            "suggestionsLabel": {
+              "t": "Propozycje adresowe",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Otwórz przewodnik.",
+            "shareCopyLink": {
+              "t": "Kopiuj link",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Zacznij tutaj: trzy kroki",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Jeśli coś wygląda źle",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Dobrze wiedzieć.",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "pt-br": {
-          "file": "bebb96564cba",
+          "file": "90977faaf5ab",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Nada no guia combina com essa palavra. Tente outro, ou abra as seções acima.",
+            "suggestionsLabel": {
+              "t": "Sugestão de endereço",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Abra o guia.",
+            "shareCopyLink": {
+              "t": "Entendido.",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Comece aqui: três passos",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Se algo parecer errado",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Bom saber.",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "pt-pt": {
-          "file": "e0881677fb26",
+          "file": "4d6d78797f48",
           "counts": {
-            "esri": 12,
+            "esri": 17,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Nada no guia corresponde a essa palavra. Tente outro, ou abra as seções acima.",
+            "suggestionsLabel": {
+              "t": "Sugestões de endereço",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Abra o guia.",
+            "shareCopyLink": {
+              "t": "Copiar link",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Comece aqui: três passos",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Se algo parecer errado",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "É bom saber.",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "ro": {
-          "file": "4ffcf06bc611",
+          "file": "f9f16551e511",
           "counts": {
-            "esri": 13,
+            "esri": 17,
             "esri-check": 0,
             "community": 0,
-            "manual": 0,
+            "manual": 1,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Nimic din ghid nu se potriveşte cu acest cuvânt. Încearcă altul, sau deschide secţiunile de mai sus.",
+            "suggestionsLabel": {
+              "t": "Sugestii de răspuns",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Deschide ghidul.",
+            "shareCopyLink": {
+              "t": "Copiază linkul",
               "src": "machine",
-              "h": "2447dd6134ea"
+              "h": "2f84eea5d45d"
             },
-            "helpStartTitle": {
-              "t": "Începe aici: trei pași",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Dacă ceva nu arată bine",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "E bine de ştiut.",
-              "src": "machine",
-              "h": "79fc372dc790"
+            "firstRunDismiss": {
+              "t": "Liber.",
+              "src": "manual",
+              "h": "70afe9eff3f2"
             }
           }
         },
         "ru": {
-          "file": "b6aae9daf67f",
+          "file": "96b0fc6afc3b",
           "counts": {
-            "esri": 13,
+            "esri": 17,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 3,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Ничто в руководстве не соответствует этому слову. Попробуйте другой или откройте разделы выше.",
+            "suggestionsLabel": {
+              "t": "Адресные предложения",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Откройте проводник.",
+            "shareCopyLink": {
+              "t": "Копировать ссылку",
               "src": "machine",
-              "h": "2447dd6134ea"
+              "h": "2f84eea5d45d"
             },
-            "helpStartTitle": {
-              "t": "Начните здесь: три шага",
+            "shareEmail": {
+              "t": "Электронная почта",
               "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Если что-то выглядит неправильно",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Хорошо знать",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "84add5b29527"
             }
           }
         },
         "sk": {
-          "file": "627dcc731cd0",
+          "file": "801be19f0b08",
           "counts": {
-            "esri": 13,
+            "esri": 17,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 3,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Nič v sprievodcovi nezodpovedá tomu slovu. Skúste iné, alebo otvoriť časti vyššie.",
+            "suggestionsLabel": {
+              "t": "Návrhy na adresu",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Otvorte sprievodcu.",
+            "shareCopyLink": {
+              "t": "Kopírovať odkaz",
               "src": "machine",
-              "h": "2447dd6134ea"
+              "h": "2f84eea5d45d"
             },
-            "helpStartTitle": {
-              "t": "Začnite tu: tri kroky",
+            "shareEmail": {
+              "t": "E-mail",
               "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Ak niečo vyzerá zle",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Dobré vedieť",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "84add5b29527"
             }
           }
         },
         "sl": {
-          "file": "8be7d103fd7b",
+          "file": "a5e359b1d2b7",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Nič v vodiču se ne ujema s to besedo. Poskusite drugo ali pa odprite zgornje oddelke.",
+            "suggestionsLabel": {
+              "t": "Predlogi za naslov",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Odpri vodič.",
+            "shareCopyLink": {
+              "t": "Kopiraj povezavo",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Začnite tukaj: trije koraki",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Če je kaj narobe.",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Dobro je vedeti.",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "sr": {
-          "file": "9da2fdb3f9b4",
+          "file": "04e9b72d11fb",
           "counts": {
-            "esri": 13,
+            "esri": 11,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 0,
             "stale": 0,
-            "missing": 84
+            "missing": 90
           },
           "entries": {}
         },
         "sv": {
-          "file": "e91681888b70",
+          "file": "8df27427d53e",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Ingenting i guiden matchar det ordet. Prova en annan, eller öppna avsnitten ovan.",
+            "suggestionsLabel": {
+              "t": "Adressförslag",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Öppna guiden.",
+            "shareCopyLink": {
+              "t": "Kopiera länk",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Börja här: tre steg",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Om något ser fel",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Bra att veta",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "th": {
-          "file": "c71cb8248b6e",
+          "file": "e1a3c22b8e9d",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "ไม่มีอะไรในคู่มือที่ตรงกับคํานั้น ลอง เปิด อีก ส่วน หนึ่ง ข้าง บน.",
+            "suggestionsLabel": {
+              "t": "ข้อเสนอแนะจากที่อยู่",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "เปิดคู่มือ",
+            "shareCopyLink": {
+              "t": "คัดลอกลิงก์",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "เริ่มที่นี่: สามขั้นตอน",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "ถ้ามีอะไรผิดปกติ",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "ดีที่ได้รู้",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "tr": {
-          "file": "af75714e77f2",
+          "file": "2c4917f1a316",
           "counts": {
-            "esri": 12,
+            "esri": 17,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Rehberde hiçbir şey bu kelimeyi maçları. Başka bir deneyin veya yukarıdaki bölümleri açın.",
+            "suggestionsLabel": {
+              "t": "Adres",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Rehberi açın.",
+            "shareCopyLink": {
+              "t": "Kopyalama linki",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Buraya başlayın: Üç adım",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Bir şey yanlış görünüyorsa",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "İyi bilmek",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "zh-cn": {
-          "file": "068fed802e26",
+          "file": "10b587b14973",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "指南中没有任何内容与这个词相符。 尝试另一个,或者打开上面的部分。",
+            "suggestionsLabel": {
+              "t": "处理建议",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "开导.",
+            "shareCopyLink": {
+              "t": "复制链接",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "从这里开始: 三步",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "如果有什么不对劲",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "很高兴知道",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "uk": {
-          "file": "66035f1ef321",
+          "file": "110428c9568a",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Ніщо в інструкції відповідає словом. Спробуйте ще одну або відкрийте розділи вище.",
+            "suggestionsLabel": {
+              "t": "Контакти",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Відкрийте посібник.",
+            "shareCopyLink": {
+              "t": "Статус на сервери",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "Почати тут: три кроки",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Якщо щось виглядає неправильно",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Добре знати",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "vi": {
-          "file": "9186946e371d",
+          "file": "845d893440fc",
           "counts": {
-            "esri": 13,
+            "esri": 17,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 3,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "Không có gì phù hợp với từ đó. Thử cái khác, hoặc mở phần trên.",
+            "suggestionsLabel": {
+              "t": "Địa chỉ",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "Mở sách hướng dẫn ra.",
+            "shareCopyLink": {
+              "t": "Chép liên kết",
               "src": "machine",
-              "h": "2447dd6134ea"
+              "h": "2f84eea5d45d"
             },
-            "helpStartTitle": {
-              "t": "Bắt đầu ở đây: ba bước",
+            "shareEmail": {
+              "t": "Email",
               "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Nếu có gì không ổn",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Rất vui được biết",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "84add5b29527"
             }
           }
         },
         "zh-hk": {
-          "file": "ca819cb2bd3d",
+          "file": "a510457d970a",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "向导裡沒有什麼能符合這個詞的 再試一次,或者打開上面的區域",
+            "suggestionsLabel": {
+              "t": "地址",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "打開向导",
+            "shareCopyLink": {
+              "t": "复制連結",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "從這裡開始: 三步",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "如果有什麼不對勁",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "很高興知道",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         },
         "zh-tw": {
-          "file": "ca819cb2bd3d",
+          "file": "a510457d970a",
           "counts": {
-            "esri": 13,
+            "esri": 18,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 5,
+            "machine": 2,
             "stale": 0,
-            "missing": 79
+            "missing": 81
           },
           "entries": {
-            "helpNoMatches": {
-              "t": "向导裡沒有什麼能符合這個詞的 再試一次,或者打開上面的區域",
+            "suggestionsLabel": {
+              "t": "地址",
               "src": "machine",
-              "h": "3fe179f75330"
+              "h": "45ba4a20f9e9"
             },
-            "firstRunHelpLink": {
-              "t": "打開向导",
+            "shareCopyLink": {
+              "t": "复制連結",
               "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "helpStartTitle": {
-              "t": "從這裡開始: 三步",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "如果有什麼不對勁",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "很高興知道",
-              "src": "machine",
-              "h": "79fc372dc790"
+              "h": "2f84eea5d45d"
             }
           }
         }
@@ -1695,72 +1189,72 @@
       },
       "locales": {
         "ar": {
-          "file": "7da9e7eb16fe",
+          "file": "a706b81d8862",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "علامة الزر",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "لون المخطط",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "العنوان",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(none)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "دليل المساعدة",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "اظهر زر التساؤل الذي يفتح المرشد",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "bg": {
-          "file": "528f6f341d93",
+          "file": "155182aa1143",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Поставяне на етикета на бутона",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Цвят на очертанията",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Заглавие на заглавната част",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(няма)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Показване на ръководство за помощ",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Показване на бутона въпрос-марка, която отваря джаджа помощ ръководство",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
@@ -1779,127 +1273,137 @@
           "entries": {}
         },
         "ca": {
-          "file": "e7fa7c4092cd",
+          "file": "71b31722aaad",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Envia una etiqueta de botó",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Color de contorn ressaltat",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Títol de la capçalera",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(cap)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Mostra la guia d' ajuda",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Mostra el botó Pregunta- marca que obre la guia d' ajuda de l' estri",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "cs": {
-          "file": "b566f2d95186",
+          "file": "0b11867cc46e",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Tisk tlačítka",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Barva zvýraznění obrysu",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Název hlavičky",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(žádné)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Zobrazit nápovědu",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Zobrazit tlačítko question- mark, které otevře nápovědu widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "da": {
-          "file": "5f3036aeedf1",
+          "file": "a583b8d7d884",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Indsend knap etiket",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Fremhæv omrids farve",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Overskrift",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(ingen)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Vis hjælpeguide",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Vis spørgsmåls- markerings- knappen der åbner kontrolhjælpevejledningen",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "de": {
-          "file": "4bcf935f5be8",
+          "file": "1af16ac83d77",
           "counts": {
-            "esri": 7,
+            "esri": 8,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 4,
+            "machine": 5,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Button Label einreichen",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Farbtonfarbe",
               "src": "machine",
               "h": "4e526e81bbea"
+            },
+            "headerTitle": {
+              "t": "Titel der Überschrift",
+              "src": "machine",
+              "h": "4be73943a2d1"
             },
             "noField": {
               "t": "(keine)",
@@ -1910,221 +1414,216 @@
               "t": "Show Help Guide",
               "src": "machine",
               "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Zeigen Sie die Fragezeichentaste an, die das Widget-Hilfehandbuch öffnet",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "el": {
-          "file": "11e853a42151",
+          "file": "fa1a2b28a9d1",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Υποβολή ετικέτας κουμπιού",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Χρώμα περιγράμματος επισήμανσης",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Τίτλος επικεφαλίδας",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(Δεν υπάρχει)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Εμφάνιση οδηγού βοήθειας",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Εμφάνιση του κουμπιού ερωτηματολογίου που ανοίγει τον οδηγό βοήθειας widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "es": {
-          "file": "f978d978cba3",
+          "file": "b7970bf047d6",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Presentar la etiqueta del botón",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Color de perfil alto",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Título del título",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(ninguno)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Mostrar guía de ayuda",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Mostrar el botón de la marca de preguntas que abre el widget guía de ayuda",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "et": {
-          "file": "7eb622c6a472",
+          "file": "5b9e1a8d7dd8",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Klõpsa nupu pealdisele",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Esiletõstetud kontuuri värv",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Päise pealkiri",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(Ükski)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Abijuhendi näitamine",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Küsimusemärgi nupu näitamine, mis avab vidina abi juhendi",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "fi": {
-          "file": "022f8cd45f08",
+          "file": "939ea8ff6134",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Lähetä painikkeen etiketti",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Korosta ääriviivan väri",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Otsikko",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(ei yhtään)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Näytä ohje",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Näytä kysymys-merkki-painike, joka avaa widget ohjeen",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "fr": {
-          "file": "93b33b6d2aa9",
+          "file": "80d4220af27d",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Soumettre l'étiquette du bouton",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Mettre en évidence la couleur des contours",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Titre de l'en-tête",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(aucune)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Afficher le guide d'aide",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Afficher le bouton question-marque qui ouvre le guide d'aide du widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "he": {
-          "file": "2653e9c9c8f4",
+          "file": "f934c8bb838f",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "תגית כפתור",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "המונחים: color",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "כותרת Header",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(none)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "מדריך עזרה",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "הצג את לחצן סימן שאלה פותח את מדריך העזרה widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
@@ -2143,504 +1642,504 @@
           "entries": {}
         },
         "hu": {
-          "file": "5d34f752dae6",
+          "file": "73b1f037aebf",
           "counts": {
-            "esri": 6,
+            "esri": 8,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Adja meg a gomb címkéjét",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "A vázlat színe",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Fejléc",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(nincs)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Segítőútmutató megjelenítése",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Megjeleníti a kérdőjel gombot, amely megnyitja a widget súgó útmutatót",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "id": {
-          "file": "e1307ffcc45a",
+          "file": "1b77bffde7e3",
           "counts": {
-            "esri": 7,
+            "esri": 8,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 87
           },
           "entries": {
+            "submitLabel": {
+              "t": "Kirim label tombol",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Tandai warna garis luar",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Judul header",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(tidak ada)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Tampilkan panduan bantuan",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Tampilkan tombol tanya-tandai yang membuka panduan bantuan widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "it": {
-          "file": "824cff3f8265",
+          "file": "34b95a66f7e7",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Inserisci l'etichetta del pulsante",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Colore dei contorni",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Titolo dell'intestazione",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(none)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Mostra la guida",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Mostra il pulsante di punto interrogativo che apre la guida di aiuto widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "ja": {
-          "file": "bfc34f595f77",
+          "file": "197a1a59598e",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "ボタンのラベルを提出して下さい",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "ハイライト輪郭色",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "ヘッダーのタイトル",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(なし)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "ヘルプガイドを表示",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "ウィジェットヘルプガイドを開く質問のボタンを表示する",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "ko": {
-          "file": "db5742a0835b",
+          "file": "df46a66c1ba6",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "버튼 라벨 제출",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "높은 빛 윤곽 색깔",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "회사소개",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(없음)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "공지사항",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "위젯 도움말 가이드를 열 수있는 질문 표시 버튼",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "lt": {
-          "file": "c94b3bc93aeb",
+          "file": "bcb446621b5b",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Pateikti mygtuko etiketę",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Paryškinti kontūro spalvą",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Antraštinis pavadinimas",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(nėra)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Rodyti pagalbos vadovą",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Rodyti klausimų žymėjimo mygtuką, kuris atveria valdikliui skirtą pagalbos vadovą",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "lv": {
-          "file": "d449d34dc677",
+          "file": "2d80b788aff0",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Iesniegt pogas etiķeti",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Izcelšanas kontūras krāsa",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Galvenes nosaukums",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(nav)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Rādīt palīdzības ceļvedi",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Rādīt jautājumu zīmes pogu, kas atver logdaļu palīdzības rokasgrāmatu",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "no": {
-          "file": "7316318c9e8b",
+          "file": "1753c1db9751",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Kontakt brukerstøtte",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Høyderissfarge",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Topptekst",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(ingen)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Vis hjelpguide",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Vis spørsmålsmerkeknappen som åpner widget-hjelpeguiden",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "nl": {
-          "file": "3625ea4f452e",
+          "file": "5a2798c5fc33",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Knooplabel verzenden",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Omtrekkleur markeren",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Koptitel",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(geen)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Hulplijn tonen",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "De knop met het vraagteken tonen die de hulplijn widget opent",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "pl": {
-          "file": "fd0cea9d2295",
+          "file": "d9bab1227d07",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Prześlij etykietę przycisku",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Podświetl kolor obrysu",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Tytuł nagłówka",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(brak)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Pokaż przewodnik pomocy",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Pokaż przycisk question- mark, który otwiera przewodnik pomocy widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "pt-br": {
-          "file": "76b6799965a1",
+          "file": "84fabb2cbff2",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Enviar etiqueta de botão",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Cor do contorno do realce",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Título do cabeçalho",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(Nenhuma)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Mostre guia de ajuda.",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Mostre o botão de ponto de interrogação que abre o guia de ajuda do widget.",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "pt-pt": {
-          "file": "ac305e7008a2",
+          "file": "7edd63ae075a",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Enviar o rótulo do botão",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Cor do contorno do realce",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Título do cabeçalho",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(Nenhuma)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Mostrar guia de ajuda",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Mostrar o botão de marca de perguntas que abre o guia de ajuda do elemento",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "ro": {
-          "file": "71011a3bdd28",
+          "file": "b50314d75272",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Trimite eticheta butonului",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Arată culoarea conturului",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Titlul antetului",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(niciuna)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Arată ghidul de ajutor",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Arată butonul semn de întrebare care deschide ghidul de ajutor widget",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "ru": {
-          "file": "3b5ed9a15999",
+          "file": "6fa1117b7835",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Наклейка кнопки отправки",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Выделить контурный цвет",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Заголовок заголовка",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(нет)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Показать справочник",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Покажите кнопку вопрос-марка, которая открывает руководство по помощи виджета",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "sk": {
           "file": "320912d33049",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 4,
+            "machine": 2,
             "stale": 0,
             "missing": 88
           },
@@ -2654,51 +2153,41 @@
               "t": "(žiadne)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Zobraziť návod na pomoc",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Zobraziť tlačidlo otázniku, ktoré otvorí sprievodcu pomocníkom",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "sl": {
-          "file": "01e83c80a229",
+          "file": "bd798153bc24",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Pošlji nalepko gumba",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Barva obrisa poudarjanja",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Naslov glave",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(brez)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Prikaži vodnik za pomoč",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Prikaži gumb z vprašanji, ki odpre widget pomoč vodnik",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
@@ -2717,92 +2206,102 @@
           "entries": {}
         },
         "sv": {
-          "file": "0b62df3dd61c",
+          "file": "99960630492a",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Skicka knapp etikett",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Highlight Outline färg",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Header titel",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(ingen)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Visa hjälp guide",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Visa frågemärke knappen som öppnar widget hjälp guide",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "th": {
-          "file": "f828590224e3",
+          "file": "bb4cfaffbb71",
           "counts": {
-            "esri": 6,
+            "esri": 7,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 87
           },
           "entries": {
+            "submitLabel": {
+              "t": "แถบป้ายปุ่มส่ง",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "เน้นสีกรอบ",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "หัวเรื่อง",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(ไม่มี)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "แสดงคําแนะนํา",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "แสดงปุ่ม เครื่องหมายคําถามที่เปิดวิดเจ็ตคําแนะนํา",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "tr": {
-          "file": "22d9ccfb059b",
+          "file": "110800e07f46",
           "counts": {
-            "esri": 6,
+            "esri": 7,
             "esri-check": 1,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 4,
+            "machine": 5,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Gönder butonun etiket",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Highlight draft renk",
               "src": "machine",
               "h": "4e526e81bbea"
+            },
+            "headerTitle": {
+              "t": "Header unvanı",
+              "src": "machine",
+              "h": "4be73943a2d1"
             },
             "noField": {
               "t": "(none)",
@@ -2813,186 +2312,181 @@
               "t": "Show help guide",
               "src": "machine",
               "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "widget'ı açan soru işaret düğmesine göster",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "zh-cn": {
-          "file": "3aac4f00ce59",
+          "file": "b0d76e3d09d3",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "提交按钮标签",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "突出显示大纲颜色",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "标题",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(无)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "显示帮助指南",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "显示打开部件帮助指南的问题标记按钮",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "uk": {
-          "file": "56f7c01d040e",
+          "file": "f4c433b9d56d",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Наклейка кнопки",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Колір висотних контурів",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Назва заголовка",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(без)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Показати посібник",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Показати натис-mark, який відкриває посібник з підтримки віджету",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "vi": {
-          "file": "f080d969254e",
+          "file": "af00018ebc57",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "Nhãn & Gởi",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "Màu đường nét tô sáng",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "Đầu trang",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(không có)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "Hiện hướng dẫn trợ giúp",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Hiển thị nút đánh dấu câu hỏi để mở hướng dẫn trợ giúp ô điều khiển",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "zh-hk": {
-          "file": "3ca82b97483e",
+          "file": "7d47a777e5d3",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "提交按鍵標籤",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "突顯大纲顏色",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "信頭標題",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(無)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "顯示說明指南",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "顯示開啟元件說明指導的問題標鍵",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
         "zh-tw": {
-          "file": "3ca82b97483e",
+          "file": "7d47a777e5d3",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
             "machine": 4,
             "stale": 0,
-            "missing": 88
+            "missing": 86
           },
           "entries": {
+            "submitLabel": {
+              "t": "提交按鍵標籤",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
             "highlightOutline": {
               "t": "突顯大纲顏色",
               "src": "machine",
               "h": "4e526e81bbea"
             },
+            "headerTitle": {
+              "t": "信頭標題",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
             "noField": {
               "t": "(無)",
               "src": "machine",
               "h": "3c6b183d348f"
-            },
-            "showHelpGuide": {
-              "t": "顯示說明指南",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "顯示開啟元件說明指導的問題標鍵",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         }

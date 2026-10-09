@@ -19,11 +19,33 @@ import { Button, TextInput, Tooltip, Loading, LoadingType, Alert } from 'jimu-ui
 import { CalciteIcon } from 'calcite-components'
 import { type IMConfig } from '../config'
 import defaultMessages from './translations/default'
+let __dmIntl: any = null
+/** defaultMessages, but each string comes from the app language when the widget intl has it. */
+const __dm: any = new Proxy(defaultMessages as any, {
+  get: (tgt: any, k: any) => {
+    const v = tgt[k]
+    if (typeof k !== 'string' || typeof v !== 'string') return v
+    const m = __dmIntl && __dmIntl.messages ? __dmIntl.messages[k] : undefined
+    return typeof m === 'string' ? m : v
+  }
+})
 import HelpPopup from './components/HelpPopup'
 import FirstRunHint from './components/FirstRunHint'
 import { buildHelpSections, type HelpFeatures } from './helpSections'
 import { beacon } from '../shared/beacon'
 import type { BeaconHandle } from '../shared/beacon'
+import __i18nDefaults from './translations/default'
+import { __setIntl } from './i18n-t'
+let __i18nIntl: any = null
+/** Module translator: app language via the widget intl, English from default.ts, {name} values filled. */
+const __t = (id: string, values?: { [key: string]: any }): string => {
+  const msg: string = (__i18nDefaults as any)[id] ?? id
+  if (__i18nIntl && typeof __i18nIntl.formatMessage === 'function') {
+    try { return __i18nIntl.formatMessage({ id, defaultMessage: msg }, values) } catch (e) { }
+  }
+  return msg.replace(/\{(\w+)\}/g, (m: string, k: string) => (values && values[k] != null ? String(values[k]) : m))
+}
+
 
 // Experience Builder 1.21 ships react-dom with ambient typings that are not
 // exposed as an ES module. Use webpack's runtime require instead of a TS import.
@@ -137,7 +159,7 @@ const linkifyPhones = (text: string): any => {
             const digits = part.replace(/\D/g, '')
             const href = `tel:${digits.length === 10 ? '+1' + digits : digits}`
             return (
-                <a key={i} href={href} className="zl-phone-link" aria-label={`Call ${part}`}>
+                <a key={i} href={href} className="zl-phone-link" aria-label={__t("uiCall", { part: part })}>
                     {part}
                 </a>
             )
@@ -198,6 +220,9 @@ type WidgetProps = AllWidgetProps<IMConfig> & {
 }
 
 const Widget = (props: WidgetProps) => {
+  __setIntl((props as any).intl)
+  __dmIntl = (props as any).intl
+  __i18nIntl = (props as any).intl
     const { config, useDataSources, useMapWidgetIds, id } = props
 
     // ---- State ----
@@ -206,7 +231,7 @@ const Widget = (props: WidgetProps) => {
     const [showSuggestions, setShowSuggestions] = useState(false)
     const [activeIndex, setActiveIndex] = useState(-1)
     const [loading, setLoading] = useState(false)
-    const [loadingMessage, setLoadingMessage] = useState(defaultMessages.searching)
+    const [loadingMessage, setLoadingMessage] = useState(__dm.searching)
     const [resultFeature, setResultFeature] = useState<{ attributes: any, fields: any[] } | null>(null)
     const [resultHtml, setResultHtml] = useState<string | null>(null)
     const [error, setError] = useState<string | null>(null)
@@ -481,12 +506,12 @@ const Widget = (props: WidgetProps) => {
         // full portrait viewport instead of the reduced keyboard viewport.
         ; (document.getElementById(inputId) as HTMLInputElement | null)?.blur()
         setLoading(true)
-        setLoadingMessage(defaultMessages.searching)
+        setLoadingMessage(__dm.searching)
         setError(null)
         setOutsideArea(false)
         setResultHtml(null)
         setResultFeature(null)
-        setStatusMsg(defaultMessages.searching)
+        setStatusMsg(__dm.searching)
         clearGraphics()
 
         try {
@@ -561,7 +586,7 @@ const Widget = (props: WidgetProps) => {
             const html = renderTemplate(selectedTemplate, attributesWithMeta, fields)
             setResultHtml(html)
             setResultFeature({ attributes: feature.attributes, fields })
-            setStatusMsg('Results found.')
+            setStatusMsg(__t("resultsFound"))
 
             if (displayLabel) {
                 pushRecent({
@@ -590,7 +615,7 @@ const Widget = (props: WidgetProps) => {
             beaconRef.current?.error(e, 'search')
             console.error('Zone Lookup error:', e)
             const message = e instanceof TemplateSyntaxError
-                ? defaultMessages.templateConfigurationError
+                ? __dm.templateConfigurationError
                 : e instanceof CascadeError ? e.message : config.errorMessage
             setError(message)
             setStatusMsg(message)
@@ -636,9 +661,9 @@ const Widget = (props: WidgetProps) => {
         beaconRef.current?.action('search')
         setShowSuggestions(false)
         setLoading(true)
-        setLoadingMessage(defaultMessages.searching)
+        setLoadingMessage(__dm.searching)
         setError(null)
-        setStatusMsg(defaultMessages.searching)
+        setStatusMsg(__dm.searching)
         try {
             const { locator } = await ensureModules()
             const params: any = {
@@ -675,13 +700,13 @@ const Widget = (props: WidgetProps) => {
     const handleMyLocation = useCallback(async () => {
         beaconRef.current?.action('locate')
         if (!navigator.geolocation) {
-            setError(defaultMessages.geoUnsupported)
-            setStatusMsg(defaultMessages.geoUnsupported)
+            setError(__dm.geoUnsupported)
+            setStatusMsg(__dm.geoUnsupported)
             return
         }
         setLoading(true)
-        setLoadingMessage(defaultMessages.geolocating)
-        setStatusMsg(defaultMessages.geolocating)
+        setLoadingMessage(__dm.geolocating)
+        setStatusMsg(__dm.geolocating)
         setError(null)
 
         navigator.geolocation.getCurrentPosition(
@@ -704,8 +729,8 @@ const Widget = (props: WidgetProps) => {
             },
             (err) => {
                 const msg = err.code === err.PERMISSION_DENIED
-                    ? defaultMessages.geoDenied
-                    : defaultMessages.geoUnavailable
+                    ? __dm.geoDenied
+                    : __dm.geoUnavailable
                 setError(msg)
                 setStatusMsg(msg)
                 setLoading(false)
@@ -793,12 +818,12 @@ const Widget = (props: WidgetProps) => {
         try {
             if (navigator.clipboard?.writeText) {
                 await navigator.clipboard.writeText(url)
-                setShareFeedback(defaultMessages.linkCopied)
+                setShareFeedback(__dm.linkCopied)
             } else {
-                setShareFeedback(defaultMessages.shareUnavailable)
+                setShareFeedback(__dm.shareUnavailable)
             }
         } catch (_e) {
-            setShareFeedback(defaultMessages.shareUnavailable)
+            setShareFeedback(__dm.shareUnavailable)
         }
         window.setTimeout(() => setShareFeedback(null), 2500)
     }, [getShareUrl])
@@ -807,7 +832,7 @@ const Widget = (props: WidgetProps) => {
         setShareMenuOpen(false)
         const text = buildShareText()
         const url = getShareUrl()
-        const subject = encodeURIComponent((config as any).shareEmailSubject || defaultMessages.shareEmailSubject)
+        const subject = encodeURIComponent((config as any).shareEmailSubject || __dm.shareEmailSubject)
         const body = encodeURIComponent(`${text}\n\n${url}`)
         window.location.href = `mailto:?subject=${subject}&body=${body}`
     }, [buildShareText, getShareUrl, config])
@@ -827,7 +852,7 @@ const Widget = (props: WidgetProps) => {
         try {
             if (typeof navigator.share === 'function') {
                 await navigator.share({
-                    title: defaultMessages.resultsHeading,
+                    title: __dm.resultsHeading,
                     text,
                     url
                 })
@@ -1737,7 +1762,7 @@ const Widget = (props: WidgetProps) => {
             tabIndex={-1}
             role={mobileOverlay ? 'dialog' : 'region'}
             aria-modal={mobileOverlay ? true : undefined}
-            aria-label={defaultMessages.resultsHeading}
+            aria-label={__dm.resultsHeading}
         >
             {showHero && (
                 <div className="zl-hero">
@@ -1747,7 +1772,7 @@ const Widget = (props: WidgetProps) => {
             )}
 
             {(mobileOverlay || config.enableShare || config.enablePrint) && (
-                <div className="zl-result-toolbar" role="toolbar" aria-label={defaultMessages.resultActionsLabel}>
+                <div className="zl-result-toolbar" role="toolbar" aria-label={__dm.resultActionsLabel}>
                     {mobileOverlay && (
                         <button
                             type="button"
@@ -1769,7 +1794,7 @@ const Widget = (props: WidgetProps) => {
                     </span>
                     {config.enableShare && (
                         <div className="zl-share-menu">
-                            <Tooltip title={defaultMessages.shareTooltip} placement="top">
+                            <Tooltip title={__dm.shareTooltip} placement="top">
                                 <button
                                     type="button"
                                     className="zl-toolbar-btn"
@@ -1779,14 +1804,14 @@ const Widget = (props: WidgetProps) => {
                                     aria-expanded={shareMenuOpen}
                                 >
                                     <ShareSvg size={14} />
-                                    <span>{defaultMessages.share}</span>
+                                    <span>{__dm.share}</span>
                                 </button>
                             </Tooltip>
                             {shareMenuOpen && (
                                 <div
                                     className="zl-share-popover"
                                     role="menu"
-                                    aria-label={defaultMessages.shareMenuLabel}
+                                    aria-label={__dm.shareMenuLabel}
                                     ref={shareMenuRef}
                                 >
                                     <button
@@ -1796,7 +1821,7 @@ const Widget = (props: WidgetProps) => {
                                         onClick={handleCopyLink}
                                     >
                                         <LinkSvg size={16} className="zl-share-icon" />
-                                        <span>{defaultMessages.shareCopyLink}</span>
+                                        <span>{__dm.shareCopyLink}</span>
                                     </button>
                                     <button
                                         type="button"
@@ -1805,7 +1830,7 @@ const Widget = (props: WidgetProps) => {
                                         onClick={handleEmailShare}
                                     >
                                         <MailSvg size={16} className="zl-share-icon" />
-                                        <span>{defaultMessages.shareEmail}</span>
+                                        <span>{__dm.shareEmail}</span>
                                     </button>
                                     <button
                                         type="button"
@@ -1814,7 +1839,7 @@ const Widget = (props: WidgetProps) => {
                                         onClick={handleSmsShare}
                                     >
                                         <MessageSvg size={16} className="zl-share-icon" />
-                                        <span>{defaultMessages.shareSms}</span>
+                                        <span>{__dm.shareSms}</span>
                                     </button>
                                     {hasNativeShare && (
                                         <button
@@ -1824,7 +1849,7 @@ const Widget = (props: WidgetProps) => {
                                             onClick={handleNativeShare}
                                         >
                                             <ShareSvg size={16} className="zl-share-icon" />
-                                            <span>{defaultMessages.shareMore}</span>
+                                            <span>{__dm.shareMore}</span>
                                         </button>
                                     )}
                                 </div>
@@ -1832,10 +1857,10 @@ const Widget = (props: WidgetProps) => {
                         </div>
                     )}
                     {config.enablePrint && (
-                        <Tooltip title={defaultMessages.printTooltip} placement="top">
+                        <Tooltip title={__dm.printTooltip} placement="top">
                             <button type="button" className="zl-toolbar-btn" onClick={handlePrint}>
                                 <PrintSvg size={14} />
-                                <span>{defaultMessages.print}</span>
+                                <span>{__dm.print}</span>
                             </button>
                         </Tooltip>
                     )}
@@ -1938,7 +1963,7 @@ const Widget = (props: WidgetProps) => {
                             <button
                                 type="button"
                                 className="zl-help-trigger"
-                                aria-label={`${defaultMessages.helpIconLabel}: ${config.addressTooltip}`}
+                                aria-label={`${__dm.helpIconLabel}: ${config.addressTooltip}`}
                             >
                                 <HelpSvg size={14} />
                             </button>
@@ -1999,11 +2024,11 @@ const Widget = (props: WidgetProps) => {
                                 id={listboxId}
                                 className="zl-listbox"
                                 role="listbox"
-                                aria-label={defaultMessages.suggestionsLabel}
+                                aria-label={__dm.suggestionsLabel}
                             >
                                 {suggestions.length === 0 && (
                                     <li className="zl-suggestion-empty" role="option" aria-disabled="true">
-                                        {defaultMessages.noSuggestions}
+                                        {__dm.noSuggestions}
                                     </li>
                                 )}
                                 {suggestions.map((s, idx) => (
@@ -2026,7 +2051,7 @@ const Widget = (props: WidgetProps) => {
                     {(config.enableMyLocation || config.enableMapClick) && (
                         <div className="zl-actions">
                             {config.enableMyLocation && (
-                                <Tooltip title={defaultMessages.useMyLocationTooltip} placement="top">
+                                <Tooltip title={__dm.useMyLocationTooltip} placement="top">
                                     <button
                                         type="button"
                                         className="zl-action-chip"
@@ -2034,13 +2059,13 @@ const Widget = (props: WidgetProps) => {
                                         disabled={loading || (!useDs && !config.cascadeMode)}
                                     >
                                         <CrosshairSvg size={14} />
-                                        <span>{defaultMessages.useMyLocation}</span>
+                                        <span>{__dm.useMyLocation}</span>
                                     </button>
                                 </Tooltip>
                             )}
                             {config.enableMapClick && (
                                 <Tooltip
-                                    title={mapWidgetId ? defaultMessages.clickMapTooltip : defaultMessages.clickMapNeedsMap}
+                                    title={mapWidgetId ? __dm.clickMapTooltip : __dm.clickMapNeedsMap}
                                     placement="top"
                                 >
                                     <button
@@ -2051,7 +2076,7 @@ const Widget = (props: WidgetProps) => {
                                         aria-pressed={armed}
                                     >
                                         <MapClickSvg size={14} />
-                                        <span>{defaultMessages.clickMap}</span>
+                                        <span>{__dm.clickMap}</span>
                                     </button>
                                 </Tooltip>
                             )}
@@ -2063,7 +2088,7 @@ const Widget = (props: WidgetProps) => {
             {armed && (
                 <div className="zl-clickmode-banner" role="status">
                     <MapClickSvg size={14} />
-                    <span>{defaultMessages.clickMapActive}</span>
+                    <span>{__dm.clickMapActive}</span>
                 </div>
             )}
 
@@ -2073,15 +2098,15 @@ const Widget = (props: WidgetProps) => {
                     <div className="zl-recents-head">
                         <HistorySvg size={12} />
                         <h3 id={`${id}-recents-title`} className="zl-recents-title">
-                            {defaultMessages.recentSearches}
+                            {__dm.recentSearches}
                         </h3>
                         <button
                             type="button"
                             className="zl-recents-clear"
                             onClick={clearRecents}
-                            aria-label={`${defaultMessages.clearRecent} ${defaultMessages.recentSearches.toLowerCase()}`}
+                            aria-label={`${__dm.clearRecent} ${__dm.recentSearches.toLowerCase()}`}
                         >
-                            {defaultMessages.clearRecent}
+                            {__dm.clearRecent}
                         </button>
                     </div>
                     <ul className="zl-recents-list">
@@ -2119,14 +2144,14 @@ const Widget = (props: WidgetProps) => {
                         <MapPinOffSvg size={22} />
                     </div>
                     <div className="zl-outside-content">
-                        <h2 className="zl-outside-title">{config.outsideAreaHeading || defaultMessages.outsideAreaHeading}</h2>
+                        <h2 className="zl-outside-title">{config.outsideAreaHeading || __dm.outsideAreaHeading}</h2>
                         <p className="zl-outside-message">{linkifyPhones(config.outsideAreaMessage)}</p>
                         <button
                             type="button"
                             className="zl-outside-action"
                             onClick={handleReset}
                         >
-                            {config.tryAnotherAddressLabel || defaultMessages.tryAnotherAddress}
+                            {config.tryAnotherAddressLabel || __dm.tryAnotherAddress}
                         </button>
                     </div>
                 </div>
@@ -2140,7 +2165,7 @@ const Widget = (props: WidgetProps) => {
           and gets swapped for the result card only when the result lands. Keeps widget
           height stable in iframe embeds with no disappear/reappear flash. */}
             {!resultHtml && !outsideArea && !error && (
-                <div className="zl-placeholder-card" role={loading ? 'status' : 'region'} aria-label={defaultMessages.placeholderHeading} aria-live={loading ? 'polite' : undefined}>
+                <div className="zl-placeholder-card" role={loading ? 'status' : 'region'} aria-label={__dm.placeholderHeading} aria-live={loading ? 'polite' : undefined}>
                     {loading ? (
                         <>
                             <div className="zl-placeholder-icon zl-placeholder-icon-loading" aria-hidden="true">
@@ -2154,10 +2179,10 @@ const Widget = (props: WidgetProps) => {
                                 <PinSvg size={28} />
                             </div>
                             <h3 className="zl-placeholder-title">
-                                {config.placeholderHeading || defaultMessages.placeholderHeading}
+                                {config.placeholderHeading || __dm.placeholderHeading}
                             </h3>
                             <p className="zl-placeholder-message">
-                                {linkifyPhones(config.placeholderMessage || defaultMessages.placeholderMessage)}
+                                {linkifyPhones(config.placeholderMessage || __dm.placeholderMessage)}
                             </p>
                         </>
                     )}
@@ -2186,7 +2211,7 @@ const Widget = (props: WidgetProps) => {
             )}
 
             {!useDs && !config.cascadeMode && (
-                <Alert form="basic" type="info" text={defaultMessages.noLayerConfigured} withIcon closable={false} />
+                <Alert form="basic" type="info" text={__dm.noLayerConfigured} withIcon closable={false} />
             )}
         </ZlRoot>
     )

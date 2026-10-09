@@ -99,7 +99,11 @@ System.register([], function (e) {
         helpTips4: "This guide follows the app: it only describes the buttons this app is showing you.",
         closeResultsAndSearchAnotherAddress: "Close results and search another address",
         newSearch: "New search",
-        addressLookupResultsSwipeUpOr: "Address lookup results. Swipe up or down to scroll."
+        addressLookupResultsSwipeUpOr: "Address lookup results. Swipe up or down to scroll.",
+        uiCall: "Call {part}",
+        resultsFound: "Results found.",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

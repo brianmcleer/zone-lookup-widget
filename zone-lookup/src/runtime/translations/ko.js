@@ -10,7 +10,7 @@ System.register([], function (e) {
         resultsHeading: "Lookup results",
         templateConfigurationError: "The result layout could not be read. Please contact the app administrator.",
         helpIconLabel: "도움말",
-        suggestionsLabel: "Address suggestions",
+        suggestionsLabel: "주소 제안",
         noSuggestions: "No matching addresses",
         useMyLocation: "Use my location",
         useMyLocationTooltip: "Look up the zone for your current device location.",
@@ -30,7 +30,7 @@ System.register([], function (e) {
         shareCopied: "Address copied to clipboard.",
         shareUnavailable: "Sharing isn’t supported in this browser.",
         shareMenuLabel: "공유 옵션",
-        shareCopyLink: "Copy link",
+        shareCopyLink: "관련 링크",
         shareEmail: "이메일",
         shareSms: "Text message",
         shareMore: "알아보기…",
@@ -47,11 +47,11 @@ System.register([], function (e) {
         helpIntro: "This widget tells you which area an address falls in.",
         helpSearchPlaceholder: "Search the guide (try \"address\" or \"map\")",
         helpNoMatches: "가이드의 아무것도 그 단어 일치. 다른 시도, 또는 위의 섹션을 엽니 다.",
-        helpAnd: "and",
-        firstRunTitle: "New here?",
+        helpAnd: "및",
+        firstRunTitle: "여기에 새로운?",
         firstRunBody: "Type an address, pick it from the list, then read the answer in the card below.",
-        firstRunHelpLink: "자주 묻는 질문",
-        firstRunDismiss: "Dismiss",
+        firstRunHelpLink: "자주 묻는 질문.",
+        firstRunDismiss: "뚱 베어",
         helpStartTitle: "여기에 시작: 세 단계",
         helpStart1: "Type an address in the box under \"{address}\". After a few letters, a short list of matching addresses appears.",
         helpStart2: "Click your address in that list. You can also press Enter to use exactly what you typed.",
@@ -99,7 +99,11 @@ System.register([], function (e) {
         helpTips4: "This guide follows the app: it only describes the buttons this app is showing you.",
         closeResultsAndSearchAnotherAddress: "Close results and search another address",
         newSearch: "New search",
-        addressLookupResultsSwipeUpOr: "Address lookup results. Swipe up or down to scroll."
+        addressLookupResultsSwipeUpOr: "Address lookup results. Swipe up or down to scroll.",
+        uiCall: "Call {part}",
+        resultsFound: "Results found.",
+        unknownError: "unknown error",
+        unserializableError: "unserializable error"
       })
     }
   }

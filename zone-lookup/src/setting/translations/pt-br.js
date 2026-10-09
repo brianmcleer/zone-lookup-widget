@@ -40,7 +40,7 @@ System.register([], function (e) {
         addressLabel: "Address input label",
         addressPlaceholder: "Address input placeholder",
         addressTooltip: "Address input tooltip",
-        submitLabel: "Submit button label",
+        submitLabel: "Enviar etiqueta de botão",
         submitTooltip: "Submit button tooltip",
         resetLabel: "Reset button label",
         resetTooltip: "Reset button tooltip",
@@ -74,7 +74,7 @@ System.register([], function (e) {
         headerStyle: "Header style",
         headerStylePlain: "Plain (intro as ordinary text)",
         headerStyleBanner: "Banner (colored band with optional title)",
-        headerTitle: "Header title",
+        headerTitle: "Título do cabeçalho",
         headerTitlePlaceholder: "e.g. \"Find your pickup area\"",
         heroSection: "Result hero",
         heroSectionHint: "Optional. Pick a field to render as a big colored badge at the top of the result card, plus an optional subtitle underneath. Leave both blank to skip the hero and use only the HTML template.",
@@ -100,8 +100,8 @@ System.register([], function (e) {
         aliasTypeClickToInsert: "{alias} ({type}) : click to insert",
         insertTokenForFieldAlias: "Insert token for field {alias}",
         help: "Ajuda",
-        showHelpGuide: "Mostre guia de ajuda.",
-        showTheQuestionMarkButtonThat: "Mostre o botão de ponto de interrogação que abre o guia de ajuda do widget."
+        showHelpGuide: "Mostre guia de ajuda",
+        showTheQuestionMarkButtonThat: "Mostre o botão de ponto de interrogação que abre o guia de ajuda do widget"
       })
     }
   }

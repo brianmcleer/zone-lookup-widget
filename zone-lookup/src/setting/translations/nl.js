@@ -40,7 +40,7 @@ System.register([], function (e) {
         addressLabel: "Address input label",
         addressPlaceholder: "Address input placeholder",
         addressTooltip: "Address input tooltip",
-        submitLabel: "Submit button label",
+        submitLabel: "Knooplabel verzenden",
         submitTooltip: "Submit button tooltip",
         resetLabel: "Reset button label",
         resetTooltip: "Reset button tooltip",
@@ -74,7 +74,7 @@ System.register([], function (e) {
         headerStyle: "Header style",
         headerStylePlain: "Plain (intro as ordinary text)",
         headerStyleBanner: "Banner (colored band with optional title)",
-        headerTitle: "Header title",
+        headerTitle: "Koptitel",
         headerTitlePlaceholder: "e.g. \"Find your pickup area\"",
         heroSection: "Result hero",
         heroSectionHint: "Optional. Pick a field to render as a big colored badge at the top of the result card, plus an optional subtitle underneath. Leave both blank to skip the hero and use only the HTML template.",
@@ -99,7 +99,7 @@ System.register([], function (e) {
         importErrorEmpty: "No recognized settings were found in the file.",
         aliasTypeClickToInsert: "{alias} ({type}) : click to insert",
         insertTokenForFieldAlias: "Insert token for field {alias}",
-        help: "Help",
+        help: "Hulp",
         showHelpGuide: "Hulplijn tonen",
         showTheQuestionMarkButtonThat: "De knop met het vraagteken tonen die de hulplijn widget opent"
       })

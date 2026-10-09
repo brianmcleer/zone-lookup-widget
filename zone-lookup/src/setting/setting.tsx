@@ -32,6 +32,16 @@ import {
 import { ColorPicker } from 'jimu-ui/basic/color-picker'
 import { type IMConfig, type ColorRGBA, type SearchConstraint } from '../config'
 import defaultMessages from './translations/default'
+let __dmIntl: any = null
+/** defaultMessages, but each string comes from the app language when the widget intl has it. */
+const __dm: any = new Proxy(defaultMessages as any, {
+  get: (tgt: any, k: any) => {
+    const v = tgt[k]
+    if (typeof k !== 'string' || typeof v !== 'string') return v
+    const m = __dmIntl && __dmIntl.messages ? __dmIntl.messages[k] : undefined
+    return typeof m === 'string' ? m : v
+  }
+})
 import { validateTemplate, type TemplateErrorCode } from '../runtime/template'
 import { useTokens } from '../runtime/theme'
 import { hooks as __exbI18nHooks } from 'jimu-core';
@@ -235,6 +245,7 @@ type SettingProps = AllWidgetSettingProps<IMConfig> & {
 }
 
 const Setting = (props: SettingProps) => {
+  __dmIntl = (props as any).intl
   const t = __exbI18nHooks.useTranslation(__exbI18nMessages);
     const { config, onSettingChange, id, useDataSources, useMapWidgetIds } = props
 
@@ -248,12 +259,12 @@ const Setting = (props: SettingProps) => {
     const templateHelpId = `zl-template-help-${id}`
     const conditionalHelpId = `zl-conditional-help-${id}`
     const templateErrorMessages: Record<TemplateErrorCode, string> = {
-        invalidDirective: defaultMessages.templateInvalidDirective,
-        unexpectedElse: defaultMessages.templateUnexpectedElse,
-        duplicateElse: defaultMessages.templateDuplicateElse,
-        unexpectedClose: defaultMessages.templateUnexpectedClose,
-        missingClose: defaultMessages.templateMissingClose,
-        tooDeep: defaultMessages.templateTooDeep
+        invalidDirective: __dm.templateInvalidDirective,
+        unexpectedElse: __dm.templateUnexpectedElse,
+        duplicateElse: __dm.templateDuplicateElse,
+        unexpectedClose: __dm.templateUnexpectedClose,
+        missingClose: __dm.templateMissingClose,
+        tooDeep: __dm.templateTooDeep
     }
 
     // ---- Load fields from the configured zone layer ----
@@ -326,20 +337,20 @@ const Setting = (props: SettingProps) => {
         if (fileInputRef.current) fileInputRef.current.value = ''
 
         const reader = new FileReader()
-        reader.onerror = () => setImportStatus({ type: 'error', text: defaultMessages.importErrorParse })
+        reader.onerror = () => setImportStatus({ type: 'error', text: __dm.importErrorParse })
         reader.onload = () => {
             const text = String(reader.result || '')
             const parsed = parseConfigXml(text)
             if (!parsed) {
-                setImportStatus({ type: 'error', text: defaultMessages.importErrorParse })
+                setImportStatus({ type: 'error', text: __dm.importErrorParse })
                 return
             }
             if (parsed.count === 0) {
-                setImportStatus({ type: 'error', text: defaultMessages.importErrorEmpty })
+                setImportStatus({ type: 'error', text: __dm.importErrorEmpty })
                 return
             }
             onSettingChange({ id, config: (config as any).merge(parsed.updates) })
-            setImportStatus({ type: 'success', text: `${defaultMessages.importSuccess} (${parsed.count})` })
+            setImportStatus({ type: 'success', text: `${__dm.importSuccess} (${parsed.count})` })
             window.setTimeout(() => setImportStatus(null), 4000)
         }
         reader.readAsText(file)
@@ -438,19 +449,19 @@ const Setting = (props: SettingProps) => {
         <SettingRoot className="widget-setting-zone-lookup" zlStyles={styles}>
 
             {/* ---- MAP ---- */}
-            <SettingSection title={defaultMessages.mapSection}>
-                <SettingRow flow="wrap" label={defaultMessages.selectMap}>
+            <SettingSection title={__dm.mapSection}>
+                <SettingRow flow="wrap" label={__dm.selectMap}>
                     <MapWidgetSelector
                         useMapWidgetIds={useMapWidgetIds}
                         onSelect={onMapWidgetSelected}
                     />
                 </SettingRow>
-                <Hint>{defaultMessages.selectMapHint}</Hint>
+                <Hint>{__dm.selectMapHint}</Hint>
             </SettingSection>
 
             {/* ---- ZONE LAYER ---- */}
-            <SettingSection title={defaultMessages.dataSection}>
-                <SettingRow flow="wrap" label={defaultMessages.selectLayer}>
+            <SettingSection title={__dm.dataSection}>
+                <SettingRow flow="wrap" label={__dm.selectLayer}>
                     <DataSourceSelector
                         types={Immutable([AllDataSourceTypes.FeatureLayer])}
                         useDataSources={useDataSources}
@@ -459,12 +470,12 @@ const Setting = (props: SettingProps) => {
                         widgetId={id}
                     />
                 </SettingRow>
-                <Hint>{defaultMessages.selectLayerHint}</Hint>
+                <Hint>{__dm.selectLayerHint}</Hint>
             </SettingSection>
 
             {/* ---- GEOCODER ---- */}
-            <SettingSection title={defaultMessages.geocoderSection}>
-                <SettingRow flow="wrap" label={defaultMessages.geocodeUrl}>
+            <SettingSection title={__dm.geocoderSection}>
+                <SettingRow flow="wrap" label={__dm.geocodeUrl}>
                     <TextInput
                         value={config.geocodeUrl}
                         onChange={(e: any) => updateConfig('geocodeUrl', e.target.value)}
@@ -472,24 +483,24 @@ const Setting = (props: SettingProps) => {
                         className="w-100"
                     />
                 </SettingRow>
-                <Hint>{defaultMessages.geocodeUrlHint}</Hint>
+                <Hint>{__dm.geocodeUrlHint}</Hint>
 
-                <SettingRow flow="wrap" label={defaultMessages.constrainSearch}>
+                <SettingRow flow="wrap" label={__dm.constrainSearch}>
                     <Select
                         value={config.constrainSearch}
                         onChange={(e: any) => updateConfig('constrainSearch', e.target.value as SearchConstraint)}
                         className="w-100"
                     >
-                        <Option value="none">{defaultMessages.constrainNone}</Option>
-                        <Option value="mapExtent">{defaultMessages.constrainMap}</Option>
-                        <Option value="layerExtent">{defaultMessages.constrainLayer}</Option>
+                        <Option value="none">{__dm.constrainNone}</Option>
+                        <Option value="mapExtent">{__dm.constrainMap}</Option>
+                        <Option value="layerExtent">{__dm.constrainLayer}</Option>
                     </Select>
                 </SettingRow>
             </SettingSection>
 
             {/* ---- TEMPLATE ---- */}
-            <SettingSection title={defaultMessages.templateSection}>
-                <SettingRow flow="wrap" label={defaultMessages.introLabel}>
+            <SettingSection title={__dm.templateSection}>
+                <SettingRow flow="wrap" label={__dm.introLabel}>
                     <TextArea
                         className="zl-textarea-intro"
                         value={config.intro}
@@ -497,40 +508,40 @@ const Setting = (props: SettingProps) => {
                         placeholder="<p>Enter your address to see your zone.</p>"
                     />
                 </SettingRow>
-                <Hint>{defaultMessages.introHint}</Hint>
+                <Hint>{__dm.introHint}</Hint>
 
-                <SettingRow flow="wrap" label={defaultMessages.resultTemplate}>
+                <SettingRow flow="wrap" label={__dm.resultTemplate}>
                     <TextArea
                         className="zl-textarea-template"
                         value={config.resultTemplate}
                         onChange={(e: any) => updateConfig('resultTemplate', e.target.value)}
                         placeholder="<h3>Zone Info</h3><p><strong>Zone:</strong> {ZONE_NAME}</p>"
-                        aria-label={defaultMessages.resultTemplate}
+                        aria-label={__dm.resultTemplate}
                         aria-describedby={`${templateHelpId} ${conditionalHelpId}`}
                         aria-invalid={templateError ? true : undefined}
                     />
                 </SettingRow>
                 <Hint>
-                    <span id={templateHelpId}>{defaultMessages.resultTemplateHint}</span>
+                    <span id={templateHelpId}>{__dm.resultTemplateHint}</span>
                 </Hint>
 
                 <div id={conditionalHelpId}>
-                    <Hint>{defaultMessages.conditionalTemplateHint}</Hint>
+                    <Hint>{__dm.conditionalTemplateHint}</Hint>
                     <pre className="zl-template-example" tabIndex={0}
-                        aria-label={defaultMessages.conditionalTemplateExampleLabel}>
-                        {defaultMessages.conditionalTemplateExample}
+                        aria-label={__dm.conditionalTemplateExampleLabel}>
+                        {__dm.conditionalTemplateExample}
                     </pre>
                 </div>
                 {templateError && (
                     <Alert type="error" withIcon
-                        text={`${defaultMessages.templateErrorPrefix} ${templateErrorMessages[templateError]}`} />
+                        text={`${__dm.templateErrorPrefix} ${templateErrorMessages[templateError]}`} />
                 )}
 
-                <SettingRow flow="wrap" label={defaultMessages.availableFields}>
+                <SettingRow flow="wrap" label={__dm.availableFields}>
                     <div className="zl-token-panel">
-                        {fieldsLoading && <div className="zl-token-empty">{defaultMessages.fieldsLoading}</div>}
+                        {fieldsLoading && <div className="zl-token-empty">{__dm.fieldsLoading}</div>}
                         {!fieldsLoading && fields.length === 0 && (
-                            <div className="zl-token-empty">{defaultMessages.availableFieldsEmpty}</div>
+                            <div className="zl-token-empty">{__dm.availableFieldsEmpty}</div>
                         )}
                         {!fieldsLoading && fields.length > 0 && (
                             <div className="zl-token-list" role="list">
@@ -559,81 +570,81 @@ const Setting = (props: SettingProps) => {
             </SettingSection>
 
             {/* ---- LABELS & MESSAGES ---- */}
-            <SettingSection title={defaultMessages.textSection}>
-                <SettingRow flow="wrap" label={defaultMessages.addressLabel}>
+            <SettingSection title={__dm.textSection}>
+                <SettingRow flow="wrap" label={__dm.addressLabel}>
                     <TextInput
                         value={config.addressLabel}
                         onChange={(e: any) => updateConfig('addressLabel', e.target.value)}
                         className="w-100"
                     />
                 </SettingRow>
-                <SettingRow flow="wrap" label={defaultMessages.addressPlaceholder}>
+                <SettingRow flow="wrap" label={__dm.addressPlaceholder}>
                     <TextInput
                         value={config.addressPlaceholder}
                         onChange={(e: any) => updateConfig('addressPlaceholder', e.target.value)}
                         className="w-100"
                     />
                 </SettingRow>
-                <SettingRow flow="wrap" label={defaultMessages.addressTooltip}>
+                <SettingRow flow="wrap" label={__dm.addressTooltip}>
                     <TextInput
                         value={config.addressTooltip}
                         onChange={(e: any) => updateConfig('addressTooltip', e.target.value)}
                         className="w-100"
                     />
                 </SettingRow>
-                <SettingRow flow="wrap" label={defaultMessages.submitLabel}>
+                <SettingRow flow="wrap" label={__dm.submitLabel}>
                     <TextInput
                         value={config.submitLabel}
                         onChange={(e: any) => updateConfig('submitLabel', e.target.value)}
                         className="w-100"
                     />
                 </SettingRow>
-                <SettingRow flow="wrap" label={defaultMessages.submitTooltip}>
+                <SettingRow flow="wrap" label={__dm.submitTooltip}>
                     <TextInput
                         value={config.submitTooltip}
                         onChange={(e: any) => updateConfig('submitTooltip', e.target.value)}
                         className="w-100"
                     />
                 </SettingRow>
-                <SettingRow label={defaultMessages.showResetButton}>
+                <SettingRow label={__dm.showResetButton}>
                     <Switch
                         checked={config.showResetButton}
                         onChange={(e: any) => updateConfig('showResetButton', e.target.checked)}
-                        aria-label={defaultMessages.showResetButton}
+                        aria-label={__dm.showResetButton}
                     />
                 </SettingRow>
-                <SettingRow label={defaultMessages.iframeMode}>
+                <SettingRow label={__dm.iframeMode}>
                     <Switch
                         checked={!!(config as any).iframeMode}
                         onChange={(e: any) => updateConfig('iframeMode', e.target.checked)}
-                        aria-label={defaultMessages.iframeMode}
+                        aria-label={__dm.iframeMode}
                     />
                 </SettingRow>
                 {(config as any).iframeMode && (
                     <SettingRow flow="wrap">
-                        <small className="text-muted">{defaultMessages.iframeModeHint}</small>
+                        <small className="text-muted">{__dm.iframeModeHint}</small>
                     </SettingRow>
                 )}
-                <SettingRow label={defaultMessages.mobileOptimized}>
+                <SettingRow label={__dm.mobileOptimized}>
                     <Switch
                         checked={(config as any).mobileOptimized !== false}
                         onChange={(e: any) => updateConfig('mobileOptimized', e.target.checked)}
-                        aria-label={defaultMessages.mobileOptimized}
+                        aria-label={__dm.mobileOptimized}
                     />
                 </SettingRow>
                 <SettingRow flow="wrap">
-                    <small className="text-muted">{defaultMessages.mobileOptimizedHint}</small>
+                    <small className="text-muted">{__dm.mobileOptimizedHint}</small>
                 </SettingRow>
                 {config.showResetButton && (
                     <>
-                        <SettingRow flow="wrap" label={defaultMessages.resetLabel}>
+                        <SettingRow flow="wrap" label={__dm.resetLabel}>
                             <TextInput
                                 value={config.resetLabel}
                                 onChange={(e: any) => updateConfig('resetLabel', e.target.value)}
                                 className="w-100"
                             />
                         </SettingRow>
-                        <SettingRow flow="wrap" label={defaultMessages.resetTooltip}>
+                        <SettingRow flow="wrap" label={__dm.resetTooltip}>
                             <TextInput
                                 value={config.resetTooltip}
                                 onChange={(e: any) => updateConfig('resetTooltip', e.target.value)}
@@ -642,72 +653,72 @@ const Setting = (props: SettingProps) => {
                         </SettingRow>
                     </>
                 )}
-                <SettingRow flow="wrap" label={defaultMessages.noAddressMessage}>
+                <SettingRow flow="wrap" label={__dm.noAddressMessage}>
                     <TextInput
                         value={config.noAddressMessage}
                         onChange={(e: any) => updateConfig('noAddressMessage', e.target.value)}
                         className="w-100"
                     />
                 </SettingRow>
-                <SettingRow flow="wrap" label={defaultMessages.outsideAreaMessage}>
+                <SettingRow flow="wrap" label={__dm.outsideAreaMessage}>
                     <TextInput
                         value={config.outsideAreaMessage}
                         onChange={(e: any) => updateConfig('outsideAreaMessage', e.target.value)}
                         className="w-100"
                     />
                 </SettingRow>
-                <SettingRow flow="wrap" label={defaultMessages.errorMessage}>
+                <SettingRow flow="wrap" label={__dm.errorMessage}>
                     <TextInput
                         value={config.errorMessage}
                         onChange={(e: any) => updateConfig('errorMessage', e.target.value)}
                         className="w-100"
                     />
                 </SettingRow>
-                <SettingRow flow="wrap" label={defaultMessages.placeholderHeading}>
+                <SettingRow flow="wrap" label={__dm.placeholderHeading}>
                     <TextInput
                         value={(config as any).placeholderHeading || ''}
                         onChange={(e: any) => updateConfig('placeholderHeading', e.target.value)}
-                        placeholder={defaultMessages.placeholderHeadingPlaceholder}
+                        placeholder={__dm.placeholderHeadingPlaceholder}
                         className="w-100"
                     />
                 </SettingRow>
-                <SettingRow flow="wrap" label={defaultMessages.placeholderMessage}>
+                <SettingRow flow="wrap" label={__dm.placeholderMessage}>
                     <TextInput
                         value={(config as any).placeholderMessage || ''}
                         onChange={(e: any) => updateConfig('placeholderMessage', e.target.value)}
-                        placeholder={defaultMessages.placeholderMessagePlaceholder}
+                        placeholder={__dm.placeholderMessagePlaceholder}
                         className="w-100"
                     />
                 </SettingRow>
-                <SettingRow flow="wrap" label={defaultMessages.outsideAreaHeading}>
+                <SettingRow flow="wrap" label={__dm.outsideAreaHeading}>
                     <TextInput
                         value={(config as any).outsideAreaHeading || ''}
                         onChange={(e: any) => updateConfig('outsideAreaHeading', e.target.value)}
-                        placeholder={defaultMessages.outsideAreaHeadingPlaceholder}
+                        placeholder={__dm.outsideAreaHeadingPlaceholder}
                         className="w-100"
                     />
                 </SettingRow>
-                <SettingRow flow="wrap" label={defaultMessages.tryAnotherAddressLabel}>
+                <SettingRow flow="wrap" label={__dm.tryAnotherAddressLabel}>
                     <TextInput
                         value={(config as any).tryAnotherAddressLabel || ''}
                         onChange={(e: any) => updateConfig('tryAnotherAddressLabel', e.target.value)}
-                        placeholder={defaultMessages.tryAnotherAddressLabelPlaceholder}
+                        placeholder={__dm.tryAnotherAddressLabelPlaceholder}
                         className="w-100"
                     />
                 </SettingRow>
-                <SettingRow flow="wrap" label={defaultMessages.shareEmailSubject}>
+                <SettingRow flow="wrap" label={__dm.shareEmailSubject}>
                     <TextInput
                         value={(config as any).shareEmailSubject || ''}
                         onChange={(e: any) => updateConfig('shareEmailSubject', e.target.value)}
-                        placeholder={defaultMessages.shareEmailSubjectPlaceholder}
+                        placeholder={__dm.shareEmailSubjectPlaceholder}
                         className="w-100"
                     />
                 </SettingRow>
             </SettingSection>
 
             {/* ---- APPEARANCE ---- */}
-            <SettingSection title={defaultMessages.appearanceSection}>
-                <SettingRow flow="wrap" label={defaultMessages.zoomLevel}>
+            <SettingSection title={__dm.appearanceSection}>
+                <SettingRow flow="wrap" label={__dm.zoomLevel}>
                     <NumericInput
                         value={config.zoomLevel}
                         min={0}
@@ -717,19 +728,19 @@ const Setting = (props: SettingProps) => {
                         className="w-100"
                     />
                 </SettingRow>
-                <SettingRow label={defaultMessages.highlightFill}>
+                <SettingRow label={__dm.highlightFill}>
                     <ColorPicker
                         color={arrayToRgba(config.highlightFillColor)}
                         onChange={(value: string) => onColorChange('highlightFillColor', value)}
                     />
                 </SettingRow>
-                <SettingRow label={defaultMessages.highlightOutline}>
+                <SettingRow label={__dm.highlightOutline}>
                     <ColorPicker
                         color={arrayToRgba(config.highlightOutlineColor)}
                         onChange={(value: string) => onColorChange('highlightOutlineColor', value)}
                     />
                 </SettingRow>
-                <SettingRow flow="wrap" label={defaultMessages.highlightOutlineWidth}>
+                <SettingRow flow="wrap" label={__dm.highlightOutlineWidth}>
                     <NumericInput
                         value={config.highlightOutlineWidth}
                         min={0}
@@ -742,11 +753,11 @@ const Setting = (props: SettingProps) => {
             </SettingSection>
 
             {/* ---- BRAND COLORS (apply to the top UI / chrome) ---- */}
-            <SettingSection title={defaultMessages.brandSection}>
+            <SettingSection title={__dm.brandSection}>
                 <div style={{ fontSize: 12, color: 'var(--gray-700)', padding: '0 0 8px 0' }}>
-                    {defaultMessages.brandSectionHint}
+                    {__dm.brandSectionHint}
                 </div>
-                <SettingRow label={defaultMessages.brandPrimaryColor}>
+                <SettingRow label={__dm.brandPrimaryColor}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                         <ColorPicker
                             color={arrayToRgba(config.brandPrimaryColor as any)}
@@ -757,14 +768,14 @@ const Setting = (props: SettingProps) => {
                                 type="tertiary"
                                 size="sm"
                                 onClick={() => onColorClear('brandPrimaryColor')}
-                                aria-label={defaultMessages.brandColorClear}
+                                aria-label={__dm.brandColorClear}
                             >
-                                {defaultMessages.brandColorClear}
+                                {__dm.brandColorClear}
                             </Button>
                         )}
                     </div>
                 </SettingRow>
-                <SettingRow label={defaultMessages.brandHeadingColor}>
+                <SettingRow label={__dm.brandHeadingColor}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                         <ColorPicker
                             color={arrayToRgba(config.brandHeadingColor as any)}
@@ -775,29 +786,29 @@ const Setting = (props: SettingProps) => {
                                 type="tertiary"
                                 size="sm"
                                 onClick={() => onColorClear('brandHeadingColor')}
-                                aria-label={defaultMessages.brandColorClear}
+                                aria-label={__dm.brandColorClear}
                             >
-                                {defaultMessages.brandColorClear}
+                                {__dm.brandColorClear}
                             </Button>
                         )}
                     </div>
                 </SettingRow>
-                <SettingRow flow="wrap" label={defaultMessages.headerStyle}>
+                <SettingRow flow="wrap" label={__dm.headerStyle}>
                     <Select
                         value={config.headerStyle || 'plain'}
                         onChange={(e: any) => updateConfig('headerStyle', (e.target.value || 'plain') as any)}
                         className="w-100"
                     >
-                        <option value="plain">{defaultMessages.headerStylePlain}</option>
-                        <option value="banner">{defaultMessages.headerStyleBanner}</option>
+                        <option value="plain">{__dm.headerStylePlain}</option>
+                        <option value="banner">{__dm.headerStyleBanner}</option>
                     </Select>
                 </SettingRow>
                 {config.headerStyle === 'banner' && (
-                    <SettingRow flow="wrap" label={defaultMessages.headerTitle}>
+                    <SettingRow flow="wrap" label={__dm.headerTitle}>
                         <TextInput
                             value={config.headerTitle || ''}
                             onChange={(e: any) => updateConfig('headerTitle', e.target.value)}
-                            placeholder={defaultMessages.headerTitlePlaceholder}
+                            placeholder={__dm.headerTitlePlaceholder}
                             className="w-100"
                         />
                     </SettingRow>
@@ -805,16 +816,16 @@ const Setting = (props: SettingProps) => {
             </SettingSection>
 
             {/* ---- HERO ---- */}
-            <SettingSection title={defaultMessages.heroSection}>
-                <Hint>{defaultMessages.heroSectionHint}</Hint>
-                <SettingRow flow="wrap" label={defaultMessages.heroTitleField}>
+            <SettingSection title={__dm.heroSection}>
+                <Hint>{__dm.heroSectionHint}</Hint>
+                <SettingRow flow="wrap" label={__dm.heroTitleField}>
                     <Select
                         value={config.heroTitleField || ''}
                         onChange={(e: any) => updateConfig('heroTitleField', e.target.value || '')}
                         className="w-100"
                         disabled={fields.length === 0}
                     >
-                        <Option value="">{defaultMessages.noField}</Option>
+                        <Option value="">{__dm.noField}</Option>
                         {fields.map((f: any) => (
                             <Option key={`title-${f.name}`} value={f.name}>
                                 {f.alias || f.name}
@@ -822,14 +833,14 @@ const Setting = (props: SettingProps) => {
                         ))}
                     </Select>
                 </SettingRow>
-                <SettingRow flow="wrap" label={defaultMessages.heroSubtitleField}>
+                <SettingRow flow="wrap" label={__dm.heroSubtitleField}>
                     <Select
                         value={config.heroSubtitleField || ''}
                         onChange={(e: any) => updateConfig('heroSubtitleField', e.target.value || '')}
                         className="w-100"
                         disabled={fields.length === 0}
                     >
-                        <Option value="">{defaultMessages.noField}</Option>
+                        <Option value="">{__dm.noField}</Option>
                         {fields.map((f: any) => (
                             <Option key={`sub-${f.name}`} value={f.name}>
                                 {f.alias || f.name}
@@ -840,30 +851,30 @@ const Setting = (props: SettingProps) => {
             </SettingSection>
 
             {/* ---- FEATURES ---- */}
-            <SettingSection title={defaultMessages.featuresSection}>
-                <SettingRow label={defaultMessages.enableMyLocation}>
+            <SettingSection title={__dm.featuresSection}>
+                <SettingRow label={__dm.enableMyLocation}>
                     <Switch
                         checked={config.enableMyLocation}
                         onChange={(e: any) => updateConfig('enableMyLocation', e.target.checked)}
-                        aria-label={defaultMessages.enableMyLocation}
+                        aria-label={__dm.enableMyLocation}
                     />
                 </SettingRow>
-                <SettingRow label={defaultMessages.enableMapClick}>
+                <SettingRow label={__dm.enableMapClick}>
                     <Switch
                         checked={config.enableMapClick}
                         onChange={(e: any) => updateConfig('enableMapClick', e.target.checked)}
-                        aria-label={defaultMessages.enableMapClick}
+                        aria-label={__dm.enableMapClick}
                     />
                 </SettingRow>
-                <SettingRow label={defaultMessages.enableRecentSearches}>
+                <SettingRow label={__dm.enableRecentSearches}>
                     <Switch
                         checked={config.enableRecentSearches}
                         onChange={(e: any) => updateConfig('enableRecentSearches', e.target.checked)}
-                        aria-label={defaultMessages.enableRecentSearches}
+                        aria-label={__dm.enableRecentSearches}
                     />
                 </SettingRow>
                 {config.enableRecentSearches && (
-                    <SettingRow flow="wrap" label={defaultMessages.maxRecentSearches}>
+                    <SettingRow flow="wrap" label={__dm.maxRecentSearches}>
                         <NumericInput
                             value={config.maxRecentSearches}
                             min={1}
@@ -874,35 +885,35 @@ const Setting = (props: SettingProps) => {
                         />
                     </SettingRow>
                 )}
-                <SettingRow label={defaultMessages.enableShare}>
+                <SettingRow label={__dm.enableShare}>
                     <Switch
                         checked={config.enableShare}
                         onChange={(e: any) => updateConfig('enableShare', e.target.checked)}
-                        aria-label={defaultMessages.enableShare}
+                        aria-label={__dm.enableShare}
                     />
                 </SettingRow>
-                <SettingRow label={defaultMessages.enablePrint}>
+                <SettingRow label={__dm.enablePrint}>
                     <Switch
                         checked={config.enablePrint}
                         onChange={(e: any) => updateConfig('enablePrint', e.target.checked)}
-                        aria-label={defaultMessages.enablePrint}
+                        aria-label={__dm.enablePrint}
                     />
                 </SettingRow>
             </SettingSection>
 
             {/* ---- IMPORT / EXPORT ---- */}
-            <SettingSection title={defaultMessages.importExportSection}>
-                <Hint>{defaultMessages.importExportHint}</Hint>
+            <SettingSection title={__dm.importExportSection}>
+                <Hint>{__dm.importExportHint}</Hint>
                 <SettingRow flow="wrap">
                     <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', width: '100%' }}>
-                        <Tooltip title={defaultMessages.exportTooltip} placement="top">
+                        <Tooltip title={__dm.exportTooltip} placement="top">
                             <Button type="primary" size="sm" onClick={handleExport}>
-                                {defaultMessages.exportConfig}
+                                {__dm.exportConfig}
                             </Button>
                         </Tooltip>
-                        <Tooltip title={defaultMessages.importTooltip} placement="top">
+                        <Tooltip title={__dm.importTooltip} placement="top">
                             <Button type="secondary" size="sm" onClick={handleImportClick}>
-                                {defaultMessages.importConfig}
+                                {__dm.importConfig}
                             </Button>
                         </Tooltip>
                         <input
