@@ -955,18 +955,74 @@
           }
         },
         "bs": {
-          "file": "270d59bd0bd1",
+          "file": "54e8efcf4943",
           "counts": {
             "esri": 11,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 0,
+            "machine": 11,
             "stale": 0,
-            "missing": 90
+            "missing": 79
           },
-          "entries": {}
+          "entries": {
+            "suggestionsLabel": {
+              "t": "Prijedlozi za adresu",
+              "src": "machine",
+              "h": "45ba4a20f9e9"
+            },
+            "shareCopyLink": {
+              "t": "Kopiraj link",
+              "src": "machine",
+              "h": "2f84eea5d45d"
+            },
+            "helpNoMatches": {
+              "t": "Ništa u vodiču ne odgovara toj riječi.",
+              "src": "machine",
+              "h": "3fe179f75330"
+            },
+            "firstRunTitle": {
+              "t": "Novi ovdje?",
+              "src": "machine",
+              "h": "b81f2e17e001"
+            },
+            "firstRunHelpLink": {
+              "t": "Otvori vodič.",
+              "src": "machine",
+              "h": "2447dd6134ea"
+            },
+            "firstRunDismiss": {
+              "t": "Otpust",
+              "src": "machine",
+              "h": "70afe9eff3f2"
+            },
+            "helpStartTitle": {
+              "t": "Počnite ovdje: tri koraka",
+              "src": "machine",
+              "h": "789320b4831d"
+            },
+            "helpTroubleTitle": {
+              "t": "Ako nešto nije u redu",
+              "src": "machine",
+              "h": "6f7fec3ff1e0"
+            },
+            "helpTipsTitle": {
+              "t": "Dobro je znati.",
+              "src": "machine",
+              "h": "79fc372dc790"
+            },
+            "unknownError": {
+              "t": "nepoznata greška",
+              "src": "machine",
+              "h": "af6321ca7a8b"
+            },
+            "unserializableError": {
+              "t": "Neserijalizacijska greška",
+              "src": "machine",
+              "h": "76e73551597a"
+            }
+          }
         },
         "ca": {
           "file": "3c5fbf52c648",
@@ -5169,18 +5225,469 @@
           }
         },
         "hr": {
-          "file": "270d59bd0bd1",
+          "file": "0f5d3dc47cb0",
           "counts": {
             "esri": 11,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 0,
+            "machine": 90,
             "stale": 0,
-            "missing": 90
+            "missing": 0
           },
-          "entries": {}
+          "entries": {
+            "_widgetLabel": {
+              "t": "Pretraživanje zone",
+              "src": "machine",
+              "h": "6752914d15a2"
+            },
+            "searching": {
+              "t": "Tražim adresu...",
+              "src": "machine",
+              "h": "b52edced9716"
+            },
+            "noMapConfigured": {
+              "t": "Mapa nije konfigurirana. Grafički element će i dalje tražiti zone, ali rezultati neće biti naglašeni na karti.",
+              "src": "machine",
+              "h": "d3f2c6cf45ca"
+            },
+            "noLayerConfigured": {
+              "t": "Zonski sloj nije konfiguriran. Otvorite postavke widgeta za odabir jednog.",
+              "src": "machine",
+              "h": "a4f5aaa87bfc"
+            },
+            "resultsHeading": {
+              "t": "Rezultati pretrage",
+              "src": "machine",
+              "h": "75fe05ecb349"
+            },
+            "templateConfigurationError": {
+              "t": "Raspored rezultata nije mogao biti pročitan. Molim kontaktirajte administratora aplikacije.",
+              "src": "machine",
+              "h": "df9a2b6e6e39"
+            },
+            "suggestionsLabel": {
+              "t": "Prijedlozi za adresu",
+              "src": "machine",
+              "h": "45ba4a20f9e9"
+            },
+            "noSuggestions": {
+              "t": "Nema odgovarajućih adresa",
+              "src": "machine",
+              "h": "65d118a0c956"
+            },
+            "useMyLocation": {
+              "t": "Koristi moju lokaciju.",
+              "src": "machine",
+              "h": "0132375d9a57"
+            },
+            "useMyLocationTooltip": {
+              "t": "Potražite zonu za trenutnu lokaciju uređaja.",
+              "src": "machine",
+              "h": "8bffe562402c"
+            },
+            "geolocating": {
+              "t": "Dobivanje svoju lokaciju...",
+              "src": "machine",
+              "h": "2c622bd3ad00"
+            },
+            "geoUnsupported": {
+              "t": "Vaš preglednik ne podržava usluge lokacije.",
+              "src": "machine",
+              "h": "edb406401d39"
+            },
+            "geoDenied": {
+              "t": "Pristup lokaciji je odbijen. Umjesto toga upišite adresu.",
+              "src": "machine",
+              "h": "ed97c2f3e5d5"
+            },
+            "geoUnavailable": {
+              "t": "Vaša lokacija nije mogla biti utvrđena upravo sada.",
+              "src": "machine",
+              "h": "469ae8541f15"
+            },
+            "clickMap": {
+              "t": "Kliknite na mapu",
+              "src": "machine",
+              "h": "aed33969ffd5"
+            },
+            "clickMapTooltip": {
+              "t": "Kliknite bilo gdje na karti kako biste pogledali zonu te točke.",
+              "src": "machine",
+              "h": "f7a4f1614ee7"
+            },
+            "clickMapActive": {
+              "t": "Kliknite bilo koju točku na karti...",
+              "src": "machine",
+              "h": "e031c7a3c375"
+            },
+            "clickMapNeedsMap": {
+              "t": "Spojite map widget u postavkama za korištenje ovog.",
+              "src": "machine",
+              "h": "026ca9c0377d"
+            },
+            "resultActionsLabel": {
+              "t": "Odrednice ispisa",
+              "src": "machine",
+              "h": "938d269d71aa"
+            },
+            "shareTooltip": {
+              "t": "Podijelite ove rezultate.",
+              "src": "machine",
+              "h": "15e4fc1b72f3"
+            },
+            "shareCopied": {
+              "t": "Adresa kopirana u odlagalište.",
+              "src": "machine",
+              "h": "4bcd59c7a98d"
+            },
+            "shareUnavailable": {
+              "t": "Dijeljenje nije podržano u ovom pregledniku.",
+              "src": "machine",
+              "h": "08fad64dd440"
+            },
+            "shareCopyLink": {
+              "t": "Kopiraj poveznicu",
+              "src": "machine",
+              "h": "2f84eea5d45d"
+            },
+            "shareSms": {
+              "t": "Poruke",
+              "src": "machine",
+              "h": "7cfcf842d6e7"
+            },
+            "linkCopied": {
+              "t": "Link kopiran u odlagalište.",
+              "src": "machine",
+              "h": "0aad611ee63f"
+            },
+            "shareEmailSubject": {
+              "t": "Rezultati pretrage",
+              "src": "machine",
+              "h": "75fe05ecb349"
+            },
+            "printTooltip": {
+              "t": "Ispiši ove rezultate.",
+              "src": "machine",
+              "h": "f3dcfc87f678"
+            },
+            "outsideAreaHeading": {
+              "t": "Adresa je izvan uslužnog područja",
+              "src": "machine",
+              "h": "b0d7ae65c84b"
+            },
+            "tryAnotherAddress": {
+              "t": "Pokušajte s drugom adresom",
+              "src": "machine",
+              "h": "14e6c8d9c746"
+            },
+            "placeholderHeading": {
+              "t": "Pronađite svoje područje",
+              "src": "machine",
+              "h": "40e86d190ac0"
+            },
+            "placeholderMessage": {
+              "t": "Unesite gore adresu da biste vidjeli svoje rezultate.",
+              "src": "machine",
+              "h": "fc20fc41a4ec"
+            },
+            "helpIntro": {
+              "t": "Ovaj widget vam govori u kojem području adresa spada.",
+              "src": "machine",
+              "h": "0edb7e28d6cc"
+            },
+            "helpSearchPlaceholder": {
+              "t": "Traži vodič (pokušaj adresa ilimapa",
+              "src": "machine",
+              "h": "8bc11a159c8c"
+            },
+            "helpNoMatches": {
+              "t": "Ništa u vodiču ne odgovara toj riječi. Pokušajte drugi, ili otvorite dijelove iznad.",
+              "src": "machine",
+              "h": "3fe179f75330"
+            },
+            "firstRunTitle": {
+              "t": "Novi ovdje?",
+              "src": "machine",
+              "h": "b81f2e17e001"
+            },
+            "firstRunBody": {
+              "t": "Upišite adresu, izaberite je s popisa, a zatim pročitajte odgovor u donjoj kartici.",
+              "src": "machine",
+              "h": "981f9b709a9d"
+            },
+            "firstRunHelpLink": {
+              "t": "Otvori vodič.",
+              "src": "machine",
+              "h": "2447dd6134ea"
+            },
+            "firstRunDismiss": {
+              "t": "Otpust",
+              "src": "machine",
+              "h": "70afe9eff3f2"
+            },
+            "helpStartTitle": {
+              "t": "Počnite ovdje: tri koraka",
+              "src": "machine",
+              "h": "789320b4831d"
+            },
+            "helpStart1": {
+              "t": "Upišite adresu u okvir pod{address} Nakon nekoliko slova, pojavljuje se kratki popis odgovarajućih adresa.",
+              "src": "machine",
+              "h": "acabf78d5bfa"
+            },
+            "helpStart2": {
+              "t": "Kliknite na vašu adresu u tom popisu. Također možete pritisnuti Enter da upotrijebite točno ono što ste upisali.",
+              "src": "machine",
+              "h": "15fdda2e742d"
+            },
+            "helpStart3": {
+              "t": "Pročitajte odgovor u kartici ispod kutije.",
+              "src": "machine",
+              "h": "525a49702a78"
+            },
+            "helpStart3Map": {
+              "t": "Pročitajte odgovor u kartici ispod kutije i pogledajte zasjenjeno područje na karti.",
+              "src": "machine",
+              "h": "a4de533078e9"
+            },
+            "helpFindTitle": {
+              "t": "Tipkanje adrese",
+              "src": "machine",
+              "h": "c1ecb1642563"
+            },
+            "helpFind1": {
+              "t": "Popis adresa se pojavljuje nakon što ste ukucali oko tri slova. Odabir s popisa je najsigurniji način da biste dobili pravo mjesto.",
+              "src": "machine",
+              "h": "670096e1f83f"
+            },
+            "helpFind2": {
+              "t": "Koristite dolje i gore tipke strelice za kretanje kroz popis, a zatim pritisnite Enter odabrati jedan.",
+              "src": "machine",
+              "h": "8a8df3e95a87"
+            },
+            "helpFind3": {
+              "t": "Mali x na desnom kraju kutije isprazni ga tako da možete početi ispočetka.",
+              "src": "machine",
+              "h": "5b7c5fce9ad1"
+            },
+            "helpFindReset": {
+              "t": "{reset}sjedi ispod kutije; ona isprazni kutiju i očisti odgovor.",
+              "src": "machine",
+              "h": "35e6f2e71402"
+            },
+            "helpFind4": {
+              "t": "Kućni broj prvo, zatim naziv ulice, najbolje djeluje: 250 N 5. St.",
+              "src": "machine",
+              "h": "91f0f38f9eba"
+            },
+            "helpWaysTitle": {
+              "t": "Drugi načini da se potraži mjesto",
+              "src": "machine",
+              "h": "d74bd0af5aa2"
+            },
+            "helpWaysIntro": {
+              "t": "Ne morate tipkati adresu. Također možete koristiti {ways}.",
+              "src": "machine",
+              "h": "209fb23c346a"
+            },
+            "helpWaysLocation": {
+              "t": "{name}: koristi lokaciju uređaja na kojem se nalazite. Vaš preglednik prvi put traži dozvolu. Odaberite Dozvoli.",
+              "src": "machine",
+              "h": "33dc9e195797"
+            },
+            "helpWaysClick": {
+              "t": "{name}: omogućuje vam da odaberete mjesto na karti. Kliknite na gumb, a zatim kliknite na kartu. Kliknite gumb ponovno zaustaviti.",
+              "src": "machine",
+              "h": "1419f6373dce"
+            },
+            "helpWaysClickNoMap": {
+              "t": "{name} je sivo jer ova aplikacija ne prikazuje kartu pored widgeta.",
+              "src": "machine",
+              "h": "ccae692c93a8"
+            },
+            "helpResultConditional": {
+              "t": "Rješenje u odgovoru može se promijeniti kako bi odgovaralo području u kojem se nalazi vaša adresa.",
+              "src": "machine",
+              "h": "9f0461a7b0ea"
+            },
+            "helpResultTitle": {
+              "t": "Čitam odgovor.",
+              "src": "machine",
+              "h": "e7183f8e9212"
+            },
+            "helpResultHero": {
+              "t": "U boji bar na vrhu kartice je kratak odgovor, kao što su naziv područja i datum.",
+              "src": "machine",
+              "h": "fd1cc89584f8"
+            },
+            "helpResult1": {
+              "t": "Ostatak kartice daje detalje za adresu koju ste tražili.",
+              "src": "machine",
+              "h": "e443d16feea7"
+            },
+            "helpResultMap": {
+              "t": "Na karti, crvena točka označava adresu i odgovarajuće područje je zasjenjeno.",
+              "src": "machine",
+              "h": "f13e3bb53213"
+            },
+            "helpResultOutside": {
+              "t": "Ako adresa sjedi izvan područja koje ova aplikacija pokriva, žuti karton tako kaže i nudi {tryAnother}.",
+              "src": "machine",
+              "h": "42369b69f484"
+            },
+            "helpRecentTitle": {
+              "t": "Vaše nedavne adrese",
+              "src": "machine",
+              "h": "c8bea5124986"
+            },
+            "helpRecent1": {
+              "t": "Zadnjih nekoliko adresa je upisano pod{recent} kada je kutija prazna.",
+              "src": "machine",
+              "h": "0880fc15fe3f"
+            },
+            "helpRecent2": {
+              "t": "Kliknite jedan da ga ponovno pogledati.",
+              "src": "machine",
+              "h": "c2c93adaea33"
+            },
+            "helpRecent3": {
+              "t": "{clear} uklanja taj popis iz ovog preglednika. Popis je samo na vašem računalu, i nitko ga drugi ne vidi.",
+              "src": "machine",
+              "h": "5a83c30f4e9e"
+            },
+            "helpActionsTitle": {
+              "t": "Dugmad na odgovornoj kartici",
+              "src": "machine",
+              "h": "9d904ec4969e"
+            },
+            "helpActionsIntro": {
+              "t": "Na vrhu kartice s odgovorom dobivate {actions}.",
+              "src": "machine",
+              "h": "62284a65a86e"
+            },
+            "helpActionsShare": {
+              "t": "{name}: otvara mali izbornik s Kopiraj linkom, e-mailom i tekstualnom porukom.",
+              "src": "machine",
+              "h": "5eb43873da8f"
+            },
+            "helpActionsPrint": {
+              "t": "{name}: ispisuje sam odgovornu karticu, a ne cijelu stranicu.",
+              "src": "machine",
+              "h": "d7267c580be3"
+            },
+            "helpTroubleTitle": {
+              "t": "Ako nešto izgleda loše",
+              "src": "machine",
+              "h": "6f7fec3ff1e0"
+            },
+            "helpTroubleNoList": {
+              "t": "Ne pojavljuje se popis adresa: ukucali ste manje od tri slova, ili je usluga adrese spora. Upišite malo više i pričekajte sekundu.",
+              "src": "machine",
+              "h": "5234bef234bf"
+            },
+            "helpTroubleNoMatch": {
+              "t": "Vaša adresa nije na popisu: broj kuće ili pravopis može biti neznatno isključen. Pokušajte ime ulice na svoju ruku, a zatim izaberite onaj pravi s popisa.",
+              "src": "machine",
+              "h": "f8b3b8bbda26"
+            },
+            "helpTroubleOutside": {
+              "t": "Odgovor kaže da je adresa izvan područja: da adresa nije u područjima koje ova aplikacija pokriva. Provjerite adresu, zatim koristite broj telefona ili kontakt prikazan na kartici.",
+              "src": "machine",
+              "h": "645a2db9cb41"
+            },
+            "helpTroubleLocation": {
+              "t": "{name} ne čini ništa: vaš preglednik blokira pristup lokaciji. Dozvoli lokaciju za ovu stranicu u postavkama preglednika ili umjesto toga ukucaj adresu.",
+              "src": "machine",
+              "h": "4bc6ff1df594"
+            },
+            "helpTroubleClick": {
+              "t": "{name} je sivo: widget nema kartu za klik, ili karta još uvijek učitava. Upišite adresu umjesto toga.",
+              "src": "machine",
+              "h": "d0e1bf6cab7e"
+            },
+            "helpTroubleShare": {
+              "t": "Kopiraj link ne čini ništa: ovaj preglednik ne dopušta kopiranje s stranice. Umjesto toga, kopirajte adresu iz okvira ručno.",
+              "src": "machine",
+              "h": "d388c8fc6025"
+            },
+            "helpTroublePrint": {
+              "t": "Ispis prikazuje cijelu stranicu: prozor za ispis je otvoren iz izbornika preglednika. Umjesto toga koristite gumb {name} na kartici za odgovor.",
+              "src": "machine",
+              "h": "913d9deb2c54"
+            },
+            "helpTroubleBlank": {
+              "t": "Kartica ostaje prazna nakon dugog čekanja: adresa usluga ili sloj područja nije odgovorio. Ponovno učitati stranicu i pokušati ponovno.",
+              "src": "machine",
+              "h": "875b1afeb2a1"
+            },
+            "helpTroubleContact": {
+              "t": "Još uvijek zaglavi? Kontaktirajte GIS Division i spomenuti Zone Lookup widget i ovu aplikaciju.",
+              "src": "machine",
+              "h": "cc0e5623c0c7"
+            },
+            "helpTipsTitle": {
+              "t": "Dobro je znati.",
+              "src": "machine",
+              "h": "79fc372dc790"
+            },
+            "helpTips1": {
+              "t": "Odabir adrese s popisa je pouzdaniji od upisivanja cijele adrese i pritiskanja Entera.",
+              "src": "machine",
+              "h": "66b67039b504"
+            },
+            "helpTips2": {
+              "t": "Adresa točno na rubu područja još uvijek odgovara. Grafički element izgleda kratka udaljenost oko točke.",
+              "src": "machine",
+              "h": "1519cc54b504"
+            },
+            "helpTips3": {
+              "t": "Čišćenje podataka preglednika također čisti vaše nedavne adrese.",
+              "src": "machine",
+              "h": "ea62bc7690a1"
+            },
+            "helpTips4": {
+              "t": "Ovaj vodič slijedi aplikaciju: opisuje samo gumbe koje vam ova aplikacija pokazuje.",
+              "src": "machine",
+              "h": "fcb4fdc2efae"
+            },
+            "closeResultsAndSearchAnotherAddress": {
+              "t": "Zatvori rezultate i traži drugu adresu",
+              "src": "machine",
+              "h": "678fa7bece15"
+            },
+            "newSearch": {
+              "t": "Nova pretraga",
+              "src": "machine",
+              "h": "0df419370454"
+            },
+            "addressLookupResultsSwipeUpOr": {
+              "t": "Rezultati traženja adresa. Obrišite gore ili dolje na svitak.",
+              "src": "machine",
+              "h": "dd5e1518233e"
+            },
+            "uiCall": {
+              "t": "Poziv {part}",
+              "src": "machine",
+              "h": "22587f1aa02b"
+            },
+            "resultsFound": {
+              "t": "Rezultati pronađeni.",
+              "src": "machine",
+              "h": "37e0c51ab045"
+            },
+            "unknownError": {
+              "t": "nepoznata greška",
+              "src": "machine",
+              "h": "af6321ca7a8b"
+            },
+            "unserializableError": {
+              "t": "Neserijalizacijska greška",
+              "src": "machine",
+              "h": "76e73551597a"
+            }
+          }
         },
         "hu": {
           "file": "839193e245df",
@@ -11923,18 +12430,469 @@
           }
         },
         "sr": {
-          "file": "04e9b72d11fb",
+          "file": "76250b3d28a0",
           "counts": {
             "esri": 11,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 0,
+            "machine": 90,
             "stale": 0,
-            "missing": 90
+            "missing": 0
           },
-          "entries": {}
+          "entries": {
+            "_widgetLabel": {
+              "t": "Потрага зоне@ info: whatsthis",
+              "src": "machine",
+              "h": "6752914d15a2"
+            },
+            "searching": {
+              "t": "Tražim adresu...",
+              "src": "machine",
+              "h": "b52edced9716"
+            },
+            "noMapConfigured": {
+              "t": "Nema konfigurisane mape. Grafički element će i dalje tražiti zone, ali rezultati neće biti naglašeni na mapi.",
+              "src": "machine",
+              "h": "d3f2c6cf45ca"
+            },
+            "noLayerConfigured": {
+              "t": "Zonski sloj nije konfigurisan. Otvorite postavke grafičkog elementa da izaberete jedan.",
+              "src": "machine",
+              "h": "a4f5aaa87bfc"
+            },
+            "resultsHeading": {
+              "t": "Rezultati pretrage",
+              "src": "machine",
+              "h": "75fe05ecb349"
+            },
+            "templateConfigurationError": {
+              "t": "Raspored rezultata nije mogao biti pročitan. Molim kontaktirajte administratora aplikacije.",
+              "src": "machine",
+              "h": "df9a2b6e6e39"
+            },
+            "suggestionsLabel": {
+              "t": "Prijedlozi za adresu",
+              "src": "machine",
+              "h": "45ba4a20f9e9"
+            },
+            "noSuggestions": {
+              "t": "Nema identiènih adresa.",
+              "src": "machine",
+              "h": "65d118a0c956"
+            },
+            "useMyLocation": {
+              "t": "Koristi moju lokaciju.",
+              "src": "machine",
+              "h": "0132375d9a57"
+            },
+            "useMyLocationTooltip": {
+              "t": "Potražite zonu za vašu trenutnu lokaciju ureðaja.",
+              "src": "machine",
+              "h": "8bffe562402c"
+            },
+            "geolocating": {
+              "t": "Dobivam tvoju lokaciju...",
+              "src": "machine",
+              "h": "2c622bd3ad00"
+            },
+            "geoUnsupported": {
+              "t": "Vaš preglednik ne podržava usluge lokacije.",
+              "src": "machine",
+              "h": "edb406401d39"
+            },
+            "geoDenied": {
+              "t": "Pristup lokaciji je odbijen.",
+              "src": "machine",
+              "h": "ed97c2f3e5d5"
+            },
+            "geoUnavailable": {
+              "t": "Vaša lokacija nije mogla da se utvrdi sada.",
+              "src": "machine",
+              "h": "469ae8541f15"
+            },
+            "clickMap": {
+              "t": "Kliknite на мапуQShortcut",
+              "src": "machine",
+              "h": "aed33969ffd5"
+            },
+            "clickMapTooltip": {
+              "t": "Kliknite bilo gde na mapi da biste pogledali zonu te tačke.",
+              "src": "machine",
+              "h": "f7a4f1614ee7"
+            },
+            "clickMapActive": {
+              "t": "Klikni na bilo koju taèku na mapi...",
+              "src": "machine",
+              "h": "e031c7a3c375"
+            },
+            "clickMapNeedsMap": {
+              "t": "Povežite grafički element mape u postavkama da biste koristili ovo.",
+              "src": "machine",
+              "h": "026ca9c0377d"
+            },
+            "resultActionsLabel": {
+              "t": "Radnje na rezultatu",
+              "src": "machine",
+              "h": "938d269d71aa"
+            },
+            "shareTooltip": {
+              "t": "Podelite ove rezultate.",
+              "src": "machine",
+              "h": "15e4fc1b72f3"
+            },
+            "shareCopied": {
+              "t": "Adresa kopirana u clipboard.",
+              "src": "machine",
+              "h": "4bcd59c7a98d"
+            },
+            "shareUnavailable": {
+              "t": "Deljenje nije podržano u ovom pretraživaču.",
+              "src": "machine",
+              "h": "08fad64dd440"
+            },
+            "shareCopyLink": {
+              "t": "Kopiraj link",
+              "src": "machine",
+              "h": "2f84eea5d45d"
+            },
+            "shareSms": {
+              "t": "Текстуална порукаQShortcut",
+              "src": "machine",
+              "h": "7cfcf842d6e7"
+            },
+            "linkCopied": {
+              "t": "Link kopiran u clipboard.",
+              "src": "machine",
+              "h": "0aad611ee63f"
+            },
+            "shareEmailSubject": {
+              "t": "Rezultati pretrage",
+              "src": "machine",
+              "h": "75fe05ecb349"
+            },
+            "printTooltip": {
+              "t": "Odštampaj ove rezultate.",
+              "src": "machine",
+              "h": "f3dcfc87f678"
+            },
+            "outsideAreaHeading": {
+              "t": "Adresa je izvan servisne zone.",
+              "src": "machine",
+              "h": "b0d7ae65c84b"
+            },
+            "tryAnotherAddress": {
+              "t": "Pokušaj sa drugom adresom.",
+              "src": "machine",
+              "h": "14e6c8d9c746"
+            },
+            "placeholderHeading": {
+              "t": "Naðite svoje podruèje.",
+              "src": "machine",
+              "h": "40e86d190ac0"
+            },
+            "placeholderMessage": {
+              "t": "Unesite adresu gore da vidite rezultate.",
+              "src": "machine",
+              "h": "fc20fc41a4ec"
+            },
+            "helpIntro": {
+              "t": "Ovaj vidžet vam govori u kojoj oblasti spada adresa.",
+              "src": "machine",
+              "h": "0edb7e28d6cc"
+            },
+            "helpSearchPlaceholder": {
+              "t": "Тражи водич (try address ormap",
+              "src": "machine",
+              "h": "8bc11a159c8c"
+            },
+            "helpNoMatches": {
+              "t": "Ništa u vodièu ne odgovara toj reèi.",
+              "src": "machine",
+              "h": "3fe179f75330"
+            },
+            "firstRunTitle": {
+              "t": "Novi ovde?",
+              "src": "machine",
+              "h": "b81f2e17e001"
+            },
+            "firstRunBody": {
+              "t": "Ukucaj adresu, izaberi je sa spiska, a onda proèitaj odgovor u donjoj kartici.",
+              "src": "machine",
+              "h": "981f9b709a9d"
+            },
+            "firstRunHelpLink": {
+              "t": "Otvori vodiè.",
+              "src": "machine",
+              "h": "2447dd6134ea"
+            },
+            "firstRunDismiss": {
+              "t": "Otpust.",
+              "src": "machine",
+              "h": "70afe9eff3f2"
+            },
+            "helpStartTitle": {
+              "t": "Poènite ovde: tri koraka.",
+              "src": "machine",
+              "h": "789320b4831d"
+            },
+            "helpStart1": {
+              "t": "Ukucaj adresu u kutiji pod{address} Nakon nekoliko slova, pojavljuje se kratka lista odgovarajućih adresa.",
+              "src": "machine",
+              "h": "acabf78d5bfa"
+            },
+            "helpStart2": {
+              "t": "Klikni na svoju adresu u toj listi. Takođe možeš pritisnuti Enter da bi koristio tačno ono što si ukucao.",
+              "src": "machine",
+              "h": "15fdda2e742d"
+            },
+            "helpStart3": {
+              "t": "Proèitaj odgovor u kartici ispod kutije.",
+              "src": "machine",
+              "h": "525a49702a78"
+            },
+            "helpStart3Map": {
+              "t": "Proèitajte odgovor u kartici ispod kutije, i pogledajte zasenjenu oblast na mapi.",
+              "src": "machine",
+              "h": "a4de533078e9"
+            },
+            "helpFindTitle": {
+              "t": "Upisivanje adrese",
+              "src": "machine",
+              "h": "c1ecb1642563"
+            },
+            "helpFind1": {
+              "t": "Lista adresa se pojavljuje kada ste ukucali oko tri slova. Odabir sa liste je najsigurniji način da se dobije pravo mesto.",
+              "src": "machine",
+              "h": "670096e1f83f"
+            },
+            "helpFind2": {
+              "t": "Koristite dole i gore tipke sa strelicama da se pomerite kroz listu, onda pritisnite Enter da izaberete jedan.",
+              "src": "machine",
+              "h": "8a8df3e95a87"
+            },
+            "helpFind3": {
+              "t": "Mali x na desnom kraju kutije ga isprazni tako da možete poèeti ispoèetka.",
+              "src": "machine",
+              "h": "5b7c5fce9ad1"
+            },
+            "helpFindReset": {
+              "t": "{reset}sedi ispod kutije; ona isprazni kutiju i očisti odgovor.",
+              "src": "machine",
+              "h": "35e6f2e71402"
+            },
+            "helpFind4": {
+              "t": "Kuæni broj prvo, pa ime ulice, najbolje radi: 250 N 5. ulica.",
+              "src": "machine",
+              "h": "91f0f38f9eba"
+            },
+            "helpWaysTitle": {
+              "t": "Drugi naèini da potražiš mesto",
+              "src": "machine",
+              "h": "d74bd0af5aa2"
+            },
+            "helpWaysIntro": {
+              "t": "Ne morate da kucate adresu. Takođe možete da koristite {ways}.",
+              "src": "machine",
+              "h": "209fb23c346a"
+            },
+            "helpWaysLocation": {
+              "t": "{name}: koristi lokaciju uređaja na kojem se nalazite. Vaš pretraživač traži dozvolu prvi put. Odaberite Dozvoli.",
+              "src": "machine",
+              "h": "33dc9e195797"
+            },
+            "helpWaysClick": {
+              "t": "{name}: dozvoljava da izaberete mesto na mapi. Kliknite na dugme, zatim kliknite na mapu. Kliknite ponovo na dugme da stanete.",
+              "src": "machine",
+              "h": "1419f6373dce"
+            },
+            "helpWaysClickNoMap": {
+              "t": "{name} je sivo jer ova aplikacija ne pokazuje mapu pored vidžeta.",
+              "src": "machine",
+              "h": "ccae692c93a8"
+            },
+            "helpResultConditional": {
+              "t": "Reè u odgovoru može da se promeni da bi odgovarao podruèju u kojem je vaša adresa.",
+              "src": "machine",
+              "h": "9f0461a7b0ea"
+            },
+            "helpResultTitle": {
+              "t": "Èitam odgovor.",
+              "src": "machine",
+              "h": "e7183f8e9212"
+            },
+            "helpResultHero": {
+              "t": "Obojena šipka na vrhu kartice je kratak odgovor, kao što su naziv oblasti i datum.",
+              "src": "machine",
+              "h": "fd1cc89584f8"
+            },
+            "helpResult1": {
+              "t": "Ostatak kartice daje detalje za adresu koju ste tražili.",
+              "src": "machine",
+              "h": "e443d16feea7"
+            },
+            "helpResultMap": {
+              "t": "Na mapi, crvena tačka označava adresu i odgovarajuće područje je zasenjeno.",
+              "src": "machine",
+              "h": "f13e3bb53213"
+            },
+            "helpResultOutside": {
+              "t": "Ako adresa sedi izvan područja koje ova aplikacija pokriva, žuti karton tako kaže i nudi {tryAnother}.",
+              "src": "machine",
+              "h": "42369b69f484"
+            },
+            "helpRecentTitle": {
+              "t": "Vaše skorašnje adrese.",
+              "src": "machine",
+              "h": "c8bea5124986"
+            },
+            "helpRecent1": {
+              "t": "Vaših poslednjih nekoliko adresa je upisano pod{recent} kada je kutija prazna.",
+              "src": "machine",
+              "h": "0880fc15fe3f"
+            },
+            "helpRecent2": {
+              "t": "Klikni na jedan da ponovo pogledaš.",
+              "src": "machine",
+              "h": "c2c93adaea33"
+            },
+            "helpRecent3": {
+              "t": "{clear} uklanja tu listu iz ovog pretraživača. Lista je samo na vašem računaru, i niko drugi je ne vidi.",
+              "src": "machine",
+              "h": "5a83c30f4e9e"
+            },
+            "helpActionsTitle": {
+              "t": "Dugmad na kartici",
+              "src": "machine",
+              "h": "9d904ec4969e"
+            },
+            "helpActionsIntro": {
+              "t": "Na vrhu kartice odgovora dobija se {actions}.",
+              "src": "machine",
+              "h": "62284a65a86e"
+            },
+            "helpActionsShare": {
+              "t": "{name}: otvara mali meni sa Kopiraj linkom, e-mailom i tekstualnom porukom.",
+              "src": "machine",
+              "h": "5eb43873da8f"
+            },
+            "helpActionsPrint": {
+              "t": "{name}: ispisuje sama odgovornu karticu, a ne celu stranicu.",
+              "src": "machine",
+              "h": "d7267c580be3"
+            },
+            "helpTroubleTitle": {
+              "t": "Ako nešto nije u redu",
+              "src": "machine",
+              "h": "6f7fec3ff1e0"
+            },
+            "helpTroubleNoList": {
+              "t": "Ne pojavljuje se spisak adresa: ukucali ste manje od tri slova, ili je usluga adrese spora. Ukucajte malo više i sačekajte sekundu.",
+              "src": "machine",
+              "h": "5234bef234bf"
+            },
+            "helpTroubleNoMatch": {
+              "t": "Vaša adresa nije na spisku: broj kuće ili pravopis može biti malo isključen. Probajte ime ulice na svoju ruku, onda izaberite pravu sa liste.",
+              "src": "machine",
+              "h": "f8b3b8bbda26"
+            },
+            "helpTroubleOutside": {
+              "t": "Odgovor kaže da je adresa izvan područja: ta adresa nije u oblastima koje ova aplikacija pokriva. Provjerite adresu, zatim koristite telefonski broj ili kontakt prikazan na kartici.",
+              "src": "machine",
+              "h": "645a2db9cb41"
+            },
+            "helpTroubleLocation": {
+              "t": "{name} ne čini ništa: vaš pretraživač blokira pristup lokaciji. Dozvoli lokaciju za ovu stranicu u vašim postavkama preglednika, ili ukucaj adresu umesto toga.",
+              "src": "machine",
+              "h": "4bc6ff1df594"
+            },
+            "helpTroubleClick": {
+              "t": "{name} je sivo: vidžet nema mapu za klikanje, ili mapa još uvek učitava. Ukucaj adresu umesto toga.",
+              "src": "machine",
+              "h": "d0e1bf6cab7e"
+            },
+            "helpTroubleShare": {
+              "t": "Kopir link ne radi ništa: ovaj preglednik ne dozvoljava kopiranje sa stranice. Umjesto toga, kopirajte adresu iz kutije ručno.",
+              "src": "machine",
+              "h": "d388c8fc6025"
+            },
+            "helpTroublePrint": {
+              "t": "Ispis prikazuje cijelu stranicu: prozor za ispis je otvoren iz izbornika preglednika. Umjesto toga koristite dugme {name} na kartici za odgovor.",
+              "src": "machine",
+              "h": "913d9deb2c54"
+            },
+            "helpTroubleBlank": {
+              "t": "Kartica ostaje prazna nakon dugog čekanja: usluga adrese ili sloj oblasti nije odgovorila. Ponovo učitaj stranicu i pokušaj ponovo.",
+              "src": "machine",
+              "h": "875b1afeb2a1"
+            },
+            "helpTroubleContact": {
+              "t": "Još uvek zaglavljen? Kontaktirajte GIS diviziju i pomenite Zone Lookup vidžet i ovu aplikaciju.",
+              "src": "machine",
+              "h": "cc0e5623c0c7"
+            },
+            "helpTipsTitle": {
+              "t": "Dobro je znati.",
+              "src": "machine",
+              "h": "79fc372dc790"
+            },
+            "helpTips1": {
+              "t": "Odabir adrese sa liste je pouzdaniji od kucanja cele adrese i pritiskanja Entera.",
+              "src": "machine",
+              "h": "66b67039b504"
+            },
+            "helpTips2": {
+              "t": "Adresa na ivici podruèja se još uvek poklapa. Vidžet izgleda kao kratka razdaljina oko tačke.",
+              "src": "machine",
+              "h": "1519cc54b504"
+            },
+            "helpTips3": {
+              "t": "Čišćenje podataka iz pretraživača takođe čisti vaše nedavne adrese.",
+              "src": "machine",
+              "h": "ea62bc7690a1"
+            },
+            "helpTips4": {
+              "t": "Ovaj vodič prati aplikaciju: ona opisuje samo dugmad koja vam ova aplikacija pokazuje.",
+              "src": "machine",
+              "h": "fcb4fdc2efae"
+            },
+            "closeResultsAndSearchAnotherAddress": {
+              "t": "Zatvori rezultate i traži drugu adresu",
+              "src": "machine",
+              "h": "678fa7bece15"
+            },
+            "newSearch": {
+              "t": "Nova pretraga",
+              "src": "machine",
+              "h": "0df419370454"
+            },
+            "addressLookupResultsSwipeUpOr": {
+              "t": "Adresiraj rezultate pretraživanja.",
+              "src": "machine",
+              "h": "dd5e1518233e"
+            },
+            "uiCall": {
+              "t": "Позив {part}",
+              "src": "machine",
+              "h": "22587f1aa02b"
+            },
+            "resultsFound": {
+              "t": "Rezultati pronaðeni.",
+              "src": "machine",
+              "h": "37e0c51ab045"
+            },
+            "unknownError": {
+              "t": "nepoznata greška",
+              "src": "machine",
+              "h": "af6321ca7a8b"
+            },
+            "unserializableError": {
+              "t": "Neserijalizacijska greška",
+              "src": "machine",
+              "h": "76e73551597a"
+            }
+          }
         },
         "sv": {
           "file": "ff3d3860b27d",
@@ -16334,18 +17292,54 @@
           }
         },
         "bs": {
-          "file": "710872bd3031",
+          "file": "41b9c1cb936b",
           "counts": {
             "esri": 7,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 0,
+            "machine": 7,
             "stale": 0,
-            "missing": 92
+            "missing": 85
           },
-          "entries": {}
+          "entries": {
+            "submitLabel": {
+              "t": "Dodaj oznaku dugmeta",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
+            "highlightOutline": {
+              "t": "Istakni boju kao _crtano",
+              "src": "machine",
+              "h": "4e526e81bbea"
+            },
+            "headerTitle": {
+              "t": "Zaglavlje",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
+            "noField": {
+              "t": "(ništa)",
+              "src": "machine",
+              "h": "3c6b183d348f"
+            },
+            "enableRecentSearches": {
+              "t": "Ne mogu učitati %s: %s",
+              "src": "machine",
+              "h": "70df3267f736"
+            },
+            "showHelpGuide": {
+              "t": "Pokaži vodič za pomoć",
+              "src": "machine",
+              "h": "03e9f0b81336"
+            },
+            "showTheQuestionMarkButtonThat": {
+              "t": "Pokaži dugme sa znakom pitanja koje otvara vodič za pomoć grafičkog elementa",
+              "src": "machine",
+              "h": "62c4e81a84ca"
+            }
+          }
         },
         "ca": {
           "file": "304b2610630c",
@@ -21003,18 +21997,479 @@
           }
         },
         "hr": {
-          "file": "710872bd3031",
+          "file": "c62310473efb",
           "counts": {
             "esri": 7,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 0,
+            "machine": 92,
             "stale": 0,
-            "missing": 92
+            "missing": 0
           },
-          "entries": {}
+          "entries": {
+            "_widgetLabel": {
+              "t": "Pretraživanje zone",
+              "src": "machine",
+              "h": "6752914d15a2"
+            },
+            "dataSection": {
+              "t": "Zonski sloj",
+              "src": "machine",
+              "h": "bde7267cdd3a"
+            },
+            "templateSection": {
+              "t": "CRR-a.",
+              "src": "machine",
+              "h": "d8d9c7b63c3d"
+            },
+            "textSection": {
+              "t": "Označi & poruke",
+              "src": "machine",
+              "h": "6727f3741935"
+            },
+            "selectMapHint": {
+              "t": "Karta na kojoj se iscrtavaju pin adresa i zona. Opcionalno: widget i dalje vraća rezultate bez karte.",
+              "src": "machine",
+              "h": "90b626fa8028"
+            },
+            "selectLayer": {
+              "t": "Odaberite sloj zone",
+              "src": "machine",
+              "h": "0595cdd35427"
+            },
+            "selectLayerHint": {
+              "t": "Poligonska značajka sloj koji drži zone.",
+              "src": "machine",
+              "h": "95947185267f"
+            },
+            "geocodeUrl": {
+              "t": "Geokodiranje usluga URL",
+              "src": "machine",
+              "h": "bcb33a1cf4d5"
+            },
+            "geocodeUrlHint": {
+              "t": "REST URL na GeocodeServer. Uobičajeno za ArcGIS World Geocoder. Koristite unutarnji kompozitni lokator ako je dostupan.",
+              "src": "machine",
+              "h": "46637e81939b"
+            },
+            "constrainSearch": {
+              "t": "Ograniči pretragu na",
+              "src": "machine",
+              "h": "8f625bfac67f"
+            },
+            "constrainNone": {
+              "t": "Bez ograničenja",
+              "src": "machine",
+              "h": "a5bf4cd4c1ca"
+            },
+            "constrainLayer": {
+              "t": "Opseg sloja zone",
+              "src": "machine",
+              "h": "c30b3c5673ef"
+            },
+            "resultTemplate": {
+              "t": "Rezultat HTML predloška",
+              "src": "machine",
+              "h": "20b894e2c218"
+            },
+            "resultTemplateHint": {
+              "t": "Koristite {FIELD_NAME} za umetanje vrijednosti polja. Nazivi polja ignoriraju kapitalizaciju, a vrijednosti su HTML- escaped. Date polja koriste duge engleske datume u UTC.",
+              "src": "machine",
+              "h": "86de0026efd0"
+            },
+            "conditionalTemplateHint": {
+              "t": "Koristi {{#if FIELD_NAME}}...{{else}} za odabir teksta kada je polje naseljeno ili prazno. Nedostaju, null, prazne, i vrijednosti samo za prazna polja koriste drugu granu. Nula i lažni broj kao naseljen. Ovo je sintaksa predloška, a ne Arcade.",
+              "src": "machine",
+              "h": "edffc3bb07c7"
+            },
+            "conditionalTemplateExampleLabel": {
+              "t": "Uvjetni primjer predloška",
+              "src": "machine",
+              "h": "4de35bc611b0"
+            },
+            "conditionalTemplateExample": {
+              "t": "{{#ako Općina}} <p>Uklopljeno {Municipality}</p> {{else}} <p>Neuklopljeno {Township} Gradovništvo</p> {{/if}}}",
+              "src": "machine",
+              "h": "2987e8ddbdf6"
+            },
+            "templateErrorPrefix": {
+              "t": "Provjeri predložak rezultata:",
+              "src": "machine",
+              "h": "9134d7a063c2"
+            },
+            "templateInvalidDirective": {
+              "t": "Koristi {{##ako FIELD_NAME}}, {{else}}, i {{/if}}. Imena polja mogu sadržavati slova, brojeve i podvlake i ne mogu početi s brojem. Zatvori svaku direktivu s dvije proteze.",
+              "src": "machine",
+              "h": "7b61d1cce5c6"
+            },
+            "templateUnexpectedElse": {
+              "t": "Otvaranje {{else}} treba {{#ako FIELD_NAME}}.",
+              "src": "machine",
+              "h": "325307ac2c17"
+            },
+            "templateDuplicateElse": {
+              "t": "Svaki blok može imati samo jedan {{else}}.",
+              "src": "machine",
+              "h": "966b3e37c485"
+            },
+            "templateUnexpectedClose": {
+              "t": "Zatvaranje {{/ako}} treba otvoriti {{#ako FIELD_NAME}}.",
+              "src": "machine",
+              "h": "f84ba50ef56a"
+            },
+            "templateMissingClose": {
+              "t": "Dodaj zatvaranje {{/if}} za svako otvaranje ako je blok.",
+              "src": "machine",
+              "h": "f64cb1d159db"
+            },
+            "templateTooDeep": {
+              "t": "Koristite ne više od 64 ugniježđena ako blokovi.",
+              "src": "machine",
+              "h": "b72f8ef8510d"
+            },
+            "availableFields": {
+              "t": "Dostupna polja",
+              "src": "machine",
+              "h": "94ea8c4a55d9"
+            },
+            "availableFieldsEmpty": {
+              "t": "Odaberite sloj zone iznad da biste vidjeli njegova polja.",
+              "src": "machine",
+              "h": "82be026cf3d0"
+            },
+            "fieldsLoading": {
+              "t": "Učitavam polja...",
+              "src": "machine",
+              "h": "f4236cc4c893"
+            },
+            "introLabel": {
+              "t": "Uvod HTML (opcionalno)",
+              "src": "machine",
+              "h": "fa3261c546ef"
+            },
+            "introHint": {
+              "t": "Prikazano iznad unosa adrese. Običan HTML.",
+              "src": "machine",
+              "h": "f9fe3c1dac80"
+            },
+            "addressLabel": {
+              "t": "Unosna oznaka adrese",
+              "src": "machine",
+              "h": "133887f5895a"
+            },
+            "addressPlaceholder": {
+              "t": "Nositelj ulaznog mjesta za adresu",
+              "src": "machine",
+              "h": "f83bdddb4368"
+            },
+            "addressTooltip": {
+              "t": "Opis ulaznog alata za adresu",
+              "src": "machine",
+              "h": "80fbfcee7b83"
+            },
+            "submitLabel": {
+              "t": "Dodaj oznaku gumba",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
+            "submitTooltip": {
+              "t": "Obavještenje o prijavljivanju gumba",
+              "src": "machine",
+              "h": "c4366b467cfb"
+            },
+            "resetLabel": {
+              "t": "Vrati oznaku gumba",
+              "src": "machine",
+              "h": "5f80c90ea3cf"
+            },
+            "resetTooltip": {
+              "t": "Tipka za resetiranje",
+              "src": "machine",
+              "h": "a069076fcbb7"
+            },
+            "showResetButton": {
+              "t": "Pokaži gumb za resetiranje",
+              "src": "machine",
+              "h": "a77d13015055"
+            },
+            "noAddressMessage": {
+              "t": "Nema rezultacije poruke",
+              "src": "machine",
+              "h": "8549c8bf3a88"
+            },
+            "outsideAreaMessage": {
+              "t": "Poruke vanjskog servisnog područja",
+              "src": "machine",
+              "h": "fa4385a2059a"
+            },
+            "errorMessage": {
+              "t": "Generička poruka o grešci",
+              "src": "machine",
+              "h": "fa4ef5dc2312"
+            },
+            "placeholderHeading": {
+              "t": "Naslov mjesta (prije pretrage)",
+              "src": "machine",
+              "h": "924edd019b62"
+            },
+            "placeholderHeadingPlaceholder": {
+              "t": "npr. Pronađite svoje područje",
+              "src": "machine",
+              "h": "08fe3d7f304b"
+            },
+            "placeholderMessage": {
+              "t": "Poruke poslužitelja (prije pretrage)",
+              "src": "machine",
+              "h": "2e877b507397"
+            },
+            "placeholderMessagePlaceholder": {
+              "t": "npr.Unesite gore adresu da biste vidjeli svoje rezultate",
+              "src": "machine",
+              "h": "3fce5e953644"
+            },
+            "outsideAreaHeading": {
+              "t": "Za potrebe ovog Pravilnika primjenjuju se sljedeće definicije:",
+              "src": "machine",
+              "h": "bbba6d12de53"
+            },
+            "outsideAreaHeadingPlaceholder": {
+              "t": "Npr.Adresa je izvan uslužnog područja",
+              "src": "machine",
+              "h": "f98f6077e51c"
+            },
+            "tryAnotherAddressLabel": {
+              "t": "Outside-područje ponovno pokušati gumb naljepnica",
+              "src": "machine",
+              "h": "7da0a4719602"
+            },
+            "tryAnotherAddressLabelPlaceholder": {
+              "t": "Na primjer, pokušajte s drugom adresom.",
+              "src": "machine",
+              "h": "546da57991da"
+            },
+            "shareEmailSubject": {
+              "t": "Podijeli liniju subjekta e-pošte",
+              "src": "machine",
+              "h": "6c429571d3af"
+            },
+            "shareEmailSubjectPlaceholder": {
+              "t": "Npr. Rezultati pretraživanja",
+              "src": "machine",
+              "h": "7beaca5ef9b0"
+            },
+            "iframeMode": {
+              "t": "Optimiziraj za iframe",
+              "src": "machine",
+              "h": "88b72575a080"
+            },
+            "iframeModeHint": {
+              "t": "Widget ispunjava visinu svog roditelja i proteže rezultat kartice za uklanjanje praznog prostora ispod. Koristite pri ugradnji kao fiksne veličine iframe.",
+              "src": "machine",
+              "h": "ef673b8e4cc3"
+            },
+            "mobileOptimized": {
+              "t": "Optimiziraj za mobilno",
+              "src": "machine",
+              "h": "644d5e23ee75"
+            },
+            "mobileOptimizedHint": {
+              "t": "Na telefonima i zaslonima za dodir: veći ciljnici dodira (44px), 16px ulazni font kako bi se spriječilo automatsko zumiranje iOS-a pri fokusiranju okvira za pretraživanje, punom širinom gumba akcije, izbornika za dijeljenje palca i čvršćeg razmaka na uskim ekranima. Preporučeno. Uključite kako biste zadržali veličinu radne površine posvuda.",
+              "src": "machine",
+              "h": "56a9c4326352"
+            },
+            "zoomLevel": {
+              "t": "Povećaj razinu nakon pretraživanja",
+              "src": "machine",
+              "h": "7e1ad558972e"
+            },
+            "highlightFill": {
+              "t": "Istakni boju popunjavanja",
+              "src": "machine",
+              "h": "8ab106cbea39"
+            },
+            "highlightOutline": {
+              "t": "Istakni boju",
+              "src": "machine",
+              "h": "4e526e81bbea"
+            },
+            "highlightOutlineWidth": {
+              "t": "Istakni ocrtanu širinu (pt)",
+              "src": "machine",
+              "h": "f48874d20216"
+            },
+            "brandSection": {
+              "t": "Boje marke",
+              "src": "machine",
+              "h": "35c3b9887e7a"
+            },
+            "brandSectionHint": {
+              "t": "Opcionalno. Premostite tematski naglasak i boje naslova korištene u gornjem UI (oznaka, ikone,Koristite moju lokaciju fokus prstenovi). Ostavite prazno nasljeđivati iz teme stranice.",
+              "src": "machine",
+              "h": "c33bbc91088e"
+            },
+            "brandPrimaryColor": {
+              "t": "Primarna boja branda",
+              "src": "machine",
+              "h": "b6a023bf9e77"
+            },
+            "brandHeadingColor": {
+              "t": "Boja naslova / oznaka",
+              "src": "machine",
+              "h": "4b205906230d"
+            },
+            "brandColorClear": {
+              "t": "Vrati na temu",
+              "src": "machine",
+              "h": "d4463152f491"
+            },
+            "headerStyle": {
+              "t": "Stil zaglavlja",
+              "src": "machine",
+              "h": "3813ac59cb50"
+            },
+            "headerStylePlain": {
+              "t": "Običan (uvod kao običan tekst)",
+              "src": "machine",
+              "h": "fab52bab2e26"
+            },
+            "headerStyleBanner": {
+              "t": "Zastavica (obojena traka s opcijskim naslovom)",
+              "src": "machine",
+              "h": "08448bff83e6"
+            },
+            "headerTitle": {
+              "t": "Naslov zaglavlja",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
+            "headerTitlePlaceholder": {
+              "t": "npr. Pronađite svoje područje za preuzimanje",
+              "src": "machine",
+              "h": "3102fd455a3c"
+            },
+            "heroSection": {
+              "t": "Rezultat junaka",
+              "src": "machine",
+              "h": "99ddccbe46e2"
+            },
+            "heroSectionHint": {
+              "t": "Izborno. Odaberite polje za iscrtavanje kao velika obojena značka na vrhu rezultat kartice, plus opcionalni podnaslov ispod. Ostavite oba prazno za preskočiti junaka i koristiti samo HTML predložak.",
+              "src": "machine",
+              "h": "5b13123b61de"
+            },
+            "heroTitleField": {
+              "t": "Polje za naslov junaka",
+              "src": "machine",
+              "h": "ce6498db7640"
+            },
+            "heroSubtitleField": {
+              "t": "Polje herojskog titla",
+              "src": "machine",
+              "h": "d62e38464dc3"
+            },
+            "noField": {
+              "t": "(ništa)",
+              "src": "machine",
+              "h": "3c6b183d348f"
+            },
+            "enableMyLocation": {
+              "t": "Prikaži Koristite moju lokaciju gumb",
+              "src": "machine",
+              "h": "01d050c37f7c"
+            },
+            "enableMapClick": {
+              "t": "Prikaži Klikni na kartu način preklopljavanja",
+              "src": "machine",
+              "h": "05724fdb174c"
+            },
+            "enableRecentSearches": {
+              "t": "Zapamti nedavne pretrage",
+              "src": "machine",
+              "h": "70df3267f736"
+            },
+            "maxRecentSearches": {
+              "t": "Maks. nedavne pretrage koje treba zadržati",
+              "src": "machine",
+              "h": "1c7bb60e2209"
+            },
+            "enableShare": {
+              "t": "Prikaži gumb za dijeljenje pri rezultatu",
+              "src": "machine",
+              "h": "296899973594"
+            },
+            "enablePrint": {
+              "t": "Prikaži gumb ispisa pri rezultatu",
+              "src": "machine",
+              "h": "4b3f166a0197"
+            },
+            "importExportSection": {
+              "t": "Uvoz / izvoz",
+              "src": "machine",
+              "h": "07765bae33d9"
+            },
+            "importExportHint": {
+              "t": "Spremi ove postavke kao XML datoteku ili ih učitaj iz prethodno izvezene datoteke. Mapa widget i zona sloj reference ostati app-specifičan i treba biti ponovno izabran nakon uvoza.",
+              "src": "machine",
+              "h": "253a546c2a49"
+            },
+            "exportConfig": {
+              "t": "Izvezi u XML",
+              "src": "machine",
+              "h": "c8b2cf62f034"
+            },
+            "exportTooltip": {
+              "t": "Preuzmite ove postavke kao XML datoteku.",
+              "src": "machine",
+              "h": "d2afea7f594d"
+            },
+            "importConfig": {
+              "t": "Uvezi iz XML- a",
+              "src": "machine",
+              "h": "2a7f05ecf69e"
+            },
+            "importTooltip": {
+              "t": "Učitaj postavke iz prethodno izvezene XML datoteke.",
+              "src": "machine",
+              "h": "61d8d6f6376a"
+            },
+            "importSuccess": {
+              "t": "Konfiguracija je uspješno uvezena.",
+              "src": "machine",
+              "h": "8f3f7fd383b3"
+            },
+            "importErrorParse": {
+              "t": "Nisam mogao pročitati datoteku. Provjerite da li je to ispravan izvoz Zone Lookup XML-a.",
+              "src": "machine",
+              "h": "a9ff2e042b2d"
+            },
+            "importErrorEmpty": {
+              "t": "U datoteci nisu pronađene prepoznate postavke.",
+              "src": "machine",
+              "h": "e866065c4500"
+            },
+            "aliasTypeClickToInsert": {
+              "t": "{alias} ({type}) : kliknite za umetanje",
+              "src": "machine",
+              "h": "27d976d0d6bb"
+            },
+            "insertTokenForFieldAlias": {
+              "t": "Umetni token za polje {alias}",
+              "src": "machine",
+              "h": "bdff10403acb"
+            },
+            "showHelpGuide": {
+              "t": "Prikaži vodič pomoći",
+              "src": "machine",
+              "h": "03e9f0b81336"
+            },
+            "showTheQuestionMarkButtonThat": {
+              "t": "Prikaži gumb s upitnikom koji otvara vodič za pomoć widgetu",
+              "src": "machine",
+              "h": "62c4e81a84ca"
+            }
+          }
         },
         "hu": {
           "file": "6d23dc16eeb2",
@@ -28457,18 +29912,479 @@
           }
         },
         "sr": {
-          "file": "0afba967e694",
+          "file": "3e9196c2a2c6",
           "counts": {
             "esri": 7,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 0,
+            "machine": 92,
             "stale": 0,
-            "missing": 92
+            "missing": 0
           },
-          "entries": {}
+          "entries": {
+            "_widgetLabel": {
+              "t": "Потрага зоне@ info: whatsthis",
+              "src": "machine",
+              "h": "6752914d15a2"
+            },
+            "dataSection": {
+              "t": "Zonski sloj",
+              "src": "machine",
+              "h": "bde7267cdd3a"
+            },
+            "templateSection": {
+              "t": "Шаблон резултатаQShortcut",
+              "src": "machine",
+              "h": "d8d9c7b63c3d"
+            },
+            "textSection": {
+              "t": "Налепнице & поруке",
+              "src": "machine",
+              "h": "6727f3741935"
+            },
+            "selectMapHint": {
+              "t": "Mapa na kojoj se iscrtavaju pin adresa i zona. Opcionalno: grafički element i dalje vraća rezultate bez mape.",
+              "src": "machine",
+              "h": "90b626fa8028"
+            },
+            "selectLayer": {
+              "t": "Odaberite sloj zone",
+              "src": "machine",
+              "h": "0595cdd35427"
+            },
+            "selectLayerHint": {
+              "t": "Poligonski sloj koji drži zone.",
+              "src": "machine",
+              "h": "95947185267f"
+            },
+            "geocodeUrl": {
+              "t": "Geocoding service URL",
+              "src": "machine",
+              "h": "bcb33a1cf4d5"
+            },
+            "geocodeUrlHint": {
+              "t": "REST URL на GeocodeServer. Подразум ијевано на ArcGIS World Geocoder. Користите унутрашњи композитни локатор ако је доступан.",
+              "src": "machine",
+              "h": "46637e81939b"
+            },
+            "constrainSearch": {
+              "t": "Ograniči pretragu na",
+              "src": "machine",
+              "h": "8f625bfac67f"
+            },
+            "constrainNone": {
+              "t": "Bez ogranièenja",
+              "src": "machine",
+              "h": "a5bf4cd4c1ca"
+            },
+            "constrainLayer": {
+              "t": "Opseg sloja zone",
+              "src": "machine",
+              "h": "c30b3c5673ef"
+            },
+            "resultTemplate": {
+              "t": "Rezultat HTML šablona",
+              "src": "machine",
+              "h": "20b894e2c218"
+            },
+            "resultTemplateHint": {
+              "t": "Koristite {FIELD_NAME} za umetanje vrednosti polja. Nazivi polja ignorišu kapitalizaciju, a vrednosti su HTML-begovi. Polja datuma koriste duge engleske datume u UTC.",
+              "src": "machine",
+              "h": "86de0026efd0"
+            },
+            "conditionalTemplateHint": {
+              "t": "Koristite {{#uf FIELD_NAME}...{{else}}...{{/if}} da izaberete tekst kada je polje naseljeno ili prazno. Nedostaju, nulte, prazne, i vrednosti samo za prazna polja koristite drugu granu. Nula i lažni broj kao naseljen. Ovo je sintaksa šablona, a ne Arcade.",
+              "src": "machine",
+              "h": "edffc3bb07c7"
+            },
+            "conditionalTemplateExampleLabel": {
+              "t": "Uslovni primer šablona",
+              "src": "machine",
+              "h": "4de35bc611b0"
+            },
+            "conditionalTemplateExample": {
+              "t": "{{#ako je opština} <p>Uklopljena {Municipality}</p> {{else}} <p>Neinkorporirana {Township} Gradovina</p> {{/if}}}",
+              "src": "machine",
+              "h": "2987e8ddbdf6"
+            },
+            "templateErrorPrefix": {
+              "t": "Proveri šablon rezultata:",
+              "src": "machine",
+              "h": "9134d7a063c2"
+            },
+            "templateInvalidDirective": {
+              "t": "Koristite {{##ako FIELD_NAME}}, {{else}}, i {{/if}}. Imena polja mogu da sadrže slova, brojeve i podvlake i ne mogu da počnu sa brojem. Zatvorite svaku direktivu sa dve proteze.",
+              "src": "machine",
+              "h": "7b61d1cce5c6"
+            },
+            "templateUnexpectedElse": {
+              "t": "Potrebno je otvaranje {{else}} {{#ako je POLJOPRIVREDNO}}.",
+              "src": "machine",
+              "h": "325307ac2c17"
+            },
+            "templateDuplicateElse": {
+              "t": "Svaki blok može imati samo jedan {{else}}.",
+              "src": "machine",
+              "h": "966b3e37c485"
+            },
+            "templateUnexpectedClose": {
+              "t": "Zatvaranje {{/if}} zahteva otvaranje {{#if FIELD_NAME}.",
+              "src": "machine",
+              "h": "f84ba50ef56a"
+            },
+            "templateMissingClose": {
+              "t": "Dodaj zatvaranje {{/if}} za svako otvaranje ako je blok.",
+              "src": "machine",
+              "h": "f64cb1d159db"
+            },
+            "templateTooDeep": {
+              "t": "Koristite ne više od 64 gnezda ako blokovi.",
+              "src": "machine",
+              "h": "b72f8ef8510d"
+            },
+            "availableFields": {
+              "t": "Dostupna polja",
+              "src": "machine",
+              "h": "94ea8c4a55d9"
+            },
+            "availableFieldsEmpty": {
+              "t": "Odaberite sloj zone iznad da vidite njena polja.",
+              "src": "machine",
+              "h": "82be026cf3d0"
+            },
+            "fieldsLoading": {
+              "t": "Uèitavam polja...",
+              "src": "machine",
+              "h": "f4236cc4c893"
+            },
+            "introLabel": {
+              "t": "Увод HTML (опционално)",
+              "src": "machine",
+              "h": "fa3261c546ef"
+            },
+            "introHint": {
+              "t": "Prikazano iznad ulaza adrese.",
+              "src": "machine",
+              "h": "f9fe3c1dac80"
+            },
+            "addressLabel": {
+              "t": "Unosna oznaka adrese",
+              "src": "machine",
+              "h": "133887f5895a"
+            },
+            "addressPlaceholder": {
+              "t": "адреса уносног местодржача@ info: whatsthis",
+              "src": "machine",
+              "h": "f83bdddb4368"
+            },
+            "addressTooltip": {
+              "t": "Обавештење о уносу адресе@ info: whatsthis",
+              "src": "machine",
+              "h": "80fbfcee7b83"
+            },
+            "submitLabel": {
+              "t": "Označi dugmad",
+              "src": "machine",
+              "h": "5f9ff48452be"
+            },
+            "submitTooltip": {
+              "t": "Облачић за пријављивање дугметаComment",
+              "src": "machine",
+              "h": "c4366b467cfb"
+            },
+            "resetLabel": {
+              "t": "Resetiraj oznaku dugmadi",
+              "src": "machine",
+              "h": "5f80c90ea3cf"
+            },
+            "resetTooltip": {
+              "t": "Ресетуј облачиће дугметаQShortcut",
+              "src": "machine",
+              "h": "a069076fcbb7"
+            },
+            "showResetButton": {
+              "t": "Прикажи дугме за ресетовањеQShortcut",
+              "src": "machine",
+              "h": "a77d13015055"
+            },
+            "noAddressMessage": {
+              "t": "Poruke bez rezultata",
+              "src": "machine",
+              "h": "8549c8bf3a88"
+            },
+            "outsideAreaMessage": {
+              "t": "Poruka za spoljni servis.",
+              "src": "machine",
+              "h": "fa4385a2059a"
+            },
+            "errorMessage": {
+              "t": "Generička poruka greške",
+              "src": "machine",
+              "h": "fa4ef5dc2312"
+            },
+            "placeholderHeading": {
+              "t": "Naslov mesta (пре претраге)",
+              "src": "machine",
+              "h": "924edd019b62"
+            },
+            "placeholderHeadingPlaceholder": {
+              "t": "Na primer, naði svoje podruèje.",
+              "src": "machine",
+              "h": "08fe3d7f304b"
+            },
+            "placeholderMessage": {
+              "t": "Порука чувара места (пре претраге)",
+              "src": "machine",
+              "h": "2e877b507397"
+            },
+            "placeholderMessagePlaceholder": {
+              "t": "Npr.Unesite adresu iznad da vidite svoje rezultate",
+              "src": "machine",
+              "h": "3fce5e953644"
+            },
+            "outsideAreaHeading": {
+              "t": "Spoljni pravac.",
+              "src": "machine",
+              "h": "bbba6d12de53"
+            },
+            "outsideAreaHeadingPlaceholder": {
+              "t": "Npr.Adresa je van službene oblasti",
+              "src": "machine",
+              "h": "f98f6077e51c"
+            },
+            "tryAnotherAddressLabel": {
+              "t": "Outside-područje ponovno pokušajte gumb naljepnica",
+              "src": "machine",
+              "h": "7da0a4719602"
+            },
+            "tryAnotherAddressLabelPlaceholder": {
+              "t": "E.g.Probaj drugu adresu",
+              "src": "machine",
+              "h": "546da57991da"
+            },
+            "shareEmailSubject": {
+              "t": "Дељење е поште субјект реда",
+              "src": "machine",
+              "h": "6c429571d3af"
+            },
+            "shareEmailSubjectPlaceholder": {
+              "t": "Npr.Potražiti rezultate",
+              "src": "machine",
+              "h": "7beaca5ef9b0"
+            },
+            "iframeMode": {
+              "t": "Optimiziraj za iframe",
+              "src": "machine",
+              "h": "88b72575a080"
+            },
+            "iframeModeHint": {
+              "t": "Vidžet ispunjava visinu svog roditelja i rasteže rezultatnu karticu kako bi uklonio prazninu ispod. Koristite pri ugradnji kao fiksni ifram.",
+              "src": "machine",
+              "h": "ef673b8e4cc3"
+            },
+            "mobileOptimized": {
+              "t": "Optimiziraj za mobilni",
+              "src": "machine",
+              "h": "644d5e23ee75"
+            },
+            "mobileOptimizedHint": {
+              "t": "Na telefonima i ekranima za dodir: veće mete dodira (44px), 16px ulazni font kako bi se sprečio iOS auto-zoom pri fokusiranju okvira za pretraživanje, dugmad pune širine akcije, izbornik za dijeljenje palca, i čvršći razmak na uskim ekranima. Preporučeno uključeno. Uključite kako biste zadržali veličinu radne površine svuda.",
+              "src": "machine",
+              "h": "56a9c4326352"
+            },
+            "zoomLevel": {
+              "t": "Увећај ниво након потраживања@ info: whatsthis",
+              "src": "machine",
+              "h": "7e1ad558972e"
+            },
+            "highlightFill": {
+              "t": "Истакни боју испуњавања",
+              "src": "machine",
+              "h": "8ab106cbea39"
+            },
+            "highlightOutline": {
+              "t": "Истакни боју обриса",
+              "src": "machine",
+              "h": "4e526e81bbea"
+            },
+            "highlightOutlineWidth": {
+              "t": "Истакни острв ширине (pt)",
+              "src": "machine",
+              "h": "f48874d20216"
+            },
+            "brandSection": {
+              "t": "Brend boje",
+              "src": "machine",
+              "h": "35c3b9887e7a"
+            },
+            "brandSectionHint": {
+              "t": "Opcionalno. Premostite akcenat teme i boje naslova koje se koriste u gornjem UI (oznaka, ikone,Koristite moju lokaciju fokusni prstenovi). Ostavite prazno da nasleđujete sa teme stranice.",
+              "src": "machine",
+              "h": "c33bbc91088e"
+            },
+            "brandPrimaryColor": {
+              "t": "Primarna boja brenda",
+              "src": "machine",
+              "h": "b6a023bf9e77"
+            },
+            "brandHeadingColor": {
+              "t": "Boja naslova / oznaka",
+              "src": "machine",
+              "h": "4b205906230d"
+            },
+            "brandColorClear": {
+              "t": "Resetiraj na temu",
+              "src": "machine",
+              "h": "d4463152f491"
+            },
+            "headerStyle": {
+              "t": "Stil zaglavlja",
+              "src": "machine",
+              "h": "3813ac59cb50"
+            },
+            "headerStylePlain": {
+              "t": "Обичан (увод као обичан текст)",
+              "src": "machine",
+              "h": "fab52bab2e26"
+            },
+            "headerStyleBanner": {
+              "t": "Zabrana (obojani bend sa opcionalnim naslovom)",
+              "src": "machine",
+              "h": "08448bff83e6"
+            },
+            "headerTitle": {
+              "t": "Заглавље@ info: whatsthis",
+              "src": "machine",
+              "h": "4be73943a2d1"
+            },
+            "headerTitlePlaceholder": {
+              "t": "Na primer, naði svoje mesto za preuzimanje.",
+              "src": "machine",
+              "h": "3102fd455a3c"
+            },
+            "heroSection": {
+              "t": "Rezultat heroj",
+              "src": "machine",
+              "h": "99ddccbe46e2"
+            },
+            "heroSectionHint": {
+              "t": "Izborno. Odaberite polje za iscrtavanje kao velika obojena značka na vrhu rezultatne kartice, plus opcionalni podnaslov ispod. Ostavite oba prazna da preskoče junaka i koristite samo HTML šablon.",
+              "src": "machine",
+              "h": "5b13123b61de"
+            },
+            "heroTitleField": {
+              "t": "Polje za titulu heroja",
+              "src": "machine",
+              "h": "ce6498db7640"
+            },
+            "heroSubtitleField": {
+              "t": "Polje herojskog titla",
+              "src": "machine",
+              "h": "d62e38464dc3"
+            },
+            "noField": {
+              "t": "(None)",
+              "src": "machine",
+              "h": "3c6b183d348f"
+            },
+            "enableMyLocation": {
+              "t": "Pokažite -Koristite moju lokaciju dugme",
+              "src": "machine",
+              "h": "01d050c37f7c"
+            },
+            "enableMapClick": {
+              "t": "Прикажи клик на мапу режим прекидања",
+              "src": "machine",
+              "h": "05724fdb174c"
+            },
+            "enableRecentSearches": {
+              "t": "Setite se nedavnih pretraga.",
+              "src": "machine",
+              "h": "70df3267f736"
+            },
+            "maxRecentSearches": {
+              "t": "Maks skorašnja pretraživanja koja treba da se zadrže",
+              "src": "machine",
+              "h": "1c7bb60e2209"
+            },
+            "enableShare": {
+              "t": "Прикажи дугме д ијељења при резултатуQShortcut",
+              "src": "machine",
+              "h": "296899973594"
+            },
+            "enablePrint": {
+              "t": "Прикажи дугме за штампање при резултатуQShortcut",
+              "src": "machine",
+              "h": "4b3f166a0197"
+            },
+            "importExportSection": {
+              "t": "Увези / извозиQShortcut",
+              "src": "machine",
+              "h": "07765bae33d9"
+            },
+            "importExportHint": {
+              "t": "Sačuvajte ove postavke kao XML datoteku ili ih učitajte iz prethodno izvezene datoteke. Referenke o mapi i zonskim slojevima ostaju specifične za aplikacije i moraju biti ponovo izabrane nakon uvoza.",
+              "src": "machine",
+              "h": "253a546c2a49"
+            },
+            "exportConfig": {
+              "t": "Izvezi u XML",
+              "src": "machine",
+              "h": "c8b2cf62f034"
+            },
+            "exportTooltip": {
+              "t": "Preuzmite ove postavke kao XML datoteku.",
+              "src": "machine",
+              "h": "d2afea7f594d"
+            },
+            "importConfig": {
+              "t": "Uvezi iz XML- a",
+              "src": "machine",
+              "h": "2a7f05ecf69e"
+            },
+            "importTooltip": {
+              "t": "Učitaj postavke iz prethodno izvezene XML datoteke.",
+              "src": "machine",
+              "h": "61d8d6f6376a"
+            },
+            "importSuccess": {
+              "t": "Konfiguracija uvezena uspešno.",
+              "src": "machine",
+              "h": "8f3f7fd383b3"
+            },
+            "importErrorParse": {
+              "t": "Nisam mogao da pročitam datoteku. Proverite da li je to ispravan izvoz Zone Lookup XML-a.",
+              "src": "machine",
+              "h": "a9ff2e042b2d"
+            },
+            "importErrorEmpty": {
+              "t": "U datoteci nisu pronaðene prepoznate postavke.",
+              "src": "machine",
+              "h": "e866065c4500"
+            },
+            "aliasTypeClickToInsert": {
+              "t": "{alias} ({type}) : kliknite za umetanje",
+              "src": "machine",
+              "h": "27d976d0d6bb"
+            },
+            "insertTokenForFieldAlias": {
+              "t": "Уметни токен за поље {alias}",
+              "src": "machine",
+              "h": "bdff10403acb"
+            },
+            "showHelpGuide": {
+              "t": "Pokaži vodič za pomoć",
+              "src": "machine",
+              "h": "03e9f0b81336"
+            },
+            "showTheQuestionMarkButtonThat": {
+              "t": "Prikaži dugme sa znakom pitanja koje otvara vodič za pomoć grafičkom elementu",
+              "src": "machine",
+              "h": "62c4e81a84ca"
+            }
+          }
         },
         "sv": {
           "file": "72ec21f5799d",
