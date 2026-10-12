@@ -92,7 +92,7 @@ System.register([], function (e) {
         helpTroublePrint: "Ispis prikazuje cijelu stranicu: prozor za ispis je otvoren iz izbornika preglednika. Umjesto toga koristite gumb {name} na kartici za odgovor.",
         helpTroubleBlank: "Kartica ostaje prazna nakon dugog čekanja: adresa usluga ili sloj područja nije odgovorio. Ponovno učitati stranicu i pokušati ponovno.",
         helpTroubleContact: "Još uvijek zaglavi? Kontaktirajte GIS Division i spomenuti Zone Lookup widget i ovu aplikaciju.",
-        helpTipsTitle: "Dobro je znati.",
+        helpTipsTitle: "Dobro je znati",
         helpTips1: "Odabir adrese s popisa je pouzdaniji od upisivanja cijele adrese i pritiskanja Entera.",
         helpTips2: "Adresa točno na rubu područja još uvijek odgovara. Grafički element izgleda kratka udaljenost oko točke.",
         helpTips3: "Čišćenje podataka preglednika također čisti vaše nedavne adrese.",

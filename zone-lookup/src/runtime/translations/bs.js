@@ -92,7 +92,7 @@ System.register([], function (e) {
         helpTroublePrint: "The printout shows the whole page: the print window was opened from the browser menu. Use the {name} button on the answer card instead.",
         helpTroubleBlank: "The card stays empty after a long wait: the address service or the area layer did not answer. Reload the page and try again.",
         helpTroubleContact: "Still stuck? Contact the GIS Division and mention the Zone Lookup widget and this app.",
-        helpTipsTitle: "Dobro je znati.",
+        helpTipsTitle: "Dobro je znati",
         helpTips1: "Picking an address from the list is more reliable than typing the whole address and pressing Enter.",
         helpTips2: "An address right on the edge of an area still matches. The widget looks a short distance around the point.",
         helpTips3: "Clearing your browser data also clears your recent addresses.",

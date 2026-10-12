@@ -955,14 +955,14 @@
           }
         },
         "bs": {
-          "file": "54e8efcf4943",
+          "file": "92b6e37e163d",
           "counts": {
-            "esri": 11,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 11,
+            "machine": 2,
             "stale": 0,
             "missing": 79
           },
@@ -976,51 +976,6 @@
               "t": "Kopiraj link",
               "src": "machine",
               "h": "2f84eea5d45d"
-            },
-            "helpNoMatches": {
-              "t": "Ništa u vodiču ne odgovara toj riječi.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
-            "firstRunTitle": {
-              "t": "Novi ovdje?",
-              "src": "machine",
-              "h": "b81f2e17e001"
-            },
-            "firstRunHelpLink": {
-              "t": "Otvori vodič.",
-              "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "firstRunDismiss": {
-              "t": "Otpust",
-              "src": "machine",
-              "h": "70afe9eff3f2"
-            },
-            "helpStartTitle": {
-              "t": "Počnite ovdje: tri koraka",
-              "src": "machine",
-              "h": "789320b4831d"
-            },
-            "helpTroubleTitle": {
-              "t": "Ako nešto nije u redu",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
-            "helpTipsTitle": {
-              "t": "Dobro je znati.",
-              "src": "machine",
-              "h": "79fc372dc790"
-            },
-            "unknownError": {
-              "t": "nepoznata greška",
-              "src": "machine",
-              "h": "af6321ca7a8b"
-            },
-            "unserializableError": {
-              "t": "Neserijalizacijska greška",
-              "src": "machine",
-              "h": "76e73551597a"
             }
           }
         },
@@ -5225,14 +5180,14 @@
           }
         },
         "hr": {
-          "file": "0f5d3dc47cb0",
+          "file": "777dc29a7967",
           "counts": {
-            "esri": 11,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 90,
+            "machine": 81,
             "stale": 0,
             "missing": 0
           },
@@ -5402,35 +5357,10 @@
               "src": "machine",
               "h": "8bc11a159c8c"
             },
-            "helpNoMatches": {
-              "t": "Ništa u vodiču ne odgovara toj riječi. Pokušajte drugi, ili otvorite dijelove iznad.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
-            "firstRunTitle": {
-              "t": "Novi ovdje?",
-              "src": "machine",
-              "h": "b81f2e17e001"
-            },
             "firstRunBody": {
               "t": "Upišite adresu, izaberite je s popisa, a zatim pročitajte odgovor u donjoj kartici.",
               "src": "machine",
               "h": "981f9b709a9d"
-            },
-            "firstRunHelpLink": {
-              "t": "Otvori vodič.",
-              "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "firstRunDismiss": {
-              "t": "Otpust",
-              "src": "machine",
-              "h": "70afe9eff3f2"
-            },
-            "helpStartTitle": {
-              "t": "Počnite ovdje: tri koraka",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStart1": {
               "t": "Upišite adresu u okvir pod{address} Nakon nekoliko slova, pojavljuje se kratki popis odgovarajućih adresa.",
@@ -5577,11 +5507,6 @@
               "src": "machine",
               "h": "d7267c580be3"
             },
-            "helpTroubleTitle": {
-              "t": "Ako nešto izgleda loše",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoList": {
               "t": "Ne pojavljuje se popis adresa: ukucali ste manje od tri slova, ili je usluga adrese spora. Upišite malo više i pričekajte sekundu.",
               "src": "machine",
@@ -5627,11 +5552,6 @@
               "src": "machine",
               "h": "cc0e5623c0c7"
             },
-            "helpTipsTitle": {
-              "t": "Dobro je znati.",
-              "src": "machine",
-              "h": "79fc372dc790"
-            },
             "helpTips1": {
               "t": "Odabir adrese s popisa je pouzdaniji od upisivanja cijele adrese i pritiskanja Entera.",
               "src": "machine",
@@ -5676,16 +5596,6 @@
               "t": "Rezultati pronađeni.",
               "src": "machine",
               "h": "37e0c51ab045"
-            },
-            "unknownError": {
-              "t": "nepoznata greška",
-              "src": "machine",
-              "h": "af6321ca7a8b"
-            },
-            "unserializableError": {
-              "t": "Neserijalizacijska greška",
-              "src": "machine",
-              "h": "76e73551597a"
             }
           }
         },
@@ -12430,14 +12340,14 @@
           }
         },
         "sr": {
-          "file": "76250b3d28a0",
+          "file": "0090a65a240e",
           "counts": {
-            "esri": 11,
+            "esri": 20,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 90,
+            "machine": 81,
             "stale": 0,
             "missing": 0
           },
@@ -12607,35 +12517,10 @@
               "src": "machine",
               "h": "8bc11a159c8c"
             },
-            "helpNoMatches": {
-              "t": "Ništa u vodièu ne odgovara toj reèi.",
-              "src": "machine",
-              "h": "3fe179f75330"
-            },
-            "firstRunTitle": {
-              "t": "Novi ovde?",
-              "src": "machine",
-              "h": "b81f2e17e001"
-            },
             "firstRunBody": {
               "t": "Ukucaj adresu, izaberi je sa spiska, a onda proèitaj odgovor u donjoj kartici.",
               "src": "machine",
               "h": "981f9b709a9d"
-            },
-            "firstRunHelpLink": {
-              "t": "Otvori vodiè.",
-              "src": "machine",
-              "h": "2447dd6134ea"
-            },
-            "firstRunDismiss": {
-              "t": "Otpust.",
-              "src": "machine",
-              "h": "70afe9eff3f2"
-            },
-            "helpStartTitle": {
-              "t": "Poènite ovde: tri koraka.",
-              "src": "machine",
-              "h": "789320b4831d"
             },
             "helpStart1": {
               "t": "Ukucaj adresu u kutiji pod{address} Nakon nekoliko slova, pojavljuje se kratka lista odgovarajućih adresa.",
@@ -12782,11 +12667,6 @@
               "src": "machine",
               "h": "d7267c580be3"
             },
-            "helpTroubleTitle": {
-              "t": "Ako nešto nije u redu",
-              "src": "machine",
-              "h": "6f7fec3ff1e0"
-            },
             "helpTroubleNoList": {
               "t": "Ne pojavljuje se spisak adresa: ukucali ste manje od tri slova, ili je usluga adrese spora. Ukucajte malo više i sačekajte sekundu.",
               "src": "machine",
@@ -12832,11 +12712,6 @@
               "src": "machine",
               "h": "cc0e5623c0c7"
             },
-            "helpTipsTitle": {
-              "t": "Dobro je znati.",
-              "src": "machine",
-              "h": "79fc372dc790"
-            },
             "helpTips1": {
               "t": "Odabir adrese sa liste je pouzdaniji od kucanja cele adrese i pritiskanja Entera.",
               "src": "machine",
@@ -12881,16 +12756,6 @@
               "t": "Rezultati pronaðeni.",
               "src": "machine",
               "h": "37e0c51ab045"
-            },
-            "unknownError": {
-              "t": "nepoznata greška",
-              "src": "machine",
-              "h": "af6321ca7a8b"
-            },
-            "unserializableError": {
-              "t": "Neserijalizacijska greška",
-              "src": "machine",
-              "h": "76e73551597a"
             }
           }
         },
@@ -17294,12 +17159,12 @@
         "bs": {
           "file": "41b9c1cb936b",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 7,
+            "machine": 5,
             "stale": 0,
             "missing": 85
           },
@@ -17328,16 +17193,6 @@
               "t": "Ne mogu učitati %s: %s",
               "src": "machine",
               "h": "70df3267f736"
-            },
-            "showHelpGuide": {
-              "t": "Pokaži vodič za pomoć",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Pokaži dugme sa znakom pitanja koje otvara vodič za pomoć grafičkog elementa",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
@@ -21999,12 +21854,12 @@
         "hr": {
           "file": "c62310473efb",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 92,
+            "machine": 90,
             "stale": 0,
             "missing": 0
           },
@@ -22458,16 +22313,6 @@
               "t": "Umetni token za polje {alias}",
               "src": "machine",
               "h": "bdff10403acb"
-            },
-            "showHelpGuide": {
-              "t": "Prikaži vodič pomoći",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Prikaži gumb s upitnikom koji otvara vodič za pomoć widgetu",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
@@ -29914,12 +29759,12 @@
         "sr": {
           "file": "3e9196c2a2c6",
           "counts": {
-            "esri": 7,
+            "esri": 9,
             "esri-check": 0,
             "community": 0,
             "manual": 0,
             "existing": 0,
-            "machine": 92,
+            "machine": 90,
             "stale": 0,
             "missing": 0
           },
@@ -30373,16 +30218,6 @@
               "t": "Уметни токен за поље {alias}",
               "src": "machine",
               "h": "bdff10403acb"
-            },
-            "showHelpGuide": {
-              "t": "Pokaži vodič za pomoć",
-              "src": "machine",
-              "h": "03e9f0b81336"
-            },
-            "showTheQuestionMarkButtonThat": {
-              "t": "Prikaži dugme sa znakom pitanja koje otvara vodič za pomoć grafičkom elementu",
-              "src": "machine",
-              "h": "62c4e81a84ca"
             }
           }
         },
